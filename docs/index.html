@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Awesome Open Source Research Tools</title>
+<meta name="description" content="A curated, discipline-agnostic list of open source software for every stage of a rigorous research project.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>">
+<style>
+  :root{
+    --bg:#faf9f7;
+    --bg-alt:#f1efe9;
+    --card:#ffffff;
+    --text:#1c1a17;
+    --text-muted:#5d574c;
+    --border:#e4ded2;
+    --accent:#8a5a2c;
+    --accent-strong:#6b430f;
+    --accent-soft:#f4e6d3;
+    --link:#8a5a2c;
+    --code-bg:#f1efe9;
+    --shadow: 0 1px 2px rgba(28,26,23,.06), 0 6px 20px rgba(28,26,23,.05);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#171512;
+      --bg-alt:#1e1b17;
+      --card:#211e19;
+      --text:#f2ede4;
+      --text-muted:#b8ae9c;
+      --border:#37312a;
+      --accent:#e0a860;
+      --accent-strong:#f0c184;
+      --accent-soft:#332a1e;
+      --link:#e0a860;
+      --code-bg:#1e1b17;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+  }
+  a{color:var(--link)}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+
+  header.site{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 0;gap:16px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;color:var(--text)}
+  .brand .mark{font-size:1.3rem}
+  .nav-links{display:flex;align-items:center;gap:18px;font-size:.92rem}
+  .nav-links a{text-decoration:none;color:var(--text-muted);white-space:nowrap}
+  .nav-links a:hover{color:var(--text)}
+  .lang-toggle{
+    display:inline-flex;border:1px solid var(--border);border-radius:999px;overflow:hidden;
+    font-size:.82rem;font-weight:600;flex-shrink:0;
+  }
+  .lang-toggle button{
+    border:0;background:transparent;color:var(--text-muted);
+    padding:6px 12px;cursor:pointer;font:inherit;font-weight:inherit;
+  }
+  .lang-toggle button.active{background:var(--accent);color:#fff}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .lang-toggle button.active{color:#241a0a}
+  }
+
+  main{padding-bottom:64px}
+
+  .hero{padding:56px 0 36px;text-align:left}
+  .eyebrow{
+    display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--accent-strong);background:var(--accent-soft);padding:4px 10px;border-radius:999px;margin-bottom:16px;
+  }
+  h1{font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;margin:0 0 14px;letter-spacing:-.01em}
+  .lede{font-size:1.12rem;color:var(--text-muted);max-width:62ch;margin:0 0 26px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+    padding:11px 18px;border-radius:10px;font-weight:600;font-size:.95rem;
+    border:1px solid var(--border);transition:transform .1s ease;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .btn-primary{color:#241a0a}
+  }
+  .btn-ghost{background:var(--card);color:var(--text)}
+
+  .stats{display:flex;gap:28px;margin-top:34px;flex-wrap:wrap}
+  .stat b{display:block;font-size:1.6rem;color:var(--text)}
+  .stat span{font-size:.85rem;color:var(--text-muted)}
+
+  section{padding:40px 0;border-top:1px solid var(--border)}
+  h2{font-size:1.5rem;margin:0 0 10px;letter-spacing:-.01em}
+  .section-intro{color:var(--text-muted);max-width:68ch;margin:0 0 28px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+  .card{
+    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+    padding:18px 20px;box-shadow:var(--shadow);
+  }
+  .card h3{margin:0 0 6px;font-size:1rem;display:flex;align-items:center;gap:8px}
+  .card h3 .icon{font-size:1.1rem}
+  .card p{margin:0;color:var(--text-muted);font-size:.9rem}
+  .card .count{
+    float:right;font-size:.72rem;font-weight:700;color:var(--accent-strong);
+    background:var(--accent-soft);padding:2px 8px;border-radius:999px;
+  }
+
+  .orgs{display:flex;flex-wrap:wrap;gap:10px}
+  .org-pill{
+    border:1px solid var(--border);background:var(--card);border-radius:999px;
+    padding:8px 14px;font-size:.88rem;text-decoration:none;color:var(--text);
+  }
+  .org-pill:hover{border-color:var(--accent)}
+
+  .steps{display:grid;gap:14px}
+  .step{display:flex;gap:14px}
+  .step .num{
+    flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--accent-soft);
+    color:var(--accent-strong);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;
+  }
+  .step p{margin:2px 0 0;color:var(--text-muted)}
+  .step strong{color:var(--text)}
+
+  .callout{
+    background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px 22px;margin-top:8px;
+  }
+  code{background:var(--code-bg);padding:.15em .4em;border-radius:5px;font-size:.88em}
+
+  footer{border-top:1px solid var(--border);padding:28px 0;color:var(--text-muted);font-size:.85rem}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+  [data-i18n]{display:none}
+  [data-i18n].active-lang{display:revert}
+  h1[data-i18n].active-lang, .lede[data-i18n].active-lang, .card p[data-i18n].active-lang{display:block}
+  span[data-i18n].active-lang{display:inline}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="mark">🔬</span>
+      <span>Awesome Open Source Research Tools</span>
+    </a>
+    <div class="nav-links">
+      <a href="#categories" data-i18n="en nav-cats" class="active-lang">Categories</a>
+      <a href="#categories" data-i18n="pt nav-cats">Categorias</a>
+      <a href="#contribute" data-i18n="en nav-contribute" class="active-lang">Contribute</a>
+      <a href="#contribute" data-i18n="pt nav-contribute">Contribuir</a>
+      <a href="https://github.com/mancano-tales/awesome-open-source-research-tools" target="_blank" rel="noopener">GitHub ↗</a>
+      <span class="lang-toggle">
+        <button type="button" data-set-lang="en" class="active">EN</button>
+        <button type="button" data-set-lang="pt">PT</button>
+      </span>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+
+    <section class="hero" style="border-top:none;padding-top:56px">
+      <span class="eyebrow" data-i18n="en">Curated & method-agnostic</span>
+      <span class="eyebrow" data-i18n="pt">Curada e agnóstica quanto ao método</span>
+
+      <h1 data-i18n="en" class="active-lang">Open source tools for every stage of a research project</h1>
+      <h1 data-i18n="pt">Ferramentas de código aberto para cada etapa de um projeto de pesquisa</h1>
+
+      <p class="lede active-lang" data-i18n="en">
+        A curated list of open source software for collecting data, managing it, analyzing it,
+        making the work reproducible, writing it up, and reviewing existing literature —
+        not limited to any single discipline or method.
+      </p>
+      <p class="lede" data-i18n="pt">
+        Uma lista curada de software de código aberto para coletar dados, organizá-los, analisá-los,
+        tornar o trabalho reprodutível, escrevê-lo e revisar a literatura existente —
+        sem se limitar a uma única disciplina ou método.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/mancano-tales/awesome-open-source-research-tools" target="_blank" rel="noopener">
+          <span data-i18n="en" class="active-lang">View the list on GitHub</span>
+          <span data-i18n="pt">Ver a lista no GitHub</span>
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/mancano-tales/awesome-open-source-research-tools/blob/main/README.md" target="_blank" rel="noopener">
+          <span data-i18n="en" class="active-lang">Read the full README (EN)</span>
+          <span data-i18n="pt">Ler o README completo (EN)</span>
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/mancano-tales/awesome-open-source-research-tools/blob/main/README.pt-BR.md" target="_blank" rel="noopener">
+          <span data-i18n="en" class="active-lang">Read the README in Portuguese</span>
+          <span data-i18n="pt">Ler o README em Português</span>
+        </a>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>32+</b><span data-i18n="en" class="active-lang">open source tools</span><span data-i18n="pt">ferramentas de código aberto</span></div>
+        <div class="stat"><b>10</b><span data-i18n="en" class="active-lang">categories of the research lifecycle</span><span data-i18n="pt">categorias do ciclo de pesquisa</span></div>
+        <div class="stat"><b>5</b><span data-i18n="en" class="active-lang">organizations worth following</span><span data-i18n="pt">organizações que vale a pena seguir</span></div>
+        <div class="stat"><b>CC0</b><span data-i18n="en" class="active-lang">public domain license</span><span data-i18n="pt">licença de domínio público</span></div>
+      </div>
+    </section>
+
+    <section id="what">
+      <h2 data-i18n="en" class="active-lang">What this list is</h2>
+      <h2 data-i18n="pt">O que é esta lista</h2>
+      <p class="section-intro">
+        <span data-i18n="en" class="active-lang">
+          <strong>Awesome Open Source Research Tools</strong> tracks open source software that supports
+          any part of a rigorous, systematic research project. If a tool is open source and helps with
+          collecting data, managing it, analyzing it (qualitatively or quantitatively), keeping the work
+          reproducible, writing it up, or reviewing existing literature, it belongs here — regardless of
+          discipline. Social sciences, natural sciences, health sciences, digital humanities: all welcome,
+          as long as the software itself is open source.
+        </span>
+        <span data-i18n="pt">
+          <strong>Awesome Open Source Research Tools</strong> reúne software de código aberto que apoia
+          qualquer parte de um projeto de pesquisa rigoroso e sistemático. Se uma ferramenta é de código
+          aberto e ajuda a coletar dados, organizá-los, analisá-los (qualitativa ou quantitativamente),
+          manter o trabalho reprodutível, escrevê-lo ou revisar a literatura existente, ela tem lugar aqui —
+          independentemente da disciplina. Ciências sociais, ciências naturais, ciências da saúde,
+          humanidades digitais: todas bem-vindas, desde que o software em si seja de código aberto.
+        </span>
+      </p>
+      <p class="section-intro">
+        <span data-i18n="en" class="active-lang">
+          It lives as a GitHub "awesome list": a single, community-maintained
+          <a href="https://github.com/mancano-tales/awesome-open-source-research-tools/blob/main/README.md" target="_blank" rel="noopener">README</a>,
+          released under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0</a>
+          so anyone can reuse, fork, or republish it freely. This page is a friendlier front door to that same list.
+        </span>
+        <span data-i18n="pt">
+          Ela existe como uma "awesome list" do GitHub: um único
+          <a href="https://github.com/mancano-tales/awesome-open-source-research-tools/blob/main/README.pt-BR.md" target="_blank" rel="noopener">README</a>
+          mantido pela comunidade, publicado sob <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0</a>
+          para que qualquer pessoa possa reutilizar, fazer fork ou republicar livremente. Esta página é uma porta de entrada
+          mais amigável para essa mesma lista.
+        </span>
+      </p>
+    </section>
+
+    <section id="categories">
+      <h2 data-i18n="en" class="active-lang">How it's organized</h2>
+      <h2 data-i18n="pt">Como está organizada</h2>
+      <p class="section-intro">
+        <span data-i18n="en" class="active-lang">Ten categories follow the shape of a research project, from first contact with the field to the final publication.</span>
+        <span data-i18n="pt">Dez categorias seguem o formato de um projeto de pesquisa, do primeiro contato com o campo até a publicação final.</span>
+      </p>
+
+      <div class="grid" id="cat-grid">
+        <!-- cards injected by JS from data below -->
+      </div>
+    </section>
+
+    <section id="orgs">
+      <h2 data-i18n="en" class="active-lang">Inspiring organizations</h2>
+      <h2 data-i18n="pt">Organizações inspiradoras</h2>
+      <p class="section-intro">
+        <span data-i18n="en" class="active-lang">Beyond individual tools, the list also points to organizations whose sustained investment in open source research infrastructure is worth following.</span>
+        <span data-i18n="pt">Além de ferramentas isoladas, a lista também aponta organizações cujo investimento sustentado em infraestrutura de pesquisa de código aberto merece ser acompanhado.</span>
+      </p>
+      <div class="orgs">
+        <a class="org-pill" href="https://github.com/CenterForOpenScience" target="_blank" rel="noopener">Center for Open Science</a>
+        <a class="org-pill" href="https://github.com/DigitalScholar" target="_blank" rel="noopener">Corporation for Digital Scholarship</a>
+        <a class="org-pill" href="https://github.com/posit-dev" target="_blank" rel="noopener">Posit</a>
+        <a class="org-pill" href="https://github.com/socialsciencedatalab" target="_blank" rel="noopener">Social Science Data Lab</a>
+        <a class="org-pill" href="https://github.com/carpentries" target="_blank" rel="noopener">The Carpentries</a>
+      </div>
+    </section>
+
+    <section id="contribute">
+      <h2 data-i18n="en" class="active-lang">How to contribute</h2>
+      <h2 data-i18n="pt">Como contribuir</h2>
+      <p class="section-intro">
+        <span data-i18n="en" class="active-lang">Additions are evaluated against an objective checklist, not personal preference. A tool is generally accepted if it is:</span>
+        <span data-i18n="pt">As adições são avaliadas por um checklist objetivo, não por preferência pessoal. Uma ferramenta é geralmente aceita se for:</span>
+      </p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <strong data-i18n="en" class="active-lang">Open source</strong><strong data-i18n="pt">Código aberto</strong>
+            <p data-i18n="en" class="active-lang">Released under a recognized open source or free-culture license (not "source available" or freemium).</p>
+            <p data-i18n="pt">Publicada sob uma licença de código aberto ou cultura livre reconhecida (não "source available" nem freemium).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <strong data-i18n="en" class="active-lang">Actively maintained</strong><strong data-i18n="pt">Ativamente mantida</strong>
+            <p data-i18n="en" class="active-lang">Shows recent commits, releases, or maintainer activity — not an abandoned repository.</p>
+            <p data-i18n="pt">Apresenta commits, releases ou atividade recente de mantenedores — não é um repositório abandonado.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <div>
+            <strong data-i18n="en" class="active-lang">Documented</strong><strong data-i18n="pt">Documentada</strong>
+            <p data-i18n="en" class="active-lang">Has at least minimal documentation explaining what it does and how to use it.</p>
+            <p data-i18n="pt">Tem ao menos documentação mínima explicando o que faz e como usar.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <div>
+            <strong data-i18n="en" class="active-lang">Non-redundant</strong><strong data-i18n="pt">Não redundante</strong>
+            <p data-i18n="en" class="active-lang">Adds something the list doesn't already cover, or is clearly a stronger fit than what's listed.</p>
+            <p data-i18n="pt">Acrescenta algo que a lista ainda não cobre, ou é claramente mais adequada do que o que já está listado.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <span data-i18n="en" class="active-lang">
+          Read the full <a href="https://github.com/mancano-tales/awesome-open-source-research-tools/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">contribution guidelines</a>
+          and open a pull request against <code>README.md</code> (and, where possible, <code>README.pt-BR.md</code>).
+        </span>
+        <span data-i18n="pt">
+          Leia as <a href="https://github.com/mancano-tales/awesome-open-source-research-tools/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">diretrizes de contribuição</a>
+          completas e abra um pull request no <code>README.md</code> (e, quando possível, no <code>README.pt-BR.md</code>).
+        </span>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>
+      <span data-i18n="en" class="active-lang">Released under CC0 — public domain.</span>
+      <span data-i18n="pt">Publicada sob CC0 — domínio público.</span>
+    </span>
+    <span>
+      <a href="https://github.com/mancano-tales/awesome-open-source-research-tools" target="_blank" rel="noopener">mancano-tales/awesome-open-source-research-tools</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var CATS = [
+    {icon:"🎙️", en:["Data Collection","Field forms, surveys, transcription, web scraping and data cleaning tools."], pt:["Coleta de Dados","Formulários de campo, surveys, transcrição, web scraping e limpeza de dados."], count:8},
+    {icon:"🗄️", en:["Data Management & Organization","Repositories and version control for research data and ML pipelines."], pt:["Gestão e Organização de Dados","Repositórios e controle de versão para dados de pesquisa e pipelines de ML."], count:3},
+    {icon:"🏷️", en:["Qualitative Analysis","CAQDAS tools for coding and analyzing text, audio, image and video."], pt:["Análise Qualitativa","Ferramentas CAQDAS para codificar e analisar texto, áudio, imagem e vídeo."], count:4},
+    {icon:"📊", en:["Quantitative & Statistical Analysis","Statistical software and libraries, from GUI tools to R and Python."], pt:["Análise Quantitativa e Estatística","Softwares e bibliotecas estatísticas, de ferramentas gráficas a R e Python."], count:3},
+    {icon:"🧪", en:["Reproducibility & Computational Environments","Containers, notebooks and workflow managers for reproducible analyses."], pt:["Reprodutibilidade e Ambientes Computacionais","Contêineres, notebooks e gerenciadores de workflow para análises reprodutíveis."], count:4},
+    {icon:"✍️", en:["Writing & Publishing","Document converters and typesetting systems for academic writing."], pt:["Escrita e Publicação","Conversores de documentos e sistemas de diagramação para escrita acadêmica."], count:3},
+    {icon:"📚", en:["Reference & Citation Management","Reference managers with browser and word processor integration."], pt:["Gestão de Referências e Citações","Gerenciadores de referências com integração a navegador e processador de texto."], count:1},
+    {icon:"🤝", en:["Collaboration & Project Management","Self-hostable Git platforms and Kanban/Scrum tools for research teams."], pt:["Colaboração e Gestão de Projetos","Plataformas Git autogerenciáveis e ferramentas Kanban/Scrum para equipes de pesquisa."], count:2},
+    {icon:"📖", en:["Literature Review & Synthesis","AI-assisted screening and meta-analysis tools for systematic reviews."], pt:["Revisão de Literatura e Síntese","Ferramentas de triagem assistida por IA e meta-análise para revisões sistemáticas."], count:2},
+    {icon:"🤖", en:["AI & Agentic Research Tooling","Agent harnesses and frameworks that automate parts of the research workflow."], pt:["Ferramentas de IA e Agentes para Pesquisa","Harnesses de agentes e frameworks que automatizam partes do workflow de pesquisa."], count:2}
+  ];
+
+  var grid = document.getElementById("cat-grid");
+  CATS.forEach(function(c){
+    var card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML =
+      '<span class="count">' + c.count + '</span>' +
+      '<h3><span class="icon">' + c.icon + '</span>' +
+        '<span data-i18n="en" class="active-lang">' + c.en[0] + '</span>' +
+        '<span data-i18n="pt">' + c.pt[0] + '</span>' +
+      '</h3>' +
+      '<p><span data-i18n="en" class="active-lang">' + c.en[1] + '</span>' +
+      '<span data-i18n="pt">' + c.pt[1] + '</span></p>';
+    grid.appendChild(card);
+  });
+
+  function applyLang(lang){
+    document.documentElement.setAttribute("data-lang", lang);
+    document.documentElement.setAttribute("lang", lang === "pt" ? "pt-BR" : "en");
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var tags = el.getAttribute("data-i18n").split(" ");
+      el.classList.toggle("active-lang", tags.indexOf(lang) !== -1);
+    });
+    document.querySelectorAll("[data-set-lang]").forEach(function(btn){
+      btn.classList.toggle("active", btn.getAttribute("data-set-lang") === lang);
+    });
+    try { localStorage.setItem("aosrt-lang", lang); } catch(e){}
+  }
+
+  document.querySelectorAll("[data-set-lang]").forEach(function(btn){
+    btn.addEventListener("click", function(){ applyLang(btn.getAttribute("data-set-lang")); });
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem("aosrt-lang"); } catch(e){}
+  var initial = saved || (navigator.language && navigator.language.toLowerCase().indexOf("pt") === 0 ? "pt" : "en");
+  applyLang(initial);
+})();
+</script>
+
+</body>
+</html>

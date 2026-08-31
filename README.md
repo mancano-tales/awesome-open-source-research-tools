@@ -2,7 +2,7 @@
 
 > A curated list of open source software for any stage of a rigorous, systematic research project — not limited to any single discipline or method.
 
-Read this in [Português (Brasil)](README.pt-BR.md).
+Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingual page? See the [project site](https://mancano-tales.github.io/awesome-open-source-research-tools/).
 
 ## Scope
 

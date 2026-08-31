@@ -2,7 +2,7 @@
 
 > Uma lista curada de software de código aberto para qualquer etapa de um projeto de pesquisa rigorosa e sistemática — sem se limitar a uma única disciplina ou método.
 
-Read this in [English](README.md).
+Read this in [English](README.md). Prefere uma página bilíngue e mais navegável? Veja o [site do projeto](https://mancano-tales.github.io/awesome-open-source-research-tools/).
 
 ## Escopo
 
