@@ -19,6 +19,7 @@ This list is method- and discipline-agnostic. If a tool is open source and suppo
 - [Reference & Citation Management](#reference--citation-management)
 - [Collaboration & Project Management](#collaboration--project-management)
 - [Literature Review & Synthesis](#literature-review--synthesis)
+- [AI & Agentic Research Tooling](#ai--agentic-research-tooling)
 - [Inspiring Organizations](#inspiring-organizations)
 - [Contributing](#contributing)
 - [License](#license)
@@ -76,11 +77,17 @@ This list is method- and discipline-agnostic. If a tool is open source and suppo
 - [ASReview](https://github.com/asreview/asreview) - Open source, AI-assisted tool for systematic literature reviews and screening.
 - [metafor](https://github.com/wviechtb/metafor) - R package for conducting meta-analyses.
 
+## AI & Agentic Research Tooling
+
+- [DAAF (Data Analyst Augmentation Framework)](https://github.com/DAAF-Contribution-Community/daaf) - Open source toolkit that turns Claude Code into an auditable, reproducible quantitative research engine.
+- [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) - Open source, plugin-based AI agent harness usable to automate and orchestrate research workflows.
+
 ## Inspiring Organizations
 
 Organizations (not single tools) whose sustained investment in open source research infrastructure is worth pointing to.
 
 - [Center for Open Science](https://github.com/CenterForOpenScience) - Nonprofit behind the Open Science Framework (OSF), building infrastructure and running initiatives for open, reproducible research.
+- [Corporation for Digital Scholarship](https://github.com/DigitalScholar) - Nonprofit behind Zotero and Tropy, building free and open source tools for scholarly research.
 - [Posit](https://github.com/posit-dev) - Public benefit corporation (formerly RStudio) behind RStudio, Quarto, Shiny, renv and other widely-used open source research tooling.
 - [Social Science Data Lab](https://github.com/socialsciencedatalab) - Research lab at the Mannheim Centre for European Social Research (MZES) publishing open source tools and resources for social science data work.
 - [The Carpentries](https://github.com/carpentries) - Nonprofit teaching foundational open source data and computational skills to researchers (Software Carpentry, Data Carpentry, Library Carpentry).

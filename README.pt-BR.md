@@ -19,6 +19,7 @@ Esta lista é agnóstica quanto a método e disciplina. Se uma ferramenta é de 
 - [Gestão de Referências e Citações](#gestão-de-referências-e-citações)
 - [Colaboração e Gestão de Projetos](#colaboração-e-gestão-de-projetos)
 - [Revisão de Literatura e Síntese](#revisão-de-literatura-e-síntese)
+- [Ferramentas de IA e Agentes para Pesquisa](#ferramentas-de-ia-e-agentes-para-pesquisa)
 - [Organizações Inspiradoras](#organizações-inspiradoras)
 - [Como Contribuir](#como-contribuir)
 - [Licença](#licença)
@@ -76,11 +77,17 @@ Esta lista é agnóstica quanto a método e disciplina. Se uma ferramenta é de 
 - [ASReview](https://github.com/asreview/asreview) - Ferramenta de código aberto assistida por IA para revisões sistemáticas de literatura e triagem de artigos.
 - [metafor](https://github.com/wviechtb/metafor) - Pacote R para condução de meta-análises.
 
+## Ferramentas de IA e Agentes para Pesquisa
+
+- [DAAF (Data Analyst Augmentation Framework)](https://github.com/DAAF-Contribution-Community/daaf) - Kit de ferramentas de código aberto que transforma o Claude Code em um motor de pesquisa quantitativa auditável e reproduzível.
+- [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) - Harness de agente de IA de código aberto, baseado em plugins, utilizável para automatizar e orquestrar workflows de pesquisa.
+
 ## Organizações Inspiradoras
 
 Organizações (não ferramentas isoladas) cujo investimento sustentado em infraestrutura de pesquisa de código aberto merece destaque.
 
 - [Center for Open Science](https://github.com/CenterForOpenScience) - Organização sem fins lucrativos por trás do Open Science Framework (OSF), que constrói infraestrutura e conduz iniciativas para pesquisa aberta e reprodutível.
+- [Corporation for Digital Scholarship](https://github.com/DigitalScholar) - Organização sem fins lucrativos por trás do Zotero e do Tropy, construindo ferramentas livres e de código aberto para pesquisa acadêmica.
 - [Posit](https://github.com/posit-dev) - Empresa de benefício público (antiga RStudio) por trás do RStudio, Quarto, Shiny, renv e outras ferramentas de pesquisa de código aberto amplamente usadas.
 - [Social Science Data Lab](https://github.com/socialsciencedatalab) - Laboratório de pesquisa do Mannheim Centre for European Social Research (MZES) que publica ferramentas e recursos de código aberto para trabalho com dados em ciências sociais.
 - [The Carpentries](https://github.com/carpentries) - Fundação sem fins lucrativos que ensina habilidades computacionais e de dados de código aberto a pesquisadores (Software Carpentry, Data Carpentry, Library Carpentry).
