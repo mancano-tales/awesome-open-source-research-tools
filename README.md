@@ -31,6 +31,7 @@ This list is method- and discipline-agnostic. If a tool is open source and suppo
 - [OmniVoice](https://github.com/k2-fsa/OmniVoice) - Open source voice-cloning text-to-speech system for 600+ languages, useful for producing multilingual audio instruments (surveys, prompts) for fieldwork.
 - [OpenRefine](https://github.com/OpenRefine/OpenRefine) - Tool for cleaning and transforming messy data before analysis.
 - [Scrapy](https://github.com/scrapy/scrapy) - Python framework for web scraping and structured data extraction.
+- [Transcritório](https://github.com/antrologos/Transcritorio) - Open source, fully-local desktop app for transcribing and diarizing interviews and focus groups in Brazilian Portuguese, built at IESP-UERJ/CERES, with direct NVivo export.
 - [Vibe](https://github.com/thewh1teagle/vibe) - Open source, fully-local audio/video transcription app (Whisper, Nemotron, Parakeet) with speaker diarization, batch processing and broad export format support.
 - [VoiceStudio](https://github.com/debpalash/VoiceStudio) - Open source, fully-local speech toolkit (transcription, dictation, voice cloning, dubbing) in 646 languages, useful for transcribing interviews without sending sensitive audio to third-party clouds.
 
@@ -43,10 +44,9 @@ This list is method- and discipline-agnostic. If a tool is open source and suppo
 ## Qualitative Analysis
 
 - [Dicto](https://github.com/dictoapp/dicto) - CAQDAS for transcribing, annotating, tagging and publishing video and audio content (interviews, oral history), designed to interoperate with other transcription tools.
+- [QualCoder](https://github.com/ccbogel/QualCoder) - Cross-platform, actively maintained CAQDAS for coding and analyzing text, images, audio and video.
 - [QualiLab](https://github.com/LuizPF42/QualiLab) - Open source tool for qualitative data analysis.
-- [RQDA](https://github.com/RQDA/RQDA) - R package for qualitative data analysis.
 - [Taguette](https://github.com/remram44/taguette) - Free and open source qualitative coding tool, built as an accessible alternative to commercial QDA software.
-- [Transcritório](https://github.com/antrologos/Transcritorio) - Open source, fully-local desktop app for transcribing and diarizing interviews and focus groups in Brazilian Portuguese, built at IESP-UERJ/CERES, with direct NVivo export.
 
 ## Quantitative & Statistical Analysis
 

@@ -31,6 +31,7 @@ Esta lista é agnóstica quanto a método e disciplina. Se uma ferramenta é de 
 - [OmniVoice](https://github.com/k2-fsa/OmniVoice) - Sistema de código aberto de clonagem de voz e texto-para-fala (TTS) para mais de 600 idiomas, útil para produzir instrumentos de áudio multilíngues (surveys, roteiros) em trabalho de campo.
 - [OpenRefine](https://github.com/OpenRefine/OpenRefine) - Ferramenta para limpar e transformar dados bagunçados antes da análise.
 - [Scrapy](https://github.com/scrapy/scrapy) - Framework em Python para web scraping e extração estruturada de dados.
+- [Transcritório](https://github.com/antrologos/Transcritorio) - App desktop de código aberto e totalmente local para transcrever e diarizar entrevistas e grupos focais em português brasileiro, feito no IESP-UERJ/CERES, com exportação direta para NVivo.
 - [Vibe](https://github.com/thewh1teagle/vibe) - Aplicativo de transcrição de áudio/vídeo de código aberto e totalmente local (Whisper, Nemotron, Parakeet), com diarização de falantes, processamento em lote e amplo suporte a formatos de exportação.
 - [VoiceStudio](https://github.com/debpalash/VoiceStudio) - Kit de ferramentas de voz de código aberto e totalmente local (transcrição, ditado, clonagem de voz, dublagem) em 646 idiomas, útil para transcrever entrevistas sem enviar áudio sensível para nuvens de terceiros.
 
@@ -43,10 +44,9 @@ Esta lista é agnóstica quanto a método e disciplina. Se uma ferramenta é de 
 ## Análise Qualitativa
 
 - [Dicto](https://github.com/dictoapp/dicto) - CAQDAS para transcrever, anotar, tagear e publicar conteúdo de vídeo e áudio (entrevistas, história oral), projetado para interoperar com outras ferramentas de transcrição.
+- [QualCoder](https://github.com/ccbogel/QualCoder) - CAQDAS multiplataforma e ativamente mantido para codificar e analisar texto, imagem, áudio e vídeo.
 - [QualiLab](https://github.com/LuizPF42/QualiLab) - Ferramenta de código aberto para análise de dados qualitativos.
-- [RQDA](https://github.com/RQDA/RQDA) - Pacote R para análise de dados qualitativos.
 - [Taguette](https://github.com/remram44/taguette) - Ferramenta livre e de código aberto para codificação qualitativa, criada como alternativa acessível a softwares QDA comerciais.
-- [Transcritório](https://github.com/antrologos/Transcritorio) - App desktop de código aberto e totalmente local para transcrever e diarizar entrevistas e grupos focais em português brasileiro, feito no IESP-UERJ/CERES, com exportação direta para NVivo.
 
 ## Análise Quantitativa e Estatística
 
