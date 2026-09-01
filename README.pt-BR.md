@@ -43,10 +43,15 @@ Esta lista é agnóstica quanto a método e disciplina. Se uma ferramenta é de 
 
 ## Análise Qualitativa
 
+- [CodeBook Lab](https://github.com/LorcanMcLaren/codebook-lab) - Ambiente de benchmarking para avaliar a execução de livros de código por LLMs contra conjuntos gold standard humanos.
 - [Dicto](https://github.com/dictoapp/dicto) - CAQDAS para transcrever, anotar, tagear e publicar conteúdo de vídeo e áudio (entrevistas, história oral), projetado para interoperar com outras ferramentas de transcrição.
+- [LLM4Humanities](https://github.com/flowersteam/LLM4Humanities) - Plataforma de anotação web com active learning para codificação qualitativa de texto e avaliação de concordância inter-anotadores.
+- [LocalQ](https://github.com/zimotti/LocalQ) - Dashboard de análise qualitativa 100% local movido por Ollama para preservação de privacidade em dados confidenciais.
 - [QualCoder](https://github.com/ccbogel/QualCoder) - CAQDAS multiplataforma e ativamente mantido para codificar e analisar texto, imagem, áudio e vídeo.
 - [QualiLab](https://github.com/LuizPF42/QualiLab) - Ferramenta de código aberto para análise de dados qualitativos.
+- [quallmer](https://github.com/quallmer/quallmer) - Pacote R para codificação qualitativa assistida por IA, execução de codebooks estruturados e validação de confiabilidade inter-codificadores.
 - [Taguette](https://github.com/remram44/taguette) - Ferramenta livre e de código aberto para codificação qualitativa, criada como alternativa acessível a softwares QDA comerciais.
+- [TALLMesh](https://github.com/sdptn/TALLMesh_multi_page) - Dashboard web de análise qualitativa que operacionaliza a estrutura de análise temática reflexiva de Braun & Clarke com LLMs.
 
 ## Análise Quantitativa e Estatística
 
@@ -83,8 +88,15 @@ Esta lista é agnóstica quanto a método e disciplina. Se uma ferramenta é de 
 
 ## Ferramentas de IA e Agentes para Pesquisa
 
+- [autolabel](https://github.com/refuel-ai/autolabel) - Biblioteca Python para rotulagem declarativa de datasets via LLM, pontuação de confiança e estimativa de custos.
+- [Cleanlab](https://github.com/cleanlab/cleanlab) - Framework de IA centrada em dados para detectar erros de anotação e avaliar a confiança de respostas de LLMs (TLM).
 - [DAAF (Data Analyst Augmentation Framework)](https://github.com/DAAF-Contribution-Community/daaf) - Kit de ferramentas de código aberto que transforma o Claude Code em um motor de pesquisa quantitativa auditável e reproduzível.
 - [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) - Harness de agente de IA de código aberto, baseado em plugins, utilizável para automatizar e orquestrar workflows de pesquisa.
+- [DSPy](https://github.com/stanfordnlp/dspy) - Framework declarativo para otimizar prompts de LLM e exemplos few-shot contra métricas de validação.
+- [Instructor](https://github.com/jxnl/instructor) - Biblioteca Python que garante validação de saída em JSON Schema via Pydantic em chamadas de API de LLM.
+- [Open Notebook](https://github.com/lfnovo/open-notebook) - Alternativa de código aberto ao NotebookLM do Google, com backend em Python/FastAPI/SurrealDB e frontend em Next.js/React, licenciada sob MIT.
+- [Outlines](https://github.com/dottxt-ai/outlines) - Biblioteca de geração estruturada que garante JSON Schemas e gramáticas CFG via máscara de logits de tokens.
+- [SetFit](https://github.com/huggingface/setfit) - Framework sem prompts para fine-tuning eficiente de sentence transformers com poucas amostras rotuladas.
 
 ## Organizações Inspiradoras
 

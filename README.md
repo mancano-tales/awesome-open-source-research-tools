@@ -43,10 +43,15 @@ This list is method- and discipline-agnostic. If a tool is open source and suppo
 
 ## Qualitative Analysis
 
+- [CodeBook Lab](https://github.com/LorcanMcLaren/codebook-lab) - Validation-first benchmarking environment for evaluating LLM codebook execution against human gold-standard subsets.
 - [Dicto](https://github.com/dictoapp/dicto) - CAQDAS for transcribing, annotating, tagging and publishing video and audio content (interviews, oral history), designed to interoperate with other transcription tools.
+- [LLM4Humanities](https://github.com/flowersteam/LLM4Humanities) - Active learning and web-based annotation platform for qualitative text coding and inter-rater reliability evaluation.
+- [LocalQ](https://github.com/zimotti/LocalQ) - Fully local, privacy-compliant qualitative analysis dashboard powered by Ollama for confidential text data.
 - [QualCoder](https://github.com/ccbogel/QualCoder) - Cross-platform, actively maintained CAQDAS for coding and analyzing text, images, audio and video.
 - [QualiLab](https://github.com/LuizPF42/QualiLab) - Open source tool for qualitative data analysis.
+- [quallmer](https://github.com/quallmer/quallmer) - R package for AI-assisted qualitative text coding, structured codebook execution, and inter-coder reliability validation.
 - [Taguette](https://github.com/remram44/taguette) - Free and open source qualitative coding tool, built as an accessible alternative to commercial QDA software.
+- [TALLMesh](https://github.com/sdptn/TALLMesh_multi_page) - Qualitative analysis web dashboard operationalizing Braun & Clarke's reflexive thematic analysis framework with LLMs.
 
 ## Quantitative & Statistical Analysis
 
@@ -83,8 +88,15 @@ This list is method- and discipline-agnostic. If a tool is open source and suppo
 
 ## AI & Agentic Research Tooling
 
+- [autolabel](https://github.com/refuel-ai/autolabel) - Python library for declarative LLM dataset labeling, confidence scoring, and cost estimation.
+- [Cleanlab](https://github.com/cleanlab/cleanlab) - Data-centric AI framework for detecting annotation errors and evaluating LLM response confidence (TLM).
 - [DAAF (Data Analyst Augmentation Framework)](https://github.com/DAAF-Contribution-Community/daaf) - Open source toolkit that turns Claude Code into an auditable, reproducible quantitative research engine.
 - [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) - Open source, plugin-based AI agent harness usable to automate and orchestrate research workflows.
+- [DSPy](https://github.com/stanfordnlp/dspy) - Declarative framework for optimizing LLM prompts and few-shot examples against validation metrics.
+- [Instructor](https://github.com/jxnl/instructor) - Python library enforcing structured JSON Schema output validation via Pydantic over LLM API calls.
+- [Open Notebook](https://github.com/lfnovo/open-notebook) - Open source alternative to Google's NotebookLM, with a Python/FastAPI/SurrealDB backend and a Next.js/React frontend, MIT licensed.
+- [Outlines](https://github.com/dottxt-ai/outlines) - Structured generation library enforcing JSON Schemas and CFG grammars via token logit masking.
+- [SetFit](https://github.com/huggingface/setfit) - Prompt-free framework for efficient few-shot fine-tuning of sentence transformers on small labeled datasets.
 
 ## Inspiring Organizations
 
