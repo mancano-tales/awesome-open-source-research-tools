@@ -1147,5 +1147,35 @@
         "nlp"
       ]
     }
+  ],
+  "relatedLists": [
+    {
+      "id": "awesome-quarto",
+      "name": "awesome-quarto",
+      "url": "https://github.com/mcanouil/awesome-quarto",
+      "country": "FR",
+      "maintainer": {
+        "name": "Mickaël Canouil",
+        "url": "https://github.com/mcanouil"
+      },
+      "description": {
+        "en": "A curated list of Quarto plugins, extensions, tools, tutorials, examples and resources.",
+        "pt": "Lista curada de plugins, extensões, ferramentas, tutoriais, exemplos e recursos para o sistema de publicação científica Quarto."
+      }
+    },
+    {
+      "id": "brverse",
+      "name": "brverse (Ipea)",
+      "url": "https://github.com/ipea/brverse",
+      "country": "BR",
+      "maintainer": {
+        "name": "Ipea (Rafael H. M. Pereira et al.)",
+        "url": "https://github.com/ipea"
+      },
+      "description": {
+        "en": "Curated directory and ecosystem of open source R packages maintained by the Institute for Applied Economic Research (Ipea) for reproducible access to official Brazilian socioeconomic, census, and spatial data, strengthening national data sovereignty.",
+        "pt": "Diretório e ecossistema de pacotes em R mantidos pelo Instituto de Pesquisa Econômica Aplicada (Ipea) para acesso facilitado e reprodutível a bases de dados públicas e geoespaciais brasileiras, promovendo a soberania de dados."
+      }
+    }
   ]
 }

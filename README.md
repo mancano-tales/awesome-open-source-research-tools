@@ -108,6 +108,7 @@ Organizations (not single tools) whose sustained investment in open source resea
 
 ## Related Lists
 
+- [awesome-quarto](https://github.com/mcanouil/awesome-quarto) - A curated list of Quarto plugins, extensions, tools, tutorials, examples and resources.
 - [brverse (Ipea)](https://github.com/ipea/brverse) - Curated directory and ecosystem of open source R packages maintained by the Institute for Applied Economic Research (Ipea) for reproducible access to official Brazilian socioeconomic, census, and spatial data, strengthening national data sovereignty.
 
 ## Contributing

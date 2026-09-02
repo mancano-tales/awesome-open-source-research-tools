@@ -108,6 +108,7 @@ Organizações (e não ferramentas isoladas) cujo investimento sustentado em inf
 
 ## Listas Relacionadas
 
+- [awesome-quarto](https://github.com/mcanouil/awesome-quarto) - Lista curada de plugins, extensões, ferramentas, tutoriais, exemplos e recursos para o sistema de publicação científica Quarto.
 - [brverse (Ipea)](https://github.com/ipea/brverse) - Diretório e ecossistema de pacotes em R mantidos pelo Instituto de Pesquisa Econômica Aplicada (Ipea) para acesso facilitado e reprodutível a bases de dados públicas e geoespaciais brasileiras, promovendo a soberania de dados.
 
 ## Como Contribuir
