@@ -21,6 +21,7 @@ Esta lista é agnóstica quanto a método e disciplina. Se uma ferramenta é de 
 - [Revisão de Literatura e Síntese](#revisão-de-literatura-e-síntese)
 - [Ferramentas de IA e Agentes para Pesquisa](#ferramentas-de-ia-e-agentes-para-pesquisa)
 - [Organizações Inspiradoras](#organizações-inspiradoras)
+- [Listas Relacionadas](#listas-relacionadas)
 - [Como Contribuir](#como-contribuir)
 - [Licença](#licença)
 
@@ -48,7 +49,7 @@ Esta lista é agnóstica quanto a método e disciplina. Se uma ferramenta é de 
 - [LLM4Humanities](https://github.com/flowersteam/LLM4Humanities) - Plataforma de anotação web com active learning para codificação qualitativa de texto e avaliação de concordância inter-anotadores.
 - [LocalQ](https://github.com/zimotti/LocalQ) - Dashboard de análise qualitativa 100% local movido por Ollama para preservação de privacidade em dados confidenciais.
 - [QualCoder](https://github.com/ccbogel/QualCoder) - CAQDAS multiplataforma e ativamente mantido para codificar e analisar texto, imagem, áudio e vídeo.
-- [QualiLab](https://github.com/LuizPF42/QualiLab) - Ferramenta de código aberto para análise de dados qualitativos.
+- [QualiLab](https://github.com/LuizPF42/QualiLab) - Ferramenta de código aberto desenvolvida no Brasil para análise e codificação de dados qualitativos.
 - [quallmer](https://github.com/quallmer/quallmer) - Pacote R para codificação qualitativa assistida por IA, execução de codebooks estruturados e validação de confiabilidade inter-codificadores.
 - [Taguette](https://github.com/remram44/taguette) - Ferramenta livre e de código aberto para codificação qualitativa, criada como alternativa acessível a softwares QDA comerciais.
 - [TALLMesh](https://github.com/sdptn/TALLMesh_multi_page) - Dashboard web de análise qualitativa que operacionaliza a estrutura de análise temática reflexiva de Braun & Clarke com LLMs.
@@ -94,7 +95,7 @@ Esta lista é agnóstica quanto a método e disciplina. Se uma ferramenta é de 
 - [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) - Harness de agente de IA de código aberto, baseado em plugins, utilizável para automatizar e orquestrar workflows de pesquisa.
 - [DSPy](https://github.com/stanfordnlp/dspy) - Framework declarativo para otimizar prompts de LLM e exemplos few-shot contra métricas de validação.
 - [Instructor](https://github.com/jxnl/instructor) - Biblioteca Python que garante validação de saída em JSON Schema via Pydantic em chamadas de API de LLM.
-- [Open Notebook](https://github.com/lfnovo/open-notebook) - Alternativa de código aberto ao NotebookLM do Google, com backend em Python/FastAPI/SurrealDB e frontend em Next.js/React, licenciada sob MIT.
+- [Open Notebook](https://github.com/lfnovo/open-notebook) - Alternativa de código aberto ao NotebookLM do Google, desenvolvida no Brasil por Lucas Novo, com backend em Python/FastAPI/SurrealDB e frontend em Next.js, licenciada sob MIT.
 - [Outlines](https://github.com/dottxt-ai/outlines) - Biblioteca de geração estruturada que garante JSON Schemas e gramáticas CFG via máscara de logits de tokens.
 - [SetFit](https://github.com/huggingface/setfit) - Framework sem prompts para fine-tuning eficiente de sentence transformers com poucas amostras rotuladas.
 
@@ -104,9 +105,14 @@ Organizações (não ferramentas isoladas) cujo investimento sustentado em infra
 
 - [Center for Open Science](https://github.com/CenterForOpenScience) - Organização sem fins lucrativos por trás do Open Science Framework (OSF), que constrói infraestrutura e conduz iniciativas para pesquisa aberta e reprodutível.
 - [Corporation for Digital Scholarship](https://github.com/DigitalScholar) - Organização sem fins lucrativos por trás do Zotero e do Tropy, construindo ferramentas livres e de código aberto para pesquisa acadêmica.
+- [Ipea (Instituto de Pesquisa Econômica Aplicada)](https://github.com/ipea) - Fundação pública federal brasileira que desenvolve ferramentas abertas e infraestrutura de pesquisa reprodutível sobre dados públicos, incluindo o ecossistema `brverse`.
 - [Posit](https://github.com/posit-dev) - Empresa de benefício público (antiga RStudio) por trás do RStudio, Quarto, Shiny, renv e outras ferramentas de pesquisa de código aberto amplamente usadas.
 - [Social Science Data Lab](https://github.com/socialsciencedatalab) - Laboratório de pesquisa do Mannheim Centre for European Social Research (MZES) que publica ferramentas e recursos de código aberto para trabalho com dados em ciências sociais.
 - [The Carpentries](https://github.com/carpentries) - Fundação sem fins lucrativos que ensina habilidades computacionais e de dados de código aberto a pesquisadores (Software Carpentry, Data Carpentry, Library Carpentry).
+
+## Listas Relacionadas
+
+- [brverse (Ipea)](https://github.com/ipea/brverse) - Ecossistema e diretório curado de pacotes R de código aberto mantidos pelo Instituto de Pesquisa Econômica Aplicada (Ipea) para acesso reprodutível a dados públicos oficiais brasileiros (socioeconômicos, censitários e espaciais), fortalecendo a soberania nacional de dados.
 
 ## Como Contribuir
 

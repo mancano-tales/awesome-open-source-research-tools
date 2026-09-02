@@ -21,6 +21,7 @@ This list is method- and discipline-agnostic. If a tool is open source and suppo
 - [Literature Review & Synthesis](#literature-review--synthesis)
 - [AI & Agentic Research Tooling](#ai--agentic-research-tooling)
 - [Inspiring Organizations](#inspiring-organizations)
+- [Related Lists](#related-lists)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -48,7 +49,7 @@ This list is method- and discipline-agnostic. If a tool is open source and suppo
 - [LLM4Humanities](https://github.com/flowersteam/LLM4Humanities) - Active learning and web-based annotation platform for qualitative text coding and inter-rater reliability evaluation.
 - [LocalQ](https://github.com/zimotti/LocalQ) - Fully local, privacy-compliant qualitative analysis dashboard powered by Ollama for confidential text data.
 - [QualCoder](https://github.com/ccbogel/QualCoder) - Cross-platform, actively maintained CAQDAS for coding and analyzing text, images, audio and video.
-- [QualiLab](https://github.com/LuizPF42/QualiLab) - Open source tool for qualitative data analysis.
+- [QualiLab](https://github.com/LuizPF42/QualiLab) - Open source tool for qualitative data analysis and text coding, developed in Brazil.
 - [quallmer](https://github.com/quallmer/quallmer) - R package for AI-assisted qualitative text coding, structured codebook execution, and inter-coder reliability validation.
 - [Taguette](https://github.com/remram44/taguette) - Free and open source qualitative coding tool, built as an accessible alternative to commercial QDA software.
 - [TALLMesh](https://github.com/sdptn/TALLMesh_multi_page) - Qualitative analysis web dashboard operationalizing Braun & Clarke's reflexive thematic analysis framework with LLMs.
@@ -94,7 +95,7 @@ This list is method- and discipline-agnostic. If a tool is open source and suppo
 - [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) - Open source, plugin-based AI agent harness usable to automate and orchestrate research workflows.
 - [DSPy](https://github.com/stanfordnlp/dspy) - Declarative framework for optimizing LLM prompts and few-shot examples against validation metrics.
 - [Instructor](https://github.com/jxnl/instructor) - Python library enforcing structured JSON Schema output validation via Pydantic over LLM API calls.
-- [Open Notebook](https://github.com/lfnovo/open-notebook) - Open source alternative to Google's NotebookLM, with a Python/FastAPI/SurrealDB backend and a Next.js/React frontend, MIT licensed.
+- [Open Notebook](https://github.com/lfnovo/open-notebook) - Open source alternative to Google's NotebookLM, developed in Brazil by Lucas Novo, with a Python/FastAPI/SurrealDB backend and a Next.js frontend, MIT licensed.
 - [Outlines](https://github.com/dottxt-ai/outlines) - Structured generation library enforcing JSON Schemas and CFG grammars via token logit masking.
 - [SetFit](https://github.com/huggingface/setfit) - Prompt-free framework for efficient few-shot fine-tuning of sentence transformers on small labeled datasets.
 
@@ -104,9 +105,14 @@ Organizations (not single tools) whose sustained investment in open source resea
 
 - [Center for Open Science](https://github.com/CenterForOpenScience) - Nonprofit behind the Open Science Framework (OSF), building infrastructure and running initiatives for open, reproducible research.
 - [Corporation for Digital Scholarship](https://github.com/DigitalScholar) - Nonprofit behind Zotero and Tropy, building free and open source tools for scholarly research.
+- [Ipea (Instituto de Pesquisa Econômica Aplicada)](https://github.com/ipea) - Brazilian federal public foundation producing open source tooling and reproducible research infrastructure for official data, including the `brverse` ecosystem.
 - [Posit](https://github.com/posit-dev) - Public benefit corporation (formerly RStudio) behind RStudio, Quarto, Shiny, renv and other widely-used open source research tooling.
 - [Social Science Data Lab](https://github.com/socialsciencedatalab) - Research lab at the Mannheim Centre for European Social Research (MZES) publishing open source tools and resources for social science data work.
 - [The Carpentries](https://github.com/carpentries) - Nonprofit teaching foundational open source data and computational skills to researchers (Software Carpentry, Data Carpentry, Library Carpentry).
+
+## Related Lists
+
+- [brverse (Ipea)](https://github.com/ipea/brverse) - Curated directory and ecosystem of open source R packages maintained by the Institute for Applied Economic Research (Ipea) for reproducible access to official Brazilian socioeconomic, census, and spatial data, strengthening national data sovereignty.
 
 ## Contributing
 
