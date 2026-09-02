@@ -1,0 +1,22 @@
+{
+  "name": "awesome-open-source-research-tools",
+  "version": "1.0.0",
+  "description": "A curated, discipline-agnostic list of open source software for every stage of a rigorous research project.",
+  "scripts": {
+    "build-readmes": "node scripts/build-readmes.js",
+    "validate-data": "node scripts/validate-data.js",
+    "validate-parity": "node scripts/validate-parity.js",
+    "lint": "npx awesome-lint",
+    "test": "node scripts/validate-data.js && node scripts/validate-parity.js"
+  },
+  "keywords": [
+    "awesome",
+    "awesome-list",
+    "research-tools",
+    "open-source",
+    "science",
+    "academia"
+  ],
+  "author": "Tales Man\u00e7ano",
+  "license": "CC0-1.0"
+}

@@ -5,246 +5,453 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Awesome Open Source Research Tools</title>
 <meta name="description" content="A curated, discipline-agnostic list of open source software for every stage of a rigorous research project.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#faf9f7;
-    --bg-alt:#f1efe9;
-    --card:#ffffff;
-    --text:#1c1a17;
-    --text-muted:#5d574c;
-    --border:#e4ded2;
-    --accent:#8a5a2c;
-    --accent-strong:#6b430f;
-    --accent-soft:#f4e6d3;
-    --link:#8a5a2c;
-    --code-bg:#f1efe9;
-    --shadow: 0 1px 2px rgba(28,26,23,.06), 0 6px 20px rgba(28,26,23,.05);
-    --radius:14px;
+  :root {
+    --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+
+    /* Light Theme (Paper & Ink, WCAG 2.1 AAA) */
+    --bg: #F7F2E8;
+    --bg-alt: #EFE8DA;
+    --card: #FFFFFF;
+    --card-hover: #FCFBF8;
+    --text: #1F1B17;
+    --text-muted: #4B463E;
+    --border: #DDD5C7;
+    --border-soft: #EAE3D6;
+    --accent: #06488A;
+    --accent-hover: #033261;
+    --accent-soft: rgba(6, 72, 138, 0.08);
+    --accent-text: #06488A;
+    --tag-br-bg: rgba(12, 120, 51, 0.08);
+    --tag-br-border: rgba(12, 120, 51, 0.35);
+    --tag-br-text: #086128;
+    --shadow: 0 1px 3px rgba(31, 27, 23, 0.05), 0 8px 24px rgba(31, 27, 23, 0.04);
+    --radius: 10px;
   }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#171512;
-      --bg-alt:#1e1b17;
-      --card:#211e19;
-      --text:#f2ede4;
-      --text-muted:#b8ae9c;
-      --border:#37312a;
-      --accent:#e0a860;
-      --accent-strong:#f0c184;
-      --accent-soft:#332a1e;
-      --link:#e0a860;
-      --code-bg:#1e1b17;
-      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+
+  :root[data-theme="dark"] {
+    /* Dark Theme (Slate/Zinc Neutro, WCAG 2.1 AAA) */
+    --bg: #141210;
+    --bg-alt: #1D1A17;
+    --card: #1F1B17;
+    --card-hover: #26221D;
+    --text: #F7F2E8;
+    --text-muted: #D1C8B8;
+    --border: #3A342D;
+    --border-soft: #2B2620;
+    --accent: #58A6FF;
+    --accent-hover: #79B8FF;
+    --accent-soft: rgba(88, 166, 255, 0.12);
+    --accent-text: #58A6FF;
+    --tag-br-bg: rgba(74, 222, 128, 0.12);
+    --tag-br-border: rgba(74, 222, 128, 0.40);
+    --tag-br-text: #68E094;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]):not([data-theme="dark"]) {
+      --bg: #141210;
+      --bg-alt: #1D1A17;
+      --card: #1F1B17;
+      --card-hover: #26221D;
+      --text: #F7F2E8;
+      --text-muted: #D1C8B8;
+      --border: #3A342D;
+      --border-soft: #2B2620;
+      --accent: #58A6FF;
+      --accent-hover: #79B8FF;
+      --accent-soft: rgba(88, 166, 255, 0.12);
+      --accent-text: #58A6FF;
+      --tag-br-bg: rgba(74, 222, 128, 0.12);
+      --tag-br-border: rgba(74, 222, 128, 0.40);
+      --tag-br-text: #68E094;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
     }
   }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.6;
-  }
-  a{color:var(--link)}
-  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
 
-  header.site{
-    position:sticky;top:0;z-index:20;
-    background:color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--border);
-  }
-  .nav{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:14px 0;gap:16px;
-  }
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;color:var(--text)}
-  .brand .mark{font-size:1.3rem}
-  .nav-links{display:flex;align-items:center;gap:16px;font-size:.90rem;flex-wrap:wrap}
-  .nav-links a{text-decoration:none;color:var(--text-muted);white-space:nowrap}
-  .nav-links a:hover{color:var(--text)}
-  .lang-toggle{
-    display:inline-flex;border:1px solid var(--border);border-radius:999px;overflow:hidden;
-    font-size:.82rem;font-weight:600;flex-shrink:0;
-  }
-  .lang-toggle button{
-    border:0;background:transparent;color:var(--text-muted);
-    padding:6px 12px;cursor:pointer;font:inherit;font-weight:inherit;
-  }
-  .lang-toggle button.active{background:var(--accent);color:#fff}
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]) .lang-toggle button.active{color:#241a0a}
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    font-size: 0.98rem;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
-  main{padding-bottom:64px}
-
-  .hero{padding:56px 0 36px;text-align:left}
-  .eyebrow{
-    display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--accent-strong);background:var(--accent-soft);padding:4px 10px;border-radius:999px;margin-bottom:16px;
+  /* Skip link for accessibility */
+  .skip-link {
+    position: absolute;
+    top: -9999px;
+    left: 16px;
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 18px;
+    z-index: 1000;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
   }
-  h1{font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;margin:0 0 14px;letter-spacing:-.01em}
-  .lede{font-size:1.12rem;color:var(--text-muted);max-width:62ch;margin:0 0 26px}
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;text-decoration:none;
-    padding:11px 18px;border-radius:10px;font-weight:600;font-size:.95rem;
-    border:1px solid var(--border);transition:transform .1s ease;
-  }
-  .btn:hover{transform:translateY(-1px)}
-  .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]) .btn-primary{color:#241a0a}
-  }
-  .btn-ghost{background:var(--card);color:var(--text)}
-
-  .stats{display:flex;gap:28px;margin-top:34px;flex-wrap:wrap}
-  .stat b{display:block;font-size:1.6rem;color:var(--text)}
-  .stat span{font-size:.85rem;color:var(--text-muted)}
-
-  section{padding:40px 0;border-top:1px solid var(--border)}
-  h2{font-size:1.5rem;margin:0 0 10px;letter-spacing:-.01em}
-  .section-intro{color:var(--text-muted);max-width:68ch;margin:0 0 28px}
-
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-  .card{
-    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-    padding:18px 20px;box-shadow:var(--shadow);
-  }
-  .card h3{margin:0 0 6px;font-size:1rem;display:flex;align-items:center;gap:8px}
-  .card h3 .icon{font-size:1.1rem}
-  .card p{margin:0;color:var(--text-muted);font-size:.9rem}
-  .card .count{
-    float:right;font-size:.72rem;font-weight:700;color:var(--accent-strong);
-    background:var(--accent-soft);padding:2px 8px;border-radius:999px;
+  .skip-link:focus {
+    top: 16px;
   }
 
-  /* Directory Controls & Cards */
-  .dir-controls{
-    display:flex;flex-direction:column;gap:14px;margin-bottom:24px;
-    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-    padding:16px 18px;box-shadow:var(--shadow);
+  :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
-  .search-input-wrap{position:relative;width:100%}
-  .search-input{
-    width:100%;padding:10px 14px 10px 38px;font-size:.95rem;
-    border:1px solid var(--border);border-radius:8px;
-    background:var(--bg);color:var(--text);font-family:inherit;
-  }
-  .search-input:focus{outline:2px solid var(--accent);border-color:transparent}
-  .search-icon{
-    position:absolute;left:12px;top:50%;transform:translateY(-50%);
-    font-size:1rem;color:var(--text-muted);pointer-events:none;
-  }
-  .filter-row{
-    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;
-  }
-  .origin-filters{display:flex;flex-wrap:wrap;gap:6px}
-  .filter-pill{
-    border:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);
-    border-radius:999px;padding:5px 12px;font-size:.82rem;font-weight:600;cursor:pointer;
-    transition:all .15s ease;
-  }
-  .filter-pill:hover{color:var(--text);border-color:var(--accent)}
-  .filter-pill.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]) .filter-pill.active{color:#241a0a}
-  }
-  .filter-pill.pill-br{border-color:rgba(0,156,59,.4)}
-  .filter-pill.pill-br.active{background:#0c7833;border-color:#0c7833;color:#fff}
 
-  .cat-select{
-    padding:6px 12px;border:1px solid var(--border);border-radius:8px;
-    background:var(--bg);color:var(--text);font-size:.85rem;font-family:inherit;
-  }
-  .results-count{font-size:.84rem;color:var(--text-muted);margin-bottom:12px}
+  a { color: var(--accent); text-decoration: none; transition: color 0.15s ease; }
+  a:hover { color: var(--accent-hover); text-decoration: underline; }
 
-  .tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
-  .tool-card{
-    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-    padding:16px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column;
-    justify-content:space-between;transition:transform .1s ease, border-color .15s ease;
-  }
-  .tool-card:hover{transform:translateY(-2px);border-color:var(--accent)}
-  .tool-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px}
-  .tool-title{font-size:1.05rem;font-weight:700;margin:0}
-  .tool-title a{text-decoration:none;color:var(--text)}
-  .tool-title a:hover{color:var(--link);text-decoration:underline}
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
-  .badges-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px}
-  .cat-badge{
-    font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:999px;
-    background:var(--accent-soft);color:var(--accent-strong);
+  /* Header & Navigation */
+  header.site {
+    position: sticky; top: 0; z-index: 30;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
   }
-  .country-tag{
-    display:inline-flex;align-items:center;gap:4px;
-    font-size:.74rem;font-weight:600;padding:2px 8px;border-radius:6px;
-    background:var(--bg-alt);color:var(--text-muted);border:1px solid var(--border);
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 0; gap: 16px;
   }
-  .country-tag.country-br{
-    background:rgba(0,156,59,.08);color:#0c7833;border-color:rgba(0,156,59,.3);font-weight:700;
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-serif);
+    font-size: 1.15rem; font-weight: 700;
+    text-decoration: none; color: var(--text);
+    letter-spacing: -0.01em;
   }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]) .country-tag.country-br{
-      background:rgba(0,156,59,.22);color:#4ade80;border-color:rgba(0,156,59,.45);
+  .brand-icon {
+    width: 22px; height: 22px; color: var(--accent);
+    flex-shrink: 0;
+  }
+  .nav-links {
+    display: flex; align-items: center; gap: 18px;
+    font-size: 0.88rem; font-weight: 500; flex-wrap: wrap;
+  }
+  .nav-links a { color: var(--text-muted); text-decoration: none; }
+  .nav-links a:hover { color: var(--text); }
+
+  .header-actions {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .theme-toggle-btn, .lang-btn {
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+    transition: all 0.15s ease;
+  }
+  .theme-toggle-btn:hover, .lang-btn:hover {
+    border-color: var(--accent);
+    background: var(--bg-alt);
+  }
+  .lang-toggle {
+    display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+  }
+  .lang-toggle button {
+    border: 0; background: transparent; color: var(--text-muted);
+    padding: 6px 10px; cursor: pointer; font: inherit; font-size: 0.80rem; font-weight: 600;
+  }
+  .lang-toggle button.active {
+    background: var(--accent); color: #fff;
+  }
+  :root[data-theme="dark"] .lang-toggle button.active {
+    color: #12100E;
+  }
+
+  /* Hero Section */
+  main { padding-bottom: 64px; }
+  .hero { padding: 56px 0 36px; text-align: left; }
+  .eyebrow {
+    display: inline-block; font-size: 0.76rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent-text); background: var(--accent-soft);
+    padding: 4px 12px; border-radius: 999px; margin-bottom: 16px;
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.0rem, 4.2vw, 2.85rem);
+    line-height: 1.15; margin: 0 0 16px;
+    letter-spacing: -0.02em; font-weight: 700;
+  }
+  .lede {
+    font-size: 1.12rem; color: var(--text-muted);
+    max-width: 66ch; margin: 0 0 28px; line-height: 1.65;
+  }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+    padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 0.92rem;
+    border: 1px solid var(--border); transition: all 0.15s ease; cursor: pointer;
+  }
+  .btn:hover { transform: translateY(-1px); text-decoration: none; }
+  .btn-primary {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
+  :root[data-theme="dark"] .btn-primary {
+    color: #12100E;
+  }
+  .btn-ghost { background: var(--card); color: var(--text); }
+
+  .stats { display: flex; gap: 32px; flex-wrap: wrap; border-top: 1px solid var(--border-soft); padding-top: 24px; }
+  .stat b { display: block; font-family: var(--font-serif); font-size: 1.7rem; color: var(--text); font-weight: 700; }
+  .stat span { font-size: 0.84rem; color: var(--text-muted); }
+
+  section { padding: 48px 0; border-top: 1px solid var(--border); }
+  h2 {
+    font-family: var(--font-serif);
+    font-size: 1.65rem; margin: 0 0 10px;
+    letter-spacing: -0.015em; font-weight: 700;
+  }
+  .section-intro { color: var(--text-muted); max-width: 70ch; margin: 0 0 28px; line-height: 1.6; }
+
+  /* Directory Controls & Layout */
+  .dir-header {
+    display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 18px 20px; box-shadow: var(--shadow);
+  }
+  .search-input-wrap { position: relative; width: 100%; }
+  .search-input {
+    width: 100%; padding: 11px 14px 11px 40px; font-size: 0.95rem;
+    border: 1px solid var(--border); border-radius: 6px;
+    background: var(--bg); color: var(--text); font-family: var(--font-sans);
+    transition: border-color 0.15s ease, outline 0.15s ease;
+  }
+  .search-input:focus { outline: 2px solid var(--accent); border-color: transparent; }
+  .search-icon-svg {
+    position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+    width: 16px; height: 16px; color: var(--text-muted); pointer-events: none;
+  }
+
+  .filter-bar {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  .origin-filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .filter-pill {
+    border: 1px solid var(--border); background: var(--bg); color: var(--text-muted);
+    border-radius: 6px; padding: 5px 12px; font-size: 0.80rem; font-weight: 600; cursor: pointer;
+    transition: all 0.15s ease; font-family: var(--font-sans);
+  }
+  .filter-pill:hover { color: var(--text); border-color: var(--accent); }
+  .filter-pill.active {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
+  :root[data-theme="dark"] .filter-pill.active { color: #12100E; }
+  .filter-pill.pill-br { border-color: var(--tag-br-border); }
+  .filter-pill.pill-br.active { background: #086128; border-color: #086128; color: #fff; }
+
+  .controls-right {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .cat-select {
+    padding: 6px 12px; border: 1px solid var(--border); border-radius: 6px;
+    background: var(--bg); color: var(--text); font-size: 0.84rem; font-family: var(--font-sans);
+  }
+
+  .view-toggle-group {
+    display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+  }
+  .btn-view {
+    border: 0; background: var(--bg); color: var(--text-muted);
+    padding: 6px 10px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+    transition: all 0.15s ease;
+  }
+  .btn-view.active {
+    background: var(--accent); color: #fff;
+  }
+  :root[data-theme="dark"] .btn-view.active { color: #12100E; }
+  .btn-view svg { width: 15px; height: 15px; }
+
+  .results-meta {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.84rem; color: var(--text-muted); margin-bottom: 16px;
+  }
+
+  /* Tool Cards (Grid View) */
+  .tool-collection.layout-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(295px, 1fr)); gap: 14px;
+  }
+  .tool-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 18px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column;
+    justify-content: space-between; transition: transform 0.12s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+  .tool-card:hover {
+    transform: translateY(-2px); border-color: var(--accent); background: var(--card-hover);
+  }
+  .tool-card-header {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 8px;
+  }
+  .tool-name {
+    font-family: var(--font-serif);
+    font-size: 1.15rem; font-weight: 700; margin: 0; letter-spacing: -0.01em;
+  }
+  .tool-name a { color: var(--text); text-decoration: none; }
+  .tool-name a:hover { color: var(--accent); text-decoration: underline; }
+
+  .badges-row {
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 12px;
+  }
+  .cat-tag {
+    font-size: 0.72rem; font-weight: 600; padding: 2px 8px; border-radius: 4px;
+    background: var(--accent-soft); color: var(--accent-text);
+  }
+  .country-tag {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 0.74rem; padding: 2px 7px; border-radius: 4px;
+    background: var(--bg-alt); color: var(--text); border: 1px solid var(--border);
+    line-height: 1.2; font-weight: 500;
+  }
+  .country-code {
+    font-family: var(--font-mono); font-weight: 700; font-size: 0.68rem; letter-spacing: 0.05em; opacity: 0.85;
+  }
+  .country-tag.country-br {
+    background: var(--tag-br-bg); color: var(--tag-br-text); border-color: var(--tag-br-border); font-weight: 700;
+  }
+
+  .entity-link {
+    font-size: 0.74rem; color: var(--text-muted); text-decoration: none;
+    border: 1px dashed var(--border); padding: 1px 6px; border-radius: 4px;
+    display: inline-flex; align-items: center; gap: 3px;
+  }
+  .entity-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+  .tool-desc {
+    font-size: 0.88rem; color: var(--text-muted); margin: 0 0 14px; line-height: 1.55; flex-grow: 1;
+  }
+  .tool-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 10px; border-top: 1px solid var(--border-soft); font-size: 0.82rem;
+  }
+  .repo-link {
+    font-weight: 600; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
+  }
+  .repo-link:hover { text-decoration: underline; }
+
+  /* Tool Cards (List View) */
+  .tool-collection.layout-list {
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .tool-collection.layout-list .tool-card {
+    display: grid;
+    grid-template-columns: 240px 150px 180px 1fr auto;
+    align-items: center; padding: 12px 18px; gap: 16px;
+  }
+  .tool-collection.layout-list .tool-card-header { margin-bottom: 0; }
+  .tool-collection.layout-list .badges-row { margin-bottom: 0; }
+  .tool-collection.layout-list .tool-desc {
+    margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .tool-collection.layout-list .tool-footer {
+    border-top: none; padding-top: 0;
+  }
+  @media (max-width: 900px) {
+    .tool-collection.layout-list .tool-card {
+      grid-template-columns: 1fr; gap: 8px;
     }
   }
-  .inst-tag{
-    font-size:.72rem;color:var(--text-muted);background:transparent;
-    padding:1px 6px;border-radius:4px;border:1px dashed var(--border);
+
+  /* Category Overview Cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 18px 20px; box-shadow: var(--shadow);
+  }
+  .card h3 {
+    font-family: var(--font-serif);
+    margin: 0 0 6px; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;
+  }
+  .card h3 .icon { width: 16px; height: 16px; color: var(--accent); }
+  .card p { margin: 0; color: var(--text-muted); font-size: 0.88rem; }
+  .card .count {
+    float: right; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+    color: var(--accent-text); background: var(--accent-soft); padding: 2px 8px; border-radius: 999px;
   }
 
-  .tool-desc{font-size:.88rem;color:var(--text-muted);margin:0 0 12px;line-height:1.5;flex-grow:1}
-  .tool-footer{display:flex;align-items:center;justify-content:space-between;padding-top:8px;border-top:1px solid var(--border)}
-  .tool-link-btn{
-    font-size:.82rem;font-weight:600;text-decoration:none;color:var(--link);
-    display:inline-flex;align-items:center;gap:4px;
+  .orgs { display: flex; flex-wrap: wrap; gap: 10px; }
+  .org-pill {
+    border: 1px solid var(--border); background: var(--card); border-radius: 999px;
+    padding: 8px 16px; font-size: 0.88rem; text-decoration: none; color: var(--text);
+    display: inline-flex; align-items: center; gap: 6px; font-weight: 500;
   }
-  .tool-link-btn:hover{text-decoration:underline}
+  .org-pill:hover { border-color: var(--accent); text-decoration: none; }
 
-  .orgs{display:flex;flex-wrap:wrap;gap:10px}
-  .org-pill{
-    border:1px solid var(--border);background:var(--card);border-radius:999px;
-    padding:8px 14px;font-size:.88rem;text-decoration:none;color:var(--text);
+  .steps { display: grid; gap: 14px; }
+  .step { display: flex; gap: 14px; }
+  .step .num {
+    flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--accent-soft);
+    color: var(--accent-text); display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85rem; font-family: var(--font-mono);
   }
-  .org-pill:hover{border-color:var(--accent)}
+  .step p { margin: 2px 0 0; color: var(--text-muted); }
+  .step strong { color: var(--text); }
 
-  .steps{display:grid;gap:14px}
-  .step{display:flex;gap:14px}
-  .step .num{
-    flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--accent-soft);
-    color:var(--accent-strong);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;
+  .callout {
+    background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px 22px; margin-top: 12px; font-size: 0.92rem;
   }
-  .step p{margin:2px 0 0;color:var(--text-muted)}
-  .step strong{color:var(--text)}
+  code { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.86em; font-family: var(--font-mono); }
 
-  .callout{
-    background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);
-    padding:20px 22px;margin-top:8px;
+  .empty-state {
+    grid-column: 1 / -1; padding: 40px 20px; text-align: center;
+    background: var(--card); border: 1px dashed var(--border); border-radius: var(--radius);
+    color: var(--text-muted);
   }
-  code{background:var(--code-bg);padding:.15em .4em;border-radius:5px;font-size:.88em}
+  .btn-reset-filters {
+    margin-top: 14px; padding: 6px 14px; font-size: 0.84rem;
+    border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 6px; cursor: pointer;
+  }
 
-  footer{border-top:1px solid var(--border);padding:28px 0;color:var(--text-muted);font-size:.85rem}
-  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+  footer { border-top: 1px solid var(--border); padding: 32px 0; color: var(--text-muted); font-size: 0.85rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: center; }
 
-  [data-i18n]{display:none}
-  [data-i18n].active-lang{display:revert}
-  h1[data-i18n].active-lang, .lede[data-i18n].active-lang, .card p[data-i18n].active-lang{display:block}
-  span[data-i18n].active-lang{display:inline}
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+  }
+
+  [data-i18n] { display: none; }
+  [data-i18n].active-lang { display: revert; }
+  h1[data-i18n].active-lang, .lede[data-i18n].active-lang, .card p[data-i18n].active-lang, p[data-i18n].active-lang { display: block; }
+  span[data-i18n].active-lang { display: inline; }
 </style>
 </head>
 <body>
 
+<a href="#directory" class="skip-link" data-i18n="en" class="active-lang">Skip to tools directory</a>
+<a href="#directory" class="skip-link" data-i18n="pt">Saltar para o diretório de ferramentas</a>
+
 <header class="site">
   <div class="wrap nav">
     <a class="brand" href="#top">
-      <span class="mark">🔬</span>
+      <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
       <span>Awesome Open Source Research Tools</span>
     </a>
     <div class="nav-links">
-      <a href="#directory" data-i18n="en nav-dir" class="active-lang">Tools Directory</a>
+      <a href="#directory" data-i18n="en nav-dir" class="active-lang">Directory</a>
       <a href="#directory" data-i18n="pt nav-dir">Diretório</a>
       <a href="#categories" data-i18n="en nav-cats" class="active-lang">Categories</a>
       <a href="#categories" data-i18n="pt nav-cats">Categorias</a>
@@ -254,11 +461,17 @@
       <a href="#related" data-i18n="pt nav-related">Relacionadas</a>
       <a href="#contribute" data-i18n="en nav-contribute" class="active-lang">Contribute</a>
       <a href="#contribute" data-i18n="pt nav-contribute">Contribuir</a>
-      <a href="https://github.com/mancano-tales/awesome-open-source-research-tools" target="_blank" rel="noopener">GitHub ↗</a>
-      <span class="lang-toggle">
-        <button type="button" data-set-lang="en" class="active">EN</button>
-        <button type="button" data-set-lang="pt">PT</button>
-      </span>
+      <a href="https://github.com/mancano-tales/awesome-open-source-research-tools" target="_blank" rel="noopener noreferrer">GitHub [↗]</a>
+
+      <div class="header-actions">
+        <button type="button" id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Alternar tema de cores" title="Toggle dark/light theme">
+          <svg id="theme-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <span class="lang-toggle" role="group" aria-label="Idioma / Language">
+          <button type="button" data-set-lang="en" class="active" aria-pressed="true">EN</button>
+          <button type="button" data-set-lang="pt" aria-pressed="false">PT</button>
+        </span>
+      </div>
     </div>
   </div>
 </header>
@@ -289,15 +502,15 @@
           <span data-i18n="en" class="active-lang">Explore the tools directory</span>
           <span data-i18n="pt">Explorar diretório de ferramentas</span>
         </a>
-        <a class="btn btn-ghost" href="https://github.com/mancano-tales/awesome-open-source-research-tools" target="_blank" rel="noopener">
-          <span data-i18n="en" class="active-lang">GitHub Repository ↗</span>
-          <span data-i18n="pt">Repositório no GitHub ↗</span>
+        <a class="btn btn-ghost" href="https://github.com/mancano-tales/awesome-open-source-research-tools" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="en" class="active-lang">GitHub Repository [↗]</span>
+          <span data-i18n="pt">Repositório no GitHub [↗]</span>
         </a>
       </div>
 
       <div class="stats">
-        <div class="stat"><b>34+</b><span data-i18n="en" class="active-lang">open source tools</span><span data-i18n="pt">ferramentas de código aberto</span></div>
-        <div class="stat"><b>10</b><span data-i18n="en" class="active-lang">research stages</span><span data-i18n="pt">etapas de pesquisa</span></div>
+        <div class="stat"><b>45</b><span data-i18n="en" class="active-lang">open source tools</span><span data-i18n="pt">ferramentas de código aberto</span></div>
+        <div class="stat"><b>10</b><span data-i18n="en" class="active-lang">research stages</span><span data-i18n="pt">etapas da pesquisa</span></div>
         <div class="stat"><b>6</b><span data-i18n="en" class="active-lang">organizations</span><span data-i18n="pt">organizações</span></div>
         <div class="stat"><b>CC0</b><span data-i18n="en" class="active-lang">public domain license</span><span data-i18n="pt">licença de domínio público</span></div>
       </div>
@@ -312,90 +525,70 @@
         <span data-i18n="pt">Busque e filtre todas as ferramentas de código aberto por palavra-chave, etapa da pesquisa ou origem nacional e institucional.</span>
       </p>
 
-      <div class="dir-controls">
+      <div class="dir-header">
         <div class="search-input-wrap">
-          <span class="search-icon">🔍</span>
-          <input type="search" id="tool-search" class="search-input" placeholder="Search by name, description, country or institution..." />
+          <svg class="search-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="tool-search" class="search-input" placeholder="Search by name, description, country or institution..." aria-label="Buscar ferramentas" />
         </div>
-        <div class="filter-row">
-          <div class="origin-filters">
-            <button type="button" class="filter-pill active" data-origin="all">
+        <div class="filter-bar">
+          <div class="origin-filters" role="group" aria-label="Filtrar por origem">
+            <button type="button" class="filter-pill active" data-origin="all" aria-pressed="true">
               <span data-i18n="en" class="active-lang">All</span>
               <span data-i18n="pt">Todas</span>
             </button>
-            <button type="button" class="filter-pill pill-br" data-origin="BR">
-              <span>🇧🇷 Brasil</span>
+            <button type="button" class="filter-pill pill-br" data-origin="BR" aria-pressed="false">
+              <span>[BR] Brasil</span>
             </button>
-            <button type="button" class="filter-pill" data-origin="US">
-              <span>🇺🇸 USA</span>
+            <button type="button" class="filter-pill" data-origin="US" aria-pressed="false">
+              <span>[US] USA</span>
             </button>
-            <button type="button" class="filter-pill" data-origin="EU">
-              <span>🇪🇺 Europe</span>
+            <button type="button" class="filter-pill" data-origin="EU" aria-pressed="false">
+              <span>[EU] Europe</span>
             </button>
-            <button type="button" class="filter-pill" data-origin="GLOBAL">
-              <span>🌐 Global</span>
+            <button type="button" class="filter-pill" data-origin="GLOBAL" aria-pressed="false">
+              <span>[GLOBAL] Global</span>
             </button>
           </div>
-          <select id="cat-filter" class="cat-select" aria-label="Filter by category">
-            <option value="all" data-i18n="en" class="active-lang">All Categories</option>
-            <option value="all" data-i18n="pt">Todas as Categorias</option>
-            <option value="data-collection">🎙️ Data Collection / Coleta</option>
-            <option value="data-management">🗄️ Data Management / Gestão</option>
-            <option value="qualitative-analysis">🏷️ Qualitative Analysis / Qualitativa</option>
-            <option value="quantitative-analysis">📊 Quantitative & Stats / Quantitativa</option>
-            <option value="reproducibility">🧪 Reproducibility / Reprodutibilidade</option>
-            <option value="writing-publishing">✍️ Writing & Publishing / Escrita</option>
-            <option value="reference-management">📚 References & Citations / Citações</option>
-            <option value="collaboration">🤝 Collaboration / Colaboração</option>
-            <option value="literature-review">📖 Literature Review / Revisão</option>
-            <option value="ai-tooling">🤖 AI & Agentic / IA e Agentes</option>
-          </select>
+          <div class="controls-right">
+            <select id="cat-filter" class="cat-select" aria-label="Filtrar por categoria">
+              <option value="all" data-i18n="en" class="active-lang">All Categories</option>
+              <option value="all" data-i18n="pt">Todas as Categorias</option>
+              <option value="data-collection">Data Collection / Coleta</option>
+              <option value="data-management">Data Management / Gestão</option>
+              <option value="qualitative-analysis">Qualitative Analysis / Qualitativa</option>
+              <option value="quantitative-analysis">Quantitative & Stats / Quantitativa</option>
+              <option value="reproducibility">Reproducibility / Reprodutibilidade</option>
+              <option value="writing-publishing">Writing & Publishing / Escrita</option>
+              <option value="reference-management">References & Citations / Citações</option>
+              <option value="collaboration">Collaboration / Colaboração</option>
+              <option value="literature-review">Literature Review / Revisão</option>
+              <option value="ai-tooling">AI & Agentic / IA e Agentes</option>
+            </select>
+
+            <div class="view-toggle-group" role="group" aria-label="Modo de visualização">
+              <button type="button" id="view-grid-btn" class="btn-view active" aria-pressed="true" aria-controls="tool-collection" title="Grid view">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                <span class="sr-only">Grid View</span>
+              </button>
+              <button type="button" id="view-list-btn" class="btn-view" aria-pressed="false" aria-controls="tool-collection" title="List view">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                <span class="sr-only">List View</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div id="results-count" class="results-count"></div>
-      <div id="tool-grid" class="tool-grid">
-        <!-- populated dynamically via JS -->
+      <div class="results-meta">
+        <div id="results-count" aria-live="polite" role="status"></div>
+      </div>
+
+      <div id="tool-collection" class="tool-collection layout-grid">
+        <!-- Injetado dinamicamente via JS -->
       </div>
     </section>
 
-    <section id="what">
-      <h2 data-i18n="en" class="active-lang">What this list is</h2>
-      <h2 data-i18n="pt">O que é esta lista</h2>
-      <p class="section-intro">
-        <span data-i18n="en" class="active-lang">
-          <strong>Awesome Open Source Research Tools</strong> tracks open source software that supports
-          any part of a rigorous, systematic research project. If a tool is open source and helps with
-          collecting data, managing it, analyzing it (qualitatively or quantitatively), keeping the work
-          reproducible, writing it up, or reviewing existing literature, it belongs here — regardless of
-          discipline. Social sciences, natural sciences, health sciences, digital humanities: all welcome,
-          as long as the software itself is open source.
-        </span>
-        <span data-i18n="pt">
-          <strong>Awesome Open Source Research Tools</strong> reúne software de código aberto que apoia
-          qualquer parte de um projeto de pesquisa rigoroso e sistemático. Se uma ferramenta é de código
-          aberto e ajuda a coletar dados, organizá-los, analisá-los (qualitativa ou quantitativamente),
-          manter o trabalho reprodutível, escrevê-lo ou revisar a literatura existente, ela tem lugar aqui —
-          independentemente da disciplina. Ciências sociais, ciências naturais, ciências da saúde,
-          humanidades digitais: todas bem-vindas, desde que o software em si seja de código aberto.
-        </span>
-      </p>
-      <p class="section-intro">
-        <span data-i18n="en" class="active-lang">
-          It lives as a GitHub "awesome list": a single, community-maintained
-          <a href="https://github.com/mancano-tales/awesome-open-source-research-tools/blob/main/README.md" target="_blank" rel="noopener">README</a>,
-          released under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0</a>
-          so anyone can reuse, fork, or republish it freely.
-        </span>
-        <span data-i18n="pt">
-          Ela existe como uma "awesome list" do GitHub: um único
-          <a href="https://github.com/mancano-tales/awesome-open-source-research-tools/blob/main/README.pt-BR.md" target="_blank" rel="noopener">README</a>
-          mantido pela comunidade, publicado sob <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0</a>
-          para que qualquer pessoa possa reutilizar, fazer fork ou republicar livremente.
-        </span>
-      </p>
-    </section>
-
+    <!-- Categories Overview -->
     <section id="categories">
       <h2 data-i18n="en" class="active-lang">Categories Overview</h2>
       <h2 data-i18n="pt">Visão Geral das Categorias</h2>
@@ -405,10 +598,11 @@
       </p>
 
       <div class="grid" id="cat-grid">
-        <!-- cards injected by JS from data below -->
+        <!-- Injetado via JS -->
       </div>
     </section>
 
+    <!-- Inspiring Organizations -->
     <section id="orgs">
       <h2 data-i18n="en" class="active-lang">Inspiring organizations</h2>
       <h2 data-i18n="pt">Organizações inspiradoras</h2>
@@ -417,15 +611,16 @@
         <span data-i18n="pt">Além de ferramentas isoladas, a lista também aponta organizações cujo investimento sustentado em infraestrutura de pesquisa de código aberto merece ser acompanhado.</span>
       </p>
       <div class="orgs">
-        <a class="org-pill" href="https://github.com/CenterForOpenScience" target="_blank" rel="noopener">Center for Open Science 🇺🇸</a>
-        <a class="org-pill" href="https://github.com/DigitalScholar" target="_blank" rel="noopener">Corporation for Digital Scholarship 🇺🇸</a>
-        <a class="org-pill" href="https://github.com/ipea" target="_blank" rel="noopener">Ipea 🇧🇷</a>
-        <a class="org-pill" href="https://github.com/posit-dev" target="_blank" rel="noopener">Posit 🇺🇸</a>
-        <a class="org-pill" href="https://github.com/socialsciencedatalab" target="_blank" rel="noopener">Social Science Data Lab 🇩🇪</a>
-        <a class="org-pill" href="https://github.com/carpentries" target="_blank" rel="noopener">The Carpentries 🌐</a>
+        <a class="org-pill" href="https://github.com/CenterForOpenScience" target="_blank" rel="noopener noreferrer">Center for Open Science [US]</a>
+        <a class="org-pill" href="https://github.com/DigitalScholar" target="_blank" rel="noopener noreferrer">Corporation for Digital Scholarship [US]</a>
+        <a class="org-pill" href="https://github.com/ipea" target="_blank" rel="noopener noreferrer">Ipea [BR]</a>
+        <a class="org-pill" href="https://github.com/posit-dev" target="_blank" rel="noopener noreferrer">Posit [US]</a>
+        <a class="org-pill" href="https://github.com/socialsciencedatalab" target="_blank" rel="noopener noreferrer">Social Science Data Lab [DE]</a>
+        <a class="org-pill" href="https://github.com/carpentries" target="_blank" rel="noopener noreferrer">The Carpentries [GLOBAL]</a>
       </div>
     </section>
 
+    <!-- Related Lists -->
     <section id="related">
       <h2 data-i18n="en" class="active-lang">Related lists & ecosystems</h2>
       <h2 data-i18n="pt">Listas relacionadas e ecossistemas</h2>
@@ -434,11 +629,11 @@
         <span data-i18n="pt">Diretórios temáticos curados e ecossistemas de dados que complementam esta lista geral.</span>
       </p>
       <div class="card">
-        <div class="tool-header">
-          <h3 class="tool-title">
-            <a href="https://github.com/ipea/brverse" target="_blank" rel="noopener">brverse (Ipea) ↗</a>
+        <div class="tool-card-header">
+          <h3 class="tool-name">
+            <a href="https://github.com/ipea/brverse" target="_blank" rel="noopener noreferrer">brverse (Ipea) [↗]</a>
           </h3>
-          <span class="country-tag country-br">🇧🇷 Brasil</span>
+          <span class="country-tag country-br" role="text" aria-label="Origem: Brasil"><span class="country-code" aria-hidden="true">BR</span> <span class="country-name">Brasil</span></span>
         </div>
         <p data-i18n="en" class="active-lang">
           Curated directory and ecosystem of open source R packages maintained by the Institute for Applied Economic Research (Ipea) for programmatic, reproducible access to official Brazilian socioeconomic, census, and spatial data, strengthening national data sovereignty.
@@ -449,6 +644,7 @@
       </div>
     </section>
 
+    <!-- How to contribute -->
     <section id="contribute">
       <h2 data-i18n="en" class="active-lang">How to contribute</h2>
       <h2 data-i18n="pt">Como contribuir</h2>
@@ -493,12 +689,12 @@
 
       <div class="callout">
         <span data-i18n="en" class="active-lang">
-          Read the full <a href="https://github.com/mancano-tales/awesome-open-source-research-tools/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">contribution guidelines</a>
-          and open a pull request against <code>README.md</code> (and, where possible, <code>README.pt-BR.md</code>).
+          Read the full <a href="https://github.com/mancano-tales/awesome-open-source-research-tools/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">contribution guidelines</a>
+          and open a pull request updating <code>data/tools.json</code>.
         </span>
         <span data-i18n="pt">
-          Leia as <a href="https://github.com/mancano-tales/awesome-open-source-research-tools/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">diretrizes de contribuição</a>
-          completas e abra um pull request no <code>README.md</code> (e, quando possível, no <code>README.pt-BR.md</code>).
+          Leia as <a href="https://github.com/mancano-tales/awesome-open-source-research-tools/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">diretrizes de contribuição</a>
+          completas e abra um pull request atualizando <code>data/tools.json</code>.
         </span>
       </div>
     </section>
@@ -513,507 +709,1271 @@
       <span data-i18n="pt">Publicada sob CC0 — domínio público.</span>
     </span>
     <span>
-      <a href="https://github.com/mancano-tales/awesome-open-source-research-tools" target="_blank" rel="noopener">mancano-tales/awesome-open-source-research-tools</a>
+      <a href="https://github.com/mancano-tales/awesome-open-source-research-tools" target="_blank" rel="noopener noreferrer">mancano-tales/awesome-open-source-research-tools</a>
     </span>
   </div>
 </footer>
 
+<!-- Embedded Fallback Data for offline file:// protocol compatibility -->
+<script>
+window.AOSRT_DATA = {
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": "data-collection",
+      "nameEn": "Data Collection",
+      "namePt": "Coleta de Dados",
+      "order": 1
+    },
+    {
+      "id": "data-management",
+      "nameEn": "Data Management & Organization",
+      "namePt": "Gestão e Organização de Dados",
+      "order": 2
+    },
+    {
+      "id": "qualitative-analysis",
+      "nameEn": "Qualitative Analysis",
+      "namePt": "Análise Qualitativa",
+      "order": 3
+    },
+    {
+      "id": "quantitative-analysis",
+      "nameEn": "Quantitative & Statistical Analysis",
+      "namePt": "Análise Quantitativa e Estatística",
+      "order": 4
+    },
+    {
+      "id": "reproducibility",
+      "nameEn": "Reproducibility & Computational Environments",
+      "namePt": "Reprodutibilidade e Ambientes Computacionais",
+      "order": 5
+    },
+    {
+      "id": "writing-publishing",
+      "nameEn": "Writing & Publishing",
+      "namePt": "Escrita e Publicação",
+      "order": 6
+    },
+    {
+      "id": "reference-management",
+      "nameEn": "Reference & Citation Management",
+      "namePt": "Gestão de Referências e Citações",
+      "order": 7
+    },
+    {
+      "id": "collaboration",
+      "nameEn": "Collaboration & Project Management",
+      "namePt": "Colaboração e Gestão de Projetos",
+      "order": 8
+    },
+    {
+      "id": "literature-review",
+      "nameEn": "Literature Review & Synthesis",
+      "namePt": "Revisão de Literatura e Síntese",
+      "order": 9
+    },
+    {
+      "id": "ai-tooling",
+      "nameEn": "AI & Agentic Research Tooling",
+      "namePt": "Ferramentas de IA e Agentes para Pesquisa",
+      "order": 10
+    }
+  ],
+  "tools": [
+    {
+      "id": "kobotoolbox",
+      "name": "KoboToolbox",
+      "url": "https://github.com/kobotoolbox",
+      "categoryId": "data-collection",
+      "country": "US",
+      "maintainer": {
+        "name": "KoboToolbox Team",
+        "url": "https://github.com/kobotoolbox"
+      },
+      "institution": {
+        "name": "Harvard Humanitarian Initiative",
+        "url": "https://hhi.harvard.edu"
+      },
+      "description": {
+        "en": "Field data collection suite (forms, mobile app, server) built on ODK, widely used in humanitarian and social research.",
+        "pt": "Suíte de coleta de dados em campo (formulários, aplicativo móvel, servidor) construída sobre o ODK, amplamente usada em pesquisa social e humanitária."
+      },
+      "tags": [
+        "surveys",
+        "mobile-collection",
+        "fieldwork",
+        "odk"
+      ]
+    },
+    {
+      "id": "limesurvey",
+      "name": "LimeSurvey",
+      "url": "https://github.com/LimeSurvey/LimeSurvey",
+      "categoryId": "data-collection",
+      "country": "DE",
+      "maintainer": {
+        "name": "LimeSurvey Team",
+        "url": "https://github.com/LimeSurvey"
+      },
+      "institution": {
+        "name": "LimeSurvey GmbH",
+        "url": "https://www.limesurvey.org"
+      },
+      "description": {
+        "en": "Self-hosted online survey platform for complex questionnaires and research fieldwork.",
+        "pt": "Plataforma de questionários e surveys online autogerenciável para desenhos de pesquisa complexos e trabalho de campo."
+      },
+      "tags": [
+        "surveys",
+        "questionnaires",
+        "self-hosted"
+      ]
+    },
+    {
+      "id": "omnivoice",
+      "name": "OmniVoice",
+      "url": "https://github.com/k2-fsa/OmniVoice",
+      "categoryId": "data-collection",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "k2-fsa",
+        "url": "https://github.com/k2-fsa"
+      },
+      "institution": null,
+      "description": {
+        "en": "Open source voice-cloning text-to-speech system for 600+ languages, useful for producing multilingual audio instruments.",
+        "pt": "Sistema de código aberto de clonagem de voz e conversão texto-para-fala (TTS) em mais de 600 idiomas para elaboração de instrumentos de pesquisa em áudio."
+      },
+      "tags": [
+        "speech",
+        "tts",
+        "multilingual",
+        "audio"
+      ]
+    },
+    {
+      "id": "openrefine",
+      "name": "OpenRefine",
+      "url": "https://github.com/OpenRefine/OpenRefine",
+      "categoryId": "data-collection",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "OpenRefine Team",
+        "url": "https://github.com/OpenRefine"
+      },
+      "institution": {
+        "name": "Code for Science & Society",
+        "url": "https://codeforscience.org"
+      },
+      "description": {
+        "en": "Powerful desktop tool for cleaning, normalizing and transforming messy tabular data before analysis.",
+        "pt": "Ferramenta desktop de alto desempenho para limpeza, normalização e transformação de dados tabulares não estruturados."
+      },
+      "tags": [
+        "data-cleaning",
+        "wrangling",
+        "tabular-data"
+      ]
+    },
+    {
+      "id": "scrapy",
+      "name": "Scrapy",
+      "url": "https://github.com/scrapy/scrapy",
+      "categoryId": "data-collection",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "Scrapy Community",
+        "url": "https://github.com/scrapy"
+      },
+      "institution": {
+        "name": "Zyte",
+        "url": "https://www.zyte.com"
+      },
+      "description": {
+        "en": "Fast high-level web crawling and scraping framework for Python.",
+        "pt": "Framework em Python de alto desempenho para raspagem de dados web e extração estruturada de informação."
+      },
+      "tags": [
+        "web-scraping",
+        "python",
+        "crawling"
+      ]
+    },
+    {
+      "id": "transcritorio",
+      "name": "Transcritório",
+      "url": "https://github.com/antrologos/Transcritorio",
+      "categoryId": "data-collection",
+      "country": "BR",
+      "maintainer": {
+        "name": "Leonardo Nascimento (antrologos)",
+        "url": "https://github.com/antrologos"
+      },
+      "institution": {
+        "name": "IESP-UERJ / CERES",
+        "url": "https://iesp.uerj.br"
+      },
+      "description": {
+        "en": "Open source, fully-local desktop app for transcribing and diarizing interviews in Brazilian Portuguese, with direct NVivo export.",
+        "pt": "Aplicativo desktop open source e 100% local para transcrição e diarização de entrevistas em português brasileiro, com suporte a exportação direta para NVivo."
+      },
+      "tags": [
+        "transcription",
+        "audio",
+        "qualitative",
+        "local-first",
+        "brazil"
+      ]
+    },
+    {
+      "id": "vibe",
+      "name": "Vibe",
+      "url": "https://github.com/thewh1teagle/vibe",
+      "categoryId": "data-collection",
+      "country": "IL",
+      "maintainer": {
+        "name": "thewh1teagle",
+        "url": "https://github.com/thewh1teagle"
+      },
+      "institution": null,
+      "description": {
+        "en": "Local audio/video transcription app (Whisper, Nemotron, Parakeet) with speaker diarization and broad export formats.",
+        "pt": "Aplicativo para transcrição local de áudio e vídeo (Whisper, Nemotron, Parakeet), com diarização de falantes e múltiplos formatos de exportação."
+      },
+      "tags": [
+        "transcription",
+        "whisper",
+        "speech-to-text",
+        "local-first"
+      ]
+    },
+    {
+      "id": "voicestudio",
+      "name": "VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "categoryId": "data-collection",
+      "country": "IN",
+      "maintainer": {
+        "name": "debpalash",
+        "url": "https://github.com/debpalash"
+      },
+      "institution": null,
+      "description": {
+        "en": "Local speech toolkit (transcription, dictation, voice cloning) in 646 languages for confidential interview processing.",
+        "pt": "Kit de ferramentas de voz 100% local (transcrição, ditado, clonagem) em 646 idiomas para preservação de sigilo e privacidade em entrevistas."
+      },
+      "tags": [
+        "speech",
+        "transcription",
+        "multilingual",
+        "privacy"
+      ]
+    },
+    {
+      "id": "dataverse",
+      "name": "Dataverse",
+      "url": "https://github.com/IQSS/dataverse",
+      "categoryId": "data-management",
+      "country": "US",
+      "maintainer": {
+        "name": "Dataverse Community",
+        "url": "https://github.com/IQSS/dataverse"
+      },
+      "institution": {
+        "name": "Harvard IQSS",
+        "url": "https://www.iq.harvard.edu"
+      },
+      "description": {
+        "en": "Open source research data repository software used by institutional archives worldwide.",
+        "pt": "Software de repositório de dados de pesquisa de código aberto, amplamente adotado por acervos e instituições acadêmicas globais."
+      },
+      "tags": [
+        "repository",
+        "data-sharing",
+        "open-data",
+        "metadata"
+      ]
+    },
+    {
+      "id": "dvc",
+      "name": "DVC",
+      "url": "https://github.com/iterative/dvc",
+      "categoryId": "data-management",
+      "country": "US",
+      "maintainer": {
+        "name": "Iterative Team",
+        "url": "https://github.com/iterative"
+      },
+      "institution": {
+        "name": "Iterative",
+        "url": "https://iterative.ai"
+      },
+      "description": {
+        "en": "Data Version Control for datasets and machine learning pipelines, designed to work alongside Git.",
+        "pt": "Controle de versão para conjuntos de dados e pipelines de machine learning, projetado para operar perfeitamente integrado ao Git."
+      },
+      "tags": [
+        "version-control",
+        "data-pipelines",
+        "reproducibility",
+        "git"
+      ]
+    },
+    {
+      "id": "osf",
+      "name": "OSF (Open Science Framework)",
+      "url": "https://github.com/CenterForOpenScience/osf.io",
+      "categoryId": "data-management",
+      "country": "US",
+      "maintainer": {
+        "name": "Center for Open Science",
+        "url": "https://github.com/CenterForOpenScience"
+      },
+      "institution": {
+        "name": "Center for Open Science",
+        "url": "https://www.cos.io"
+      },
+      "description": {
+        "en": "Platform for research workflow management, preregistration, and open archiving.",
+        "pt": "Plataforma para gestão do ciclo de pesquisa, pré-registro e arquivamento aberto de dados e materiais científicos."
+      },
+      "tags": [
+        "open-science",
+        "preregistration",
+        "data-management"
+      ]
+    },
+    {
+      "id": "codebook-lab",
+      "name": "CodeBook Lab",
+      "url": "https://github.com/LorcanMcLaren/codebook-lab",
+      "categoryId": "qualitative-analysis",
+      "country": "IE",
+      "maintainer": {
+        "name": "Lorcan McLaren",
+        "url": "https://github.com/LorcanMcLaren"
+      },
+      "institution": null,
+      "description": {
+        "en": "Validation-first benchmarking environment for evaluating LLM codebook execution against human gold standards.",
+        "pt": "Ambiente de benchmarking para avaliar a execução de livros de códigos por LLMs contra padrões de referência humanos."
+      },
+      "tags": [
+        "qualitative",
+        "codebooks",
+        "llm-evaluation",
+        "caqdas"
+      ]
+    },
+    {
+      "id": "dicto",
+      "name": "Dicto",
+      "url": "https://github.com/dictoapp/dicto",
+      "categoryId": "qualitative-analysis",
+      "country": "FR",
+      "maintainer": {
+        "name": "dictoapp",
+        "url": "https://github.com/dictoapp"
+      },
+      "institution": null,
+      "description": {
+        "en": "CAQDAS for transcribing, annotating, tagging and publishing audio/video content and oral histories.",
+        "pt": "Ferramenta CAQDAS para transcrição, anotação, codificação e publicação de acervos de áudio e vídeo em pesquisa qualitativa."
+      },
+      "tags": [
+        "qualitative",
+        "audio-video",
+        "oral-history",
+        "annotation"
+      ]
+    },
+    {
+      "id": "llm4humanities",
+      "name": "LLM4Humanities",
+      "url": "https://github.com/flowersteam/LLM4Humanities",
+      "categoryId": "qualitative-analysis",
+      "country": "FR",
+      "maintainer": {
+        "name": "Inria Flowers Team",
+        "url": "https://github.com/flowersteam"
+      },
+      "institution": {
+        "name": "Inria",
+        "url": "https://www.inria.fr"
+      },
+      "description": {
+        "en": "Active learning web annotation platform for qualitative text coding and inter-rater reliability evaluation.",
+        "pt": "Plataforma de anotação web com active learning para codificação qualitativa de texto e avaliação de concordância inter-anotadores."
+      },
+      "tags": [
+        "qualitative",
+        "active-learning",
+        "annotation",
+        "humanities"
+      ]
+    },
+    {
+      "id": "localq",
+      "name": "LocalQ",
+      "url": "https://github.com/zimotti/LocalQ",
+      "categoryId": "qualitative-analysis",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "zimotti",
+        "url": "https://github.com/zimotti"
+      },
+      "institution": null,
+      "description": {
+        "en": "Fully local, privacy-compliant qualitative analysis dashboard powered by Ollama for confidential data.",
+        "pt": "Dashboard de análise qualitativa 100% local com suporte a Ollama, voltado para dados confidenciais e garantia de sigilo."
+      },
+      "tags": [
+        "qualitative",
+        "ollama",
+        "privacy",
+        "local-first"
+      ]
+    },
+    {
+      "id": "qualcoder",
+      "name": "QualCoder",
+      "url": "https://github.com/ccbogel/QualCoder",
+      "categoryId": "qualitative-analysis",
+      "country": "AU",
+      "maintainer": {
+        "name": "Colin Curtain (ccbogel)",
+        "url": "https://github.com/ccbogel"
+      },
+      "institution": null,
+      "description": {
+        "en": "Actively maintained CAQDAS for coding and analyzing text, images, audio, and video.",
+        "pt": "Software CAQDAS multiplataforma e ativamente mantido para codificação e análise de textos, imagens, áudios e vídeos."
+      },
+      "tags": [
+        "caqdas",
+        "qualitative",
+        "text-coding",
+        "multimedia"
+      ]
+    },
+    {
+      "id": "qualilab",
+      "name": "QualiLab",
+      "url": "https://github.com/LuizPF42/QualiLab",
+      "categoryId": "qualitative-analysis",
+      "country": "BR",
+      "maintainer": {
+        "name": "Luiz PF (LuizPF42)",
+        "url": "https://github.com/LuizPF42"
+      },
+      "institution": null,
+      "description": {
+        "en": "Open source tool for qualitative data analysis and text coding, developed in Brazil.",
+        "pt": "Ferramenta de código aberto desenvolvida no Brasil para análise e codificação de dados qualitativos em pesquisas acadêmicas."
+      },
+      "tags": [
+        "qualitative",
+        "text-coding",
+        "caqdas",
+        "brazil"
+      ]
+    },
+    {
+      "id": "quallmer",
+      "name": "quallmer",
+      "url": "https://github.com/quallmer/quallmer",
+      "categoryId": "qualitative-analysis",
+      "country": "DE",
+      "maintainer": {
+        "name": "quallmer",
+        "url": "https://github.com/quallmer"
+      },
+      "institution": null,
+      "description": {
+        "en": "R package for AI-assisted qualitative text coding, structured codebooks, and inter-coder reliability.",
+        "pt": "Pacote em R para codificação qualitativa assistida por IA, estruturação de livros de códigos e cálculo de confiabilidade inter-codificadores."
+      },
+      "tags": [
+        "r-package",
+        "qualitative",
+        "codebooks",
+        "reliability"
+      ]
+    },
+    {
+      "id": "taguette",
+      "name": "Taguette",
+      "url": "https://github.com/remram44/taguette",
+      "categoryId": "qualitative-analysis",
+      "country": "US",
+      "maintainer": {
+        "name": "Remi Rampin (remram44)",
+        "url": "https://github.com/remram44"
+      },
+      "institution": {
+        "name": "NYU",
+        "url": "https://www.nyu.edu"
+      },
+      "description": {
+        "en": "Free and open source qualitative text coding tool, accessible alternative to commercial QDA software.",
+        "pt": "Ferramenta livre e aberta para codificação qualitativa de texto, desenvolvida como alternativa aberta a softwares proprietários de QDA."
+      },
+      "tags": [
+        "qualitative",
+        "text-coding",
+        "open-science"
+      ]
+    },
+    {
+      "id": "tallmesh",
+      "name": "TALLMesh",
+      "url": "https://github.com/sdptn/TALLMesh_multi_page",
+      "categoryId": "qualitative-analysis",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "sdptn",
+        "url": "https://github.com/sdptn"
+      },
+      "institution": null,
+      "description": {
+        "en": "Qualitative analysis web dashboard operationalizing Braun & Clarke's reflexive thematic analysis with LLMs.",
+        "pt": "Dashboard web que operacionaliza os passos da análise temática reflexiva de Braun & Clarke com suporte a modelos de linguagem."
+      },
+      "tags": [
+        "qualitative",
+        "thematic-analysis",
+        "llm"
+      ]
+    },
+    {
+      "id": "jasp",
+      "name": "JASP",
+      "url": "https://github.com/jasp-stats/jasp-desktop",
+      "categoryId": "quantitative-analysis",
+      "country": "NL",
+      "maintainer": {
+        "name": "JASP Team",
+        "url": "https://github.com/jasp-stats"
+      },
+      "institution": {
+        "name": "University of Amsterdam",
+        "url": "https://www.uva.nl"
+      },
+      "description": {
+        "en": "Open source statistical software with a graphical interface, free alternative to SPSS for Bayesian and classical tests.",
+        "pt": "Software estatístico livre e de código aberto com interface gráfica amigável, alternativa ao SPSS para inferência clássica e bayesiana."
+      },
+      "tags": [
+        "statistics",
+        "bayesian",
+        "gui",
+        "open-science"
+      ]
+    },
+    {
+      "id": "pandas",
+      "name": "Pandas",
+      "url": "https://github.com/pandas-dev/pandas",
+      "categoryId": "quantitative-analysis",
+      "country": "US",
+      "maintainer": {
+        "name": "Pandas Development Team",
+        "url": "https://github.com/pandas-dev"
+      },
+      "institution": {
+        "name": "NumFOCUS",
+        "url": "https://numfocus.org"
+      },
+      "description": {
+        "en": "Foundational Python library for structured data manipulation, wrangling, and econometric analysis.",
+        "pt": "Biblioteca fundamental em Python para manipulação, limpeza e análise de dados estruturados e tabulares."
+      },
+      "tags": [
+        "python",
+        "data-analysis",
+        "tabular",
+        "dataframes"
+      ]
+    },
+    {
+      "id": "r-project",
+      "name": "R",
+      "url": "https://www.r-project.org/",
+      "categoryId": "quantitative-analysis",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "R Core Team",
+        "url": "https://www.r-project.org/contributors.html"
+      },
+      "institution": {
+        "name": "R Foundation",
+        "url": "https://www.r-project.org/foundation/"
+      },
+      "description": {
+        "en": "Free software environment for statistical computing, data analysis, and publication-ready graphics.",
+        "pt": "Ambiente de software livre para computação estatística, modelagem econométrica e geração de gráficos acadêmicos."
+      },
+      "tags": [
+        "statistics",
+        "econometrics",
+        "graphics",
+        "programming-language"
+      ]
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "url": "https://github.com/moby/moby",
+      "categoryId": "reproducibility",
+      "country": "US",
+      "maintainer": {
+        "name": "Docker / Moby Team",
+        "url": "https://github.com/moby"
+      },
+      "institution": {
+        "name": "Docker Inc.",
+        "url": "https://www.docker.com"
+      },
+      "description": {
+        "en": "Containerization platform to package reproducible research environments and dependencies.",
+        "pt": "Plataforma de conteinerização para empacotamento de ambientes computacionais reprodutíveis e controle de dependências."
+      },
+      "tags": [
+        "containers",
+        "reproducibility",
+        "devops",
+        "environment"
+      ]
+    },
+    {
+      "id": "jupyter",
+      "name": "Jupyter",
+      "url": "https://github.com/jupyter/notebook",
+      "categoryId": "reproducibility",
+      "country": "US",
+      "maintainer": {
+        "name": "Project Jupyter",
+        "url": "https://github.com/jupyter"
+      },
+      "institution": {
+        "name": "NumFOCUS",
+        "url": "https://numfocus.org"
+      },
+      "description": {
+        "en": "Interactive computing notebooks supporting Python, R, Julia, and dozens of other languages.",
+        "pt": "Ambiente de computação interativa que combina código executável, equações, narrativas e visualizações em notebooks."
+      },
+      "tags": [
+        "notebooks",
+        "interactive-computing",
+        "python",
+        "r",
+        "julia"
+      ]
+    },
+    {
+      "id": "renv",
+      "name": "renv",
+      "url": "https://github.com/rstudio/renv",
+      "categoryId": "reproducibility",
+      "country": "US",
+      "maintainer": {
+        "name": "Posit Team",
+        "url": "https://github.com/rstudio"
+      },
+      "institution": {
+        "name": "Posit",
+        "url": "https://posit.co"
+      },
+      "description": {
+        "en": "Dependency and project-local environment management for reproducible R projects.",
+        "pt": "Gerenciamento de dependências e isolamento de bibliotecas para projetos reproduzíveis em R."
+      },
+      "tags": [
+        "r",
+        "reproducibility",
+        "package-manager",
+        "environment"
+      ]
+    },
+    {
+      "id": "snakemake",
+      "name": "Snakemake",
+      "url": "https://github.com/snakemake/snakemake",
+      "categoryId": "reproducibility",
+      "country": "DE",
+      "maintainer": {
+        "name": "Johannes Köster",
+        "url": "https://github.com/johanneskoester"
+      },
+      "institution": {
+        "name": "University of Duisburg-Essen",
+        "url": "https://www.uni-due.de"
+      },
+      "description": {
+        "en": "Workflow management system for creating reproducible, scalable data analysis pipelines.",
+        "pt": "Sistema de gestão de fluxos de trabalho para criação de pipelines de análise de dados escaláveis e reprodutíveis."
+      },
+      "tags": [
+        "workflows",
+        "pipelines",
+        "reproducibility",
+        "python"
+      ]
+    },
+    {
+      "id": "pandoc",
+      "name": "Pandoc",
+      "url": "https://github.com/jgm/pandoc",
+      "categoryId": "writing-publishing",
+      "country": "US",
+      "maintainer": {
+        "name": "John MacFarlane (jgm)",
+        "url": "https://github.com/jgm"
+      },
+      "institution": {
+        "name": "UC Berkeley",
+        "url": "https://www.berkeley.edu"
+      },
+      "description": {
+        "en": "Universal document converter, the foundational engine behind markdown-to-PDF/HTML academic workflows.",
+        "pt": "Conversor universal de documentos, motor central para cadeias de escrita acadêmica baseadas em Markdown, LaTeX e HTML."
+      },
+      "tags": [
+        "document-converter",
+        "markdown",
+        "latex",
+        "publishing"
+      ]
+    },
+    {
+      "id": "quarto",
+      "name": "Quarto",
+      "url": "https://github.com/quarto-dev/quarto-cli",
+      "categoryId": "writing-publishing",
+      "country": "US",
+      "maintainer": {
+        "name": "Quarto Development Team",
+        "url": "https://github.com/quarto-dev"
+      },
+      "institution": {
+        "name": "Posit",
+        "url": "https://posit.co"
+      },
+      "description": {
+        "en": "Scientific and technical publishing system for reproducible articles, books, websites, and presentations.",
+        "pt": "Sistema de publicação técnica e científica de código aberto para artigos, livros, relatórios e apresentações reprodutíveis."
+      },
+      "tags": [
+        "publishing",
+        "reproducibility",
+        "r",
+        "python",
+        "markdown"
+      ]
+    },
+    {
+      "id": "tex-live",
+      "name": "TeX Live",
+      "url": "https://www.tug.org/texlive/",
+      "categoryId": "writing-publishing",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "TeX Users Group",
+        "url": "https://www.tug.org"
+      },
+      "institution": {
+        "name": "TeX Users Group",
+        "url": "https://www.tug.org"
+      },
+      "description": {
+        "en": "Comprehensive, free TeX/LaTeX distribution for publication-grade mathematical and academic typesetting.",
+        "pt": "Distribuição completa e livre de TeX e LaTeX para diagramação profissional de equações matemáticas e manuscritos acadêmicos."
+      },
+      "tags": [
+        "latex",
+        "tex",
+        "typesetting",
+        "academic-writing"
+      ]
+    },
+    {
+      "id": "beaver-zotero",
+      "name": "Beaver",
+      "url": "https://github.com/jlegewie/beaver-zotero",
+      "categoryId": "reference-management",
+      "country": "US",
+      "maintainer": {
+        "name": "Joscha Legewie (jlegewie)",
+        "url": "https://github.com/jlegewie"
+      },
+      "institution": null,
+      "description": {
+        "en": "AI research assistant plugin for Zotero with agentic library search, PDF chat, sentence-level citations, and MCP server support.",
+        "pt": "Plugin de assistente de pesquisa com IA para o Zotero com busca em toda a biblioteca, citações precisas por sentença e servidor MCP nativo."
+      },
+      "tags": [
+        "zotero",
+        "mcp",
+        "ai-assistant",
+        "citations",
+        "pdf-chat"
+      ]
+    },
+    {
+      "id": "zotero",
+      "name": "Zotero",
+      "url": "https://github.com/zotero/zotero",
+      "categoryId": "reference-management",
+      "country": "US",
+      "maintainer": {
+        "name": "Zotero Development Team",
+        "url": "https://github.com/zotero"
+      },
+      "institution": {
+        "name": "Corporation for Digital Scholarship",
+        "url": "https://digitalscholar.org"
+      },
+      "description": {
+        "en": "Free reference manager with browser integration, PDF annotation, and citation style management.",
+        "pt": "Gerenciador de referências e citações livre e aberto com extensão de navegador e integração com editores de texto."
+      },
+      "tags": [
+        "references",
+        "citations",
+        "bibliography",
+        "pdf-reader"
+      ]
+    },
+    {
+      "id": "gitlab-ce",
+      "name": "GitLab Community Edition",
+      "url": "https://gitlab.com/gitlab-org/gitlab",
+      "categoryId": "collaboration",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "GitLab Team",
+        "url": "https://gitlab.com/gitlab-org"
+      },
+      "institution": {
+        "name": "GitLab Inc.",
+        "url": "https://about.gitlab.com"
+      },
+      "description": {
+        "en": "Self-hostable Git platform with issue tracking, wikis, and CI/CD for research teams.",
+        "pt": "Plataforma Git autogerenciável completa com rastreamento de tarefas, documentação wiki e pipelines de CI/CD para equipes de pesquisa."
+      },
+      "tags": [
+        "git",
+        "collaboration",
+        "ci-cd",
+        "self-hosted"
+      ]
+    },
+    {
+      "id": "taiga",
+      "name": "Taiga",
+      "url": "https://github.com/taigaio/taiga-back",
+      "categoryId": "collaboration",
+      "country": "ES",
+      "maintainer": {
+        "name": "Taiga Team",
+        "url": "https://github.com/taigaio"
+      },
+      "institution": {
+        "name": "Kaleidos Open Source",
+        "url": "https://kaleidos.net"
+      },
+      "description": {
+        "en": "Open source project management tool (Kanban and Scrum) suited to collaborative research projects.",
+        "pt": "Ferramenta de gestão ágil de projetos (quadros Kanban e Scrum) desenhada para laboratórios e equipes de pesquisa colaborativa."
+      },
+      "tags": [
+        "project-management",
+        "kanban",
+        "scrum",
+        "agile"
+      ]
+    },
+    {
+      "id": "asreview",
+      "name": "ASReview",
+      "url": "https://github.com/asreview/asreview",
+      "categoryId": "literature-review",
+      "country": "NL",
+      "maintainer": {
+        "name": "ASReview LAB Community",
+        "url": "https://github.com/asreview"
+      },
+      "institution": {
+        "name": "Utrecht University",
+        "url": "https://www.uu.nl"
+      },
+      "description": {
+        "en": "Active-learning AI tool for systematic literature reviews and accelerated title/abstract screening.",
+        "pt": "Ferramenta com active learning para acelerar sistematicamente a triagem de títulos e resumos em revisões de literatura."
+      },
+      "tags": [
+        "literature-review",
+        "active-learning",
+        "systematic-review",
+        "screening"
+      ]
+    },
+    {
+      "id": "metafor",
+      "name": "metafor",
+      "url": "https://github.com/wviechtb/metafor",
+      "categoryId": "literature-review",
+      "country": "NL",
+      "maintainer": {
+        "name": "Wolfgang Viechtbauer (wviechtb)",
+        "url": "https://github.com/wviechtb"
+      },
+      "institution": {
+        "name": "Maastricht University",
+        "url": "https://www.maastrichtuniversity.nl"
+      },
+      "description": {
+        "en": "Comprehensive R package for conducting meta-analyses and evidence synthesis.",
+        "pt": "Pacote abrangente em R para condução de meta-análises estatísticas e síntese quantitativa de evidências."
+      },
+      "tags": [
+        "r-package",
+        "meta-analysis",
+        "evidence-synthesis",
+        "statistics"
+      ]
+    },
+    {
+      "id": "autolabel",
+      "name": "autolabel",
+      "url": "https://github.com/refuel-ai/autolabel",
+      "categoryId": "ai-tooling",
+      "country": "US",
+      "maintainer": {
+        "name": "Refuel AI",
+        "url": "https://github.com/refuel-ai"
+      },
+      "institution": {
+        "name": "Refuel AI",
+        "url": "https://refuel.ai"
+      },
+      "description": {
+        "en": "Python library for declarative dataset labeling with LLMs, confidence scoring, and cost estimation.",
+        "pt": "Biblioteca Python para anotação e rotulagem declarativa de datasets com LLMs, cálculo de confiança e controle de custos."
+      },
+      "tags": [
+        "ai",
+        "labeling",
+        "llm",
+        "data-annotation"
+      ]
+    },
+    {
+      "id": "cleanlab",
+      "name": "Cleanlab",
+      "url": "https://github.com/cleanlab/cleanlab",
+      "categoryId": "ai-tooling",
+      "country": "US",
+      "maintainer": {
+        "name": "Cleanlab Community",
+        "url": "https://github.com/cleanlab"
+      },
+      "institution": {
+        "name": "Cleanlab Inc.",
+        "url": "https://cleanlab.ai"
+      },
+      "description": {
+        "en": "Data-centric AI framework for detecting dataset errors and evaluating LLM response confidence.",
+        "pt": "Framework de IA centrada em dados para detecção de anomalias e erros em datasets e avaliação de confiabilidade de LLMs."
+      },
+      "tags": [
+        "data-centric-ai",
+        "data-quality",
+        "machine-learning"
+      ]
+    },
+    {
+      "id": "daaf",
+      "name": "DAAF",
+      "url": "https://github.com/DAAF-Contribution-Community/daaf",
+      "categoryId": "ai-tooling",
+      "country": "BR",
+      "maintainer": {
+        "name": "DAAF Contribution Community",
+        "url": "https://github.com/DAAF-Contribution-Community"
+      },
+      "institution": null,
+      "description": {
+        "en": "Toolkit that turns Claude Code into an auditable, reproducible quantitative research engine.",
+        "pt": "Kit de ferramentas de código aberto que transforma o Claude Code em um motor de pesquisa quantitativa auditável e reproduzível."
+      },
+      "tags": [
+        "claude-code",
+        "research-engine",
+        "agentic-ai",
+        "reproducibility",
+        "brazil"
+      ]
+    },
+    {
+      "id": "deepseek-harness",
+      "name": "DeepSeek Harness",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "categoryId": "ai-tooling",
+      "country": "CN",
+      "maintainer": {
+        "name": "DeepSeek AI",
+        "url": "https://github.com/deepseek-ai"
+      },
+      "institution": {
+        "name": "DeepSeek",
+        "url": "https://www.deepseek.com"
+      },
+      "description": {
+        "en": "Plugin-based AI agent harness to automate and orchestrate research workflows.",
+        "pt": "Harness de agentes de IA modular para automação e orquestração de fluxos complexos de pesquisa."
+      },
+      "tags": [
+        "agents",
+        "deepseek",
+        "automation",
+        "orchestration"
+      ]
+    },
+    {
+      "id": "dspy",
+      "name": "DSPy",
+      "url": "https://github.com/stanfordnlp/dspy",
+      "categoryId": "ai-tooling",
+      "country": "US",
+      "maintainer": {
+        "name": "Stanford NLP",
+        "url": "https://github.com/stanfordnlp"
+      },
+      "institution": {
+        "name": "Stanford University",
+        "url": "https://nlp.stanford.edu"
+      },
+      "description": {
+        "en": "Declarative framework for optimizing LLM prompts and few-shot examples against validation metrics.",
+        "pt": "Framework declarativo para otimização algorítmica de prompts e exemplos few-shot de LLMs com base em métricas de validação."
+      },
+      "tags": [
+        "prompt-optimization",
+        "dspy",
+        "llm",
+        "nlp"
+      ]
+    },
+    {
+      "id": "instructor",
+      "name": "Instructor",
+      "url": "https://github.com/jxnl/instructor",
+      "categoryId": "ai-tooling",
+      "country": "US",
+      "maintainer": {
+        "name": "Jason Liu (jxnl)",
+        "url": "https://github.com/jxnl"
+      },
+      "institution": null,
+      "description": {
+        "en": "Python library enforcing structured JSON Schema output validation via Pydantic over LLMs.",
+        "pt": "Biblioteca Python para extração e validação de saídas estruturadas em JSON Schema via Pydantic em modelos de linguagem."
+      },
+      "tags": [
+        "structured-outputs",
+        "pydantic",
+        "python",
+        "json-schema"
+      ]
+    },
+    {
+      "id": "open-notebook",
+      "name": "Open Notebook",
+      "url": "https://github.com/lfnovo/open-notebook",
+      "categoryId": "ai-tooling",
+      "country": "BR",
+      "maintainer": {
+        "name": "Lucas Novo (lfnovo)",
+        "url": "https://github.com/lfnovo"
+      },
+      "institution": null,
+      "description": {
+        "en": "Open source alternative to Google's NotebookLM, with FastAPI/SurrealDB backend and Next.js frontend.",
+        "pt": "Alternativa de código aberto ao NotebookLM do Google, desenvolvida no Brasil com backend em FastAPI/SurrealDB e interface Next.js."
+      },
+      "tags": [
+        "notebooklm-alternative",
+        "rag",
+        "knowledge-base",
+        "brazil"
+      ]
+    },
+    {
+      "id": "outlines",
+      "name": "Outlines",
+      "url": "https://github.com/dottxt-ai/outlines",
+      "categoryId": "ai-tooling",
+      "country": "US",
+      "maintainer": {
+        "name": ".txt Team",
+        "url": "https://github.com/dottxt-ai"
+      },
+      "institution": {
+        "name": ".txt",
+        "url": "https://dottxt.co"
+      },
+      "description": {
+        "en": "Structured text generation library enforcing regex and JSON schemas via token logit masking.",
+        "pt": "Biblioteca de geração estruturada que garante gramáticas regulares e esquemas JSON via mascaramento de logits em tempo de inferência."
+      },
+      "tags": [
+        "structured-generation",
+        "logits-masking",
+        "json-schema",
+        "llm"
+      ]
+    },
+    {
+      "id": "setfit",
+      "name": "SetFit",
+      "url": "https://github.com/huggingface/setfit",
+      "categoryId": "ai-tooling",
+      "country": "FR",
+      "maintainer": {
+        "name": "Hugging Face Team",
+        "url": "https://github.com/huggingface"
+      },
+      "institution": {
+        "name": "Hugging Face / Intel Labs",
+        "url": "https://huggingface.co"
+      },
+      "description": {
+        "en": "Prompt-free framework for few-shot fine-tuning of sentence transformers on small labeled datasets.",
+        "pt": "Framework para fine-tuning eficiente de Sentence Transformers com poucas amostras rotuladas, sem necessidade de prompts."
+      },
+      "tags": [
+        "few-shot",
+        "sentence-transformers",
+        "classification",
+        "nlp"
+      ]
+    }
+  ]
+};
+</script>
+
 <script>
 (function(){
   var currentLang = "en";
+  var currentTheme = "light";
+  var currentView = "grid";
   var activeOrigin = "all";
   var activeCategory = "all";
   var searchQuery = "";
 
-  var CATS = [
-    {id:"data-collection", icon:"🎙️", en:["Data Collection","Field forms, surveys, transcription, web scraping and data cleaning tools."], pt:["Coleta de Dados","Formulários de campo, surveys, transcrição, web scraping e limpeza de dados."], count:8},
-    {id:"data-management", icon:"🗄️", en:["Data Management & Organization","Repositories and version control for research data and ML pipelines."], pt:["Gestão e Organização de Dados","Repositórios e controle de versão para dados de pesquisa e pipelines de ML."], count:3},
-    {id:"qualitative-analysis", icon:"🏷️", en:["Qualitative Analysis","CAQDAS tools for coding and analyzing text, audio, image and video."], pt:["Análise Qualitativa","Ferramentas CAQDAS para codificar e analisar texto, áudio, imagem e vídeo."], count:9},
-    {id:"quantitative-analysis", icon:"📊", en:["Quantitative & Statistical Analysis","Statistical software and libraries, from GUI tools to R and Python."], pt:["Análise Quantitativa e Estatística","Softwares e bibliotecas estatísticas, de ferramentas gráficas a R e Python."], count:3},
-    {id:"reproducibility", icon:"🧪", en:["Reproducibility & Computational Environments","Containers, notebooks and workflow managers for reproducible analyses."], pt:["Reprodutibilidade e Ambientes Computacionais","Contêineres, notebooks e gerenciadores de workflow para análises reprodutíveis."], count:4},
-    {id:"writing-publishing", icon:"✍️", en:["Writing & Publishing","Document converters and typesetting systems for academic writing."], pt:["Escrita e Publicação","Conversores de documentos e sistemas de diagramação para escrita acadêmica."], count:3},
-    {id:"reference-management", icon:"📚", en:["Reference & Citation Management","Reference managers with browser and word processor integration."], pt:["Gestão de Referências e Citações","Gerenciadores de referências com integração a navegador e processador de texto."], count:2},
-    {id:"collaboration", icon:"🤝", en:["Collaboration & Project Management","Self-hostable Git platforms and Kanban/Scrum tools for research teams."], pt:["Colaboração e Gestão de Projetos","Plataformas Git autogerenciáveis e ferramentas Kanban/Scrum para equipes de pesquisa."], count:2},
-    {id:"literature-review", icon:"📖", en:["Literature Review & Synthesis","AI-assisted screening and meta-analysis tools for systematic reviews."], pt:["Revisão de Literatura e Síntese","Ferramentas de triagem assistida por IA e meta-análise para revisões sistemáticas."], count:2},
-    {id:"ai-tooling", icon:"🤖", en:["AI & Agentic Research Tooling","Agent harnesses and frameworks that automate parts of the research workflow."], pt:["Ferramentas de IA e Agentes para Pesquisa","Harnesses de agentes e frameworks que automatizam partes do workflow de pesquisa."], count:9}
-  ];
+  var COUNTRIES = {
+    BR: { code: "BR", region: "BR", en: "Brazil", pt: "Brasil" },
+    US: { code: "US", region: "US", en: "USA", pt: "EUA" },
+    DE: { code: "DE", region: "EU", en: "Germany", pt: "Alemanha" },
+    NL: { code: "NL", region: "EU", en: "Netherlands", pt: "Holanda" },
+    FR: { code: "FR", region: "EU", en: "France", pt: "França" },
+    ES: { code: "ES", region: "EU", en: "Spain", pt: "Espanha" },
+    IE: { code: "IE", region: "EU", en: "Ireland", pt: "Irlanda" },
+    AU: { code: "AU", region: "GLOBAL", en: "Australia", pt: "Austrália" },
+    IN: { code: "IN", region: "GLOBAL", en: "India", pt: "Índia" },
+    IL: { code: "IL", region: "GLOBAL", en: "Israel", pt: "Israel" },
+    CN: { code: "CN", region: "GLOBAL", en: "China", pt: "China" },
+    GLOBAL: { code: "GLOBAL", region: "GLOBAL", en: "Global", pt: "Global" }
+  };
 
-  var TOOLS = [
-    // Data Collection
-    {
-      name: "KoboToolbox", url: "https://github.com/kobotoolbox", catId: "data-collection",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA / Global", pt:"EUA / Global"},
-      institution: "Harvard Humanitarian Initiative",
-      desc: {
-        en: "Field data collection suite (forms, mobile app, server) built on ODK, widely used in social and humanitarian research.",
-        pt: "Suíte de coleta de dados em campo (formulários, app móvel, servidor) construída sobre o ODK, amplamente usada em pesquisa social e humanitária."
-      }
-    },
-    {
-      name: "LimeSurvey", url: "https://github.com/LimeSurvey/LimeSurvey", catId: "data-collection",
-      country: {code:"DE", region:"EU", flag:"🇩🇪", en:"Germany", pt:"Alemanha"},
-      institution: "LimeSurvey GmbH",
-      desc: {
-        en: "Self-hosted online survey platform for complex questionnaires and research fieldwork.",
-        pt: "Plataforma de surveys online autogerenciável para questionários complexos e pesquisa de campo."
-      }
-    },
-    {
-      name: "OmniVoice", url: "https://github.com/k2-fsa/OmniVoice", catId: "data-collection",
-      country: {code:"GLOBAL", region:"GLOBAL", flag:"🌐", en:"Global", pt:"Global"},
-      institution: "k2-fsa",
-      desc: {
-        en: "Open source voice-cloning text-to-speech system for 600+ languages, useful for producing multilingual audio instruments.",
-        pt: "Sistema de código aberto de clonagem de voz e texto-para-fala (TTS) para mais de 600 idiomas, útil para produzir instrumentos de áudio multilíngues."
-      }
-    },
-    {
-      name: "OpenRefine", url: "https://github.com/OpenRefine/OpenRefine", catId: "data-collection",
-      country: {code:"GLOBAL", region:"GLOBAL", flag:"🌐", en:"Global", pt:"Global"},
-      institution: "Code for Science & Society",
-      desc: {
-        en: "Powerful desktop tool for cleaning, normalizing and transforming messy tabular data before analysis.",
-        pt: "Ferramenta desktop para limpar, normalizar e transformar dados tabulares bagunçados antes da análise."
-      }
-    },
-    {
-      name: "Scrapy", url: "https://github.com/scrapy/scrapy", catId: "data-collection",
-      country: {code:"GLOBAL", region:"GLOBAL", flag:"🌐", en:"Global", pt:"Global"},
-      institution: "Zyte",
-      desc: {
-        en: "Fast high-level web crawling and scraping framework for Python.",
-        pt: "Framework em Python de alto desempenho para web scraping e extração estruturada de dados."
-      }
-    },
-    {
-      name: "Transcritório", url: "https://github.com/antrologos/Transcritorio", catId: "data-collection",
-      country: {code:"BR", region:"BR", flag:"🇧🇷", en:"Brazil", pt:"Brasil"},
-      institution: "IESP-UERJ / CERES",
-      desc: {
-        en: "Open source, fully-local desktop app for transcribing and diarizing interviews in Brazilian Portuguese, with direct NVivo export.",
-        pt: "App desktop de código aberto e 100% local para transcrever e diarizar entrevistas em português brasileiro, desenvolvido no IESP-UERJ/CERES com exportação para NVivo."
-      }
-    },
-    {
-      name: "Vibe", url: "https://github.com/thewh1teagle/vibe", catId: "data-collection",
-      country: {code:"IL", region:"GLOBAL", flag:"🇮🇱", en:"Israel / Global", pt:"Israel / Global"},
-      institution: null,
-      desc: {
-        en: "Local audio/video transcription app (Whisper, Nemotron, Parakeet) with speaker diarization and broad export formats.",
-        pt: "Aplicativo de transcrição local de áudio/vídeo (Whisper, Nemotron, Parakeet), com diarização de falantes e suporte a múltiplos formatos."
-      }
-    },
-    {
-      name: "VoiceStudio", url: "https://github.com/debpalash/VoiceStudio", catId: "data-collection",
-      country: {code:"IN", region:"GLOBAL", flag:"🇮🇳", en:"India / Global", pt:"Índia / Global"},
-      institution: null,
-      desc: {
-        en: "Local speech toolkit (transcription, dictation, voice cloning) in 646 languages for confidential interview processing.",
-        pt: "Kit de ferramentas de voz 100% local (transcrição, ditado, clonagem) em 646 idiomas para preservação de sigilo em entrevistas."
-      }
-    },
+  var CATEGORY_ICONS = {
+    "data-collection": '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
+    "data-management": '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>',
+    "qualitative-analysis": '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>',
+    "quantitative-analysis": '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
+    "reproducibility": '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>',
+    "writing-publishing": '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>',
+    "reference-management": '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
+    "collaboration": '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>',
+    "literature-review": '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="11.5" cy="14.5" r="2.5"/><line x1="13.25" y1="16.25" x2="16" y2="19"/></svg>',
+    "ai-tooling": '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>'
+  };
 
-    // Data Management
-    {
-      name: "Dataverse", url: "https://github.com/IQSS/dataverse", catId: "data-management",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA", pt:"EUA"},
-      institution: "Harvard IQSS",
-      desc: {
-        en: "Open source research data repository software used by institutional archives worldwide.",
-        pt: "Software de repositório de dados de pesquisa de código aberto, usado por acervos institucionais e acadêmicos globais."
-      }
-    },
-    {
-      name: "DVC", url: "https://github.com/iterative/dvc", catId: "data-management",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA", pt:"EUA"},
-      institution: "Iterative",
-      desc: {
-        en: "Data Version Control for datasets and machine learning pipelines, designed to work alongside Git.",
-        pt: "Controle de versão para conjuntos de dados e pipelines de machine learning, projetado para operar junto com o Git."
-      }
-    },
-    {
-      name: "OSF (Open Science Framework)", url: "https://github.com/CenterForOpenScience/osf.io", catId: "data-management",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA", pt:"EUA"},
-      institution: "Center for Open Science",
-      desc: {
-        en: "Platform for research workflow management, preregistration, and open archiving.",
-        pt: "Plataforma para gestão do ciclo de pesquisa, pré-registro e arquivamento aberto de dados e materiais."
-      }
-    },
+  var rawDataset = window.AOSRT_DATA || { categories: [], tools: [] };
+  var CATEGORIES = rawDataset.categories || [];
+  var TOOLS = rawDataset.tools || [];
 
-    // Qualitative Analysis
-    {
-      name: "CodeBook Lab", url: "https://github.com/LorcanMcLaren/codebook-lab", catId: "qualitative-analysis",
-      country: {code:"IE", region:"EU", flag:"🇮🇪", en:"Ireland / UK", pt:"Irlanda / Reino Unido"},
-      institution: null,
-      desc: {
-        en: "Validation-first benchmarking environment for evaluating LLM codebook execution against human gold standards.",
-        pt: "Ambiente de benchmarking para avaliar a execução de livros de código por LLMs contra conjuntos gold standard humanos."
-      }
-    },
-    {
-      name: "Dicto", url: "https://github.com/dictoapp/dicto", catId: "qualitative-analysis",
-      country: {code:"FR", region:"EU", flag:"🇫🇷", en:"France / Global", pt:"França / Global"},
-      institution: null,
-      desc: {
-        en: "CAQDAS for transcribing, annotating, tagging and publishing audio/video content and oral histories.",
-        pt: "CAQDAS para transcrever, anotar, tagear e publicar conteúdo de vídeo e áudio em pesquisas qualitativas."
-      }
-    },
-    {
-      name: "LLM4Humanities", url: "https://github.com/flowersteam/LLM4Humanities", catId: "qualitative-analysis",
-      country: {code:"FR", region:"EU", flag:"🇫🇷", en:"France", pt:"França"},
-      institution: "Inria Flowers Team",
-      desc: {
-        en: "Active learning web annotation platform for qualitative text coding and inter-rater reliability evaluation.",
-        pt: "Plataforma de anotação web com active learning para codificação qualitativa e avaliação de concordância inter-anotadores."
-      }
-    },
-    {
-      name: "LocalQ", url: "https://github.com/zimotti/LocalQ", catId: "qualitative-analysis",
-      country: {code:"GLOBAL", region:"GLOBAL", flag:"🌐", en:"Global", pt:"Global"},
-      institution: null,
-      desc: {
-        en: "Fully local, privacy-compliant qualitative analysis dashboard powered by Ollama for confidential data.",
-        pt: "Dashboard de análise qualitativa 100% local movido por Ollama para preservação de privacidade em dados confidenciais."
-      }
-    },
-    {
-      name: "QualCoder", url: "https://github.com/ccbogel/QualCoder", catId: "qualitative-analysis",
-      country: {code:"AU", region:"GLOBAL", flag:"🇦🇺", en:"Australia", pt:"Austrália"},
-      institution: null,
-      desc: {
-        en: "Actively maintained CAQDAS for coding and analyzing text, images, audio, and video.",
-        pt: "CAQDAS multiplataforma e ativamente mantido para codificar e analisar texto, imagem, áudio e vídeo."
-      }
-    },
-    {
-      name: "QualiLab", url: "https://github.com/LuizPF42/QualiLab", catId: "qualitative-analysis",
-      country: {code:"BR", region:"BR", flag:"🇧🇷", en:"Brazil", pt:"Brasil"},
-      institution: "Luiz PF",
-      desc: {
-        en: "Open source tool for qualitative data analysis and text coding, developed in Brazil.",
-        pt: "Ferramenta de código aberto desenvolvida no Brasil para análise e codificação de dados qualitativos."
-      }
-    },
-    {
-      name: "quallmer", url: "https://github.com/quallmer/quallmer", catId: "qualitative-analysis",
-      country: {code:"DE", region:"EU", flag:"🇩🇪", en:"Germany / Global", pt:"Alemanha / Global"},
-      institution: null,
-      desc: {
-        en: "R package for AI-assisted qualitative text coding, structured codebooks, and inter-coder reliability.",
-        pt: "Pacote R para codificação qualitativa assistida por IA, execução de codebooks e validação de confiabilidade."
-      }
-    },
-    {
-      name: "Taguette", url: "https://github.com/remram44/taguette", catId: "qualitative-analysis",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA", pt:"EUA"},
-      institution: "NYU",
-      desc: {
-        en: "Free and open source qualitative text coding tool, accessible alternative to commercial QDA software.",
-        pt: "Ferramenta livre para codificação qualitativa de texto, criada como alternativa aberta a softwares comerciais."
-      }
-    },
-    {
-      name: "TALLMesh", url: "https://github.com/sdptn/TALLMesh_multi_page", catId: "qualitative-analysis",
-      country: {code:"GLOBAL", region:"GLOBAL", flag:"🌐", en:"Global", pt:"Global"},
-      institution: null,
-      desc: {
-        en: "Qualitative analysis web dashboard operationalizing Braun & Clarke's reflexive thematic analysis with LLMs.",
-        pt: "Dashboard web que operacionaliza a análise temática reflexiva de Braun & Clarke com suporte de LLMs."
-      }
-    },
+  function escapeHtml(str) {
+    if (typeof str !== 'string') return '';
+    return str.replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;')
+              .replace(/'/g, '&#039;');
+  }
 
-    // Quantitative Analysis
-    {
-      name: "JASP", url: "https://github.com/jasp-stats/jasp-desktop", catId: "quantitative-analysis",
-      country: {code:"NL", region:"EU", flag:"🇳🇱", en:"Netherlands", pt:"Holanda"},
-      institution: "University of Amsterdam",
-      desc: {
-        en: "Open source statistical software with a graphical interface, free alternative to SPSS for Bayesian and classical tests.",
-        pt: "Software estatístico de código aberto com interface gráfica amigável, alternativa livre ao SPSS para testes clássicos e bayesianos."
-      }
-    },
-    {
-      name: "Pandas", url: "https://github.com/pandas-dev/pandas", catId: "quantitative-analysis",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA / Global", pt:"EUA / Global"},
-      institution: "NumFOCUS",
-      desc: {
-        en: "Foundational Python library for structured data manipulation, wrangling, and econometric analysis.",
-        pt: "Biblioteca fundamental em Python para manipulação, limpeza e análise de dados estruturados."
-      }
-    },
-    {
-      name: "R", url: "https://www.r-project.org/", catId: "quantitative-analysis",
-      country: {code:"GLOBAL", region:"GLOBAL", flag:"🌐", en:"Global", pt:"Global"},
-      institution: "R Foundation",
-      desc: {
-        en: "Free software environment for statistical computing, data analysis, and publication-ready graphics.",
-        pt: "Ambiente de software livre para computação estatística, modelagem econométrica e gráficos acadêmicos."
-      }
-    },
+  function renderCategoryGrid() {
+    var catGrid = document.getElementById("cat-grid");
+    if (!catGrid) return;
+    catGrid.innerHTML = "";
+    CATEGORIES.forEach(function(c){
+      var toolCount = TOOLS.filter(function(t){ return t.categoryId === c.id; }).length;
+      var card = document.createElement("div");
+      card.className = "card";
+      var iconSvg = CATEGORY_ICONS[c.id] || "";
+      card.innerHTML =
+        '<span class="count">' + toolCount + '</span>' +
+        '<h3>' + iconSvg +
+          '<span data-i18n="en" class="active-lang">' + escapeHtml(c.nameEn) + '</span>' +
+          '<span data-i18n="pt">' + escapeHtml(c.namePt) + '</span>' +
+        '</h3>' +
+        '<p data-i18n="en" class="active-lang">' + escapeHtml(c.nameEn) + ' tools for researchers.</p>' +
+        '<p data-i18n="pt">Ferramentas de ' + escapeHtml(c.namePt.toLowerCase()) + ' para pesquisadores.</p>';
+      catGrid.appendChild(card);
+    });
+  }
 
-    // Reproducibility
-    {
-      name: "Docker", url: "https://github.com/moby/moby", catId: "reproducibility",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA", pt:"EUA"},
-      institution: "Docker Inc.",
-      desc: {
-        en: "Containerization platform to package reproducible research environments and dependencies.",
-        pt: "Motor de conteinerização para empacotar ambientes computacionais reprodutíveis e portáveis."
-      }
-    },
-    {
-      name: "Jupyter", url: "https://github.com/jupyter/notebook", catId: "reproducibility",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA / Global", pt:"EUA / Global"},
-      institution: "NumFOCUS",
-      desc: {
-        en: "Interactive computing notebooks supporting Python, R, Julia, and dozens of other languages.",
-        pt: "Notebooks de computação interativa que combinam código vivo, equações, narrativas e visualizações."
-      }
-    },
-    {
-      name: "renv", url: "https://github.com/rstudio/renv", catId: "reproducibility",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA", pt:"EUA"},
-      institution: "Posit",
-      desc: {
-        en: "Dependency and project-local environment management for reproducible R projects.",
-        pt: "Gestão de dependências e ambientes locais para garantir a reprodutibilidade de projetos em R."
-      }
-    },
-    {
-      name: "Snakemake", url: "https://github.com/snakemake/snakemake", catId: "reproducibility",
-      country: {code:"DE", region:"EU", flag:"🇩🇪", en:"Germany", pt:"Alemanha"},
-      institution: "Univ. Duisburg-Essen",
-      desc: {
-        en: "Workflow management system for creating reproducible, scalable data analysis pipelines.",
-        pt: "Sistema de gerenciamento de workflows para criar pipelines de análise de dados escaláveis e reprodutíveis."
-      }
-    },
-
-    // Writing & Publishing
-    {
-      name: "Pandoc", url: "https://github.com/jgm/pandoc", catId: "writing-publishing",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA", pt:"EUA"},
-      institution: "UC Berkeley",
-      desc: {
-        en: "Universal document converter, the foundational engine behind markdown-to-PDF/HTML academic workflows.",
-        pt: "Conversor universal de documentos, motor por trás das cadeias de escrita acadêmica em Markdown e LaTeX."
-      }
-    },
-    {
-      name: "Quarto", url: "https://github.com/quarto-dev/quarto-cli", catId: "writing-publishing",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA", pt:"EUA"},
-      institution: "Posit",
-      desc: {
-        en: "Scientific and technical publishing system for reproducible articles, books, websites, and presentations.",
-        pt: "Sistema de publicação técnica e científica de código aberto a partir de texto puro (R, Python, Julia)."
-      }
-    },
-    {
-      name: "TeX Live", url: "https://www.tug.org/texlive/", catId: "writing-publishing",
-      country: {code:"GLOBAL", region:"GLOBAL", flag:"🌐", en:"Global", pt:"Global"},
-      institution: "TeX Users Group",
-      desc: {
-        en: "Comprehensive, free TeX/LaTeX distribution for publication-grade mathematical and academic typesetting.",
-        pt: "Distribuição completa e livre de TeX/LaTeX para diagramação de manuscritos e fórmulas matemáticas."
-      }
-    },
-
-    // Reference Management
-    {
-      name: "Beaver", url: "https://github.com/jlegewie/beaver-zotero", catId: "reference-management",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA / Germany", pt:"EUA / Alemanha"},
-      institution: "Joscha Legewie",
-      desc: {
-        en: "AI research assistant plugin for Zotero with agentic library search, PDF chat, sentence-level citations, and MCP server support.",
-        pt: "Plugin de assistente agêntico com IA para o Zotero, com busca em toda a biblioteca, citações precisas e servidor MCP."
-      }
-    },
-    {
-      name: "Zotero", url: "https://github.com/zotero/zotero", catId: "reference-management",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA", pt:"EUA"},
-      institution: "Corp. for Digital Scholarship",
-      desc: {
-        en: "Free reference manager with browser integration, PDF annotation, and citation style management.",
-        pt: "Gerenciador de referências livre e aberto com integração ao navegador e processadores de texto."
-      }
-    },
-
-    // Collaboration
-    {
-      name: "GitLab Community Edition", url: "https://gitlab.com/gitlab-org/gitlab", catId: "collaboration",
-      country: {code:"GLOBAL", region:"GLOBAL", flag:"🌐", en:"Global", pt:"Global"},
-      institution: "GitLab",
-      desc: {
-        en: "Self-hostable Git platform with issue tracking, wikis, and CI/CD for research teams.",
-        pt: "Plataforma Git autogerenciável com rastreamento de tarefas, documentação e CI/CD para grupos de pesquisa."
-      }
-    },
-    {
-      name: "Taiga", url: "https://github.com/taigaio/taiga-back", catId: "collaboration",
-      country: {code:"ES", region:"EU", flag:"🇪🇸", en:"Spain", pt:"Espanha"},
-      institution: "Kaleidos Open Source",
-      desc: {
-        en: "Open source project management tool (Kanban and Scrum) suited to collaborative research projects.",
-        pt: "Ferramenta de gestão ágil de projetos (quadros Kanban e Scrum) para equipes e laboratórios de pesquisa."
-      }
-    },
-
-    // Literature Review
-    {
-      name: "ASReview", url: "https://github.com/asreview/asreview", catId: "literature-review",
-      country: {code:"NL", region:"EU", flag:"🇳🇱", en:"Netherlands", pt:"Holanda"},
-      institution: "Utrecht University",
-      desc: {
-        en: "Active-learning AI tool for systematic literature reviews and accelerated title/abstract screening.",
-        pt: "Ferramenta com active learning para acelerar a triagem de artigos em revisões sistemáticas de literatura."
-      }
-    },
-    {
-      name: "metafor", url: "https://github.com/wviechtb/metafor", catId: "literature-review",
-      country: {code:"NL", region:"EU", flag:"🇳🇱", en:"Netherlands", pt:"Holanda"},
-      institution: "Maastricht University",
-      desc: {
-        en: "Comprehensive R package for conducting meta-analyses and evidence synthesis.",
-        pt: "Pacote R completo para condução de meta-análises e síntese quantitativa de evidências."
-      }
-    },
-
-    // AI & Agentic
-    {
-      name: "autolabel", url: "https://github.com/refuel-ai/autolabel", catId: "ai-tooling",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA", pt:"EUA"},
-      institution: "Refuel AI",
-      desc: {
-        en: "Python library for declarative dataset labeling with LLMs, confidence scoring, and cost estimation.",
-        pt: "Biblioteca Python para rotulagem declarativa de datasets via LLM com pontuação de confiança e controle de custos."
-      }
-    },
-    {
-      name: "Cleanlab", url: "https://github.com/cleanlab/cleanlab", catId: "ai-tooling",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA", pt:"EUA"},
-      institution: "Cleanlab",
-      desc: {
-        en: "Data-centric AI framework for detecting dataset errors and evaluating LLM response confidence.",
-        pt: "Framework de IA centrada em dados para detectar erros em datasets e avaliar a confiabilidade de respostas de LLMs."
-      }
-    },
-    {
-      name: "DAAF", url: "https://github.com/DAAF-Contribution-Community/daaf", catId: "ai-tooling",
-      country: {code:"BR", region:"BR", flag:"🇧🇷", en:"Brazil / Global", pt:"Brasil / Global"},
-      institution: "DAAF Community",
-      desc: {
-        en: "Toolkit that turns Claude Code into an auditable, reproducible quantitative research engine.",
-        pt: "Kit de ferramentas de código aberto que transforma o Claude Code em um motor de pesquisa quantitativa auditável e reproduzível."
-      }
-    },
-    {
-      name: "DeepSeek Harness", url: "https://github.com/deepseek-ai/deepseek-harness", catId: "ai-tooling",
-      country: {code:"CN", region:"GLOBAL", flag:"🇨🇳", en:"China", pt:"China"},
-      institution: "DeepSeek",
-      desc: {
-        en: "Plugin-based AI agent harness to automate and orchestrate research workflows.",
-        pt: "Harness de agente de IA modular para automatizar e orquestrar fluxos complexos de pesquisa."
-      }
-    },
-    {
-      name: "DSPy", url: "https://github.com/stanfordnlp/dspy", catId: "ai-tooling",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA", pt:"EUA"},
-      institution: "Stanford NLP",
-      desc: {
-        en: "Declarative framework for optimizing LLM prompts and few-shot examples against validation metrics.",
-        pt: "Framework declarativo para otimizar prompts de LLM e seleções few-shot contra métricas de validação."
-      }
-    },
-    {
-      name: "Instructor", url: "https://github.com/jxnl/instructor", catId: "ai-tooling",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA", pt:"EUA"},
-      institution: "Jason Liu",
-      desc: {
-        en: "Python library enforcing structured JSON Schema output validation via Pydantic over LLMs.",
-        pt: "Biblioteca Python que garante saídas estruturadas e tipadas em JSON Schema via Pydantic em chamadas de LLM."
-      }
-    },
-    {
-      name: "Open Notebook", url: "https://github.com/lfnovo/open-notebook", catId: "ai-tooling",
-      country: {code:"BR", region:"BR", flag:"🇧🇷", en:"Brazil", pt:"Brasil"},
-      institution: "Lucas Novo",
-      desc: {
-        en: "Open source alternative to Google's NotebookLM, with FastAPI/SurrealDB backend and Next.js frontend.",
-        pt: "Alternativa de código aberto ao NotebookLM do Google, desenvolvida no Brasil com backend em FastAPI/SurrealDB e frontend Next.js."
-      }
-    },
-    {
-      name: "Outlines", url: "https://github.com/dottxt-ai/outlines", catId: "ai-tooling",
-      country: {code:"US", region:"US", flag:"🇺🇸", en:"USA", pt:"EUA"},
-      institution: ".txt",
-      desc: {
-        en: "Structured text generation library enforcing regex and JSON schemas via token logit masking.",
-        pt: "Biblioteca de geração estruturada que garante gramáticas CFG e JSON Schemas via máscara de logits de tokens."
-      }
-    },
-    {
-      name: "SetFit", url: "https://github.com/huggingface/setfit", catId: "ai-tooling",
-      country: {code:"FR", region:"EU", flag:"🇫🇷", en:"France / USA", pt:"França / EUA"},
-      institution: "Hugging Face / Intel Labs",
-      desc: {
-        en: "Prompt-free framework for few-shot fine-tuning of sentence transformers on small labeled datasets.",
-        pt: "Framework para fine-tuning eficiente de transformers com poucas amostras rotuladas, sem necessidade de prompts."
-      }
-    }
-  ];
-
-  // Render Categories Overview
-  var catGrid = document.getElementById("cat-grid");
-  CATS.forEach(function(c){
-    var card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML =
-      '<span class="count">' + c.count + '</span>' +
-      '<h3><span class="icon">' + c.icon + '</span>' +
-        '<span data-i18n="en" class="active-lang">' + c.en[0] + '</span>' +
-        '<span data-i18n="pt">' + c.pt[0] + '</span>' +
-      '</h3>' +
-      '<p><span data-i18n="en" class="active-lang">' + c.en[1] + '</span>' +
-      '<span data-i18n="pt">' + c.pt[1] + '</span></p>';
-    catGrid.appendChild(card);
-  });
-
-  // Render Tools Directory
-  var toolGrid = document.getElementById("tool-grid");
+  var toolCollection = document.getElementById("tool-collection");
   var countEl = document.getElementById("results-count");
   var searchInput = document.getElementById("tool-search");
   var catSelect = document.getElementById("cat-filter");
   var originButtons = document.querySelectorAll("[data-origin]");
+  var btnViewGrid = document.getElementById("view-grid-btn");
+  var btnViewList = document.getElementById("view-list-btn");
+  var themeToggleBtn = document.getElementById("theme-toggle-btn");
 
-  function getCategoryName(catId, lang){
-    var match = CATS.find(function(c){ return c.id === catId; });
+  function getCategoryName(catId, lang) {
+    var match = CATEGORIES.find(function(c){ return c.id === catId; });
     if (!match) return catId;
-    return (lang === "pt" ? match.pt[0] : match.en[0]);
+    return (lang === "pt" ? match.namePt : match.nameEn);
   }
 
-  function renderTools(){
+  function renderTools() {
+    if (!toolCollection) return;
+
     var filtered = TOOLS.filter(function(tool){
-      // Origin filter
-      if (activeOrigin === "BR" && tool.country.code !== "BR") return false;
-      if (activeOrigin === "US" && tool.country.code !== "US") return false;
-      if (activeOrigin === "EU" && tool.country.region !== "EU") return false;
-      if (activeOrigin === "GLOBAL" && tool.country.code !== "GLOBAL") return false;
+      var cInfo = COUNTRIES[tool.country] || { region: "GLOBAL" };
+      if (activeOrigin === "BR" && tool.country !== "BR") return false;
+      if (activeOrigin === "US" && tool.country !== "US") return false;
+      if (activeOrigin === "EU" && cInfo.region !== "EU") return false;
+      if (activeOrigin === "GLOBAL" && tool.country !== "GLOBAL") return false;
 
-      // Category filter
-      if (activeCategory !== "all" && tool.catId !== activeCategory) return false;
+      if (activeCategory !== "all" && tool.categoryId !== activeCategory) return false;
 
-      // Search query filter
       if (searchQuery.trim() !== "") {
         var q = searchQuery.toLowerCase();
         var matchName = tool.name.toLowerCase().indexOf(q) !== -1;
-        var matchDescEn = tool.desc.en.toLowerCase().indexOf(q) !== -1;
-        var matchDescPt = tool.desc.pt.toLowerCase().indexOf(q) !== -1;
-        var matchCountry = tool.country.en.toLowerCase().indexOf(q) !== -1 || tool.country.pt.toLowerCase().indexOf(q) !== -1;
-        var matchInst = tool.institution && tool.institution.toLowerCase().indexOf(q) !== -1;
-        if (!matchName && !matchDescEn && !matchDescPt && !matchCountry && !matchInst) return false;
+        var matchDescEn = tool.description.en.toLowerCase().indexOf(q) !== -1;
+        var matchDescPt = tool.description.pt.toLowerCase().indexOf(q) !== -1;
+        var matchCountry = (COUNTRIES[tool.country] && (COUNTRIES[tool.country].en.toLowerCase().indexOf(q) !== -1 || COUNTRIES[tool.country].pt.toLowerCase().indexOf(q) !== -1));
+        var matchMaintainer = tool.maintainer && tool.maintainer.name.toLowerCase().indexOf(q) !== -1;
+        var matchInstitution = tool.institution && tool.institution.name.toLowerCase().indexOf(q) !== -1;
+        var matchTags = tool.tags && tool.tags.some(function(t){ return t.toLowerCase().indexOf(q) !== -1; });
+        if (!matchName && !matchDescEn && !matchDescPt && !matchCountry && !matchMaintainer && !matchInstitution && !matchTags) return false;
       }
       return true;
     });
@@ -1025,17 +1985,31 @@
       countEl.textContent = countText;
     }
 
-    toolGrid.innerHTML = "";
+    toolCollection.innerHTML = "";
     if (filtered.length === 0) {
-      var emptyMsg = document.createElement("div");
-      emptyMsg.style.gridColumn = "1/-1";
-      emptyMsg.style.padding = "32px";
-      emptyMsg.style.textAlign = "center";
-      emptyMsg.style.color = "var(--text-muted)";
-      emptyMsg.textContent = currentLang === "pt"
-        ? "Nenhuma ferramenta encontrada para os filtros selecionados."
-        : "No tools found matching the selected filters.";
-      toolGrid.appendChild(emptyMsg);
+      var emptyState = document.createElement("div");
+      emptyState.className = "empty-state";
+      emptyState.innerHTML =
+        '<p>' + (currentLang === "pt" ? "Nenhuma ferramenta encontrada para os filtros aplicados." : "No tools found matching the selected filters.") + '</p>' +
+        '<button type="button" class="btn-reset-filters" id="btn-reset-search">' + (currentLang === "pt" ? "Limpar filtros e busca" : "Clear filters and search") + '</button>';
+      toolCollection.appendChild(emptyState);
+
+      var btnReset = document.getElementById("btn-reset-search");
+      if (btnReset) {
+        btnReset.addEventListener("click", function(){
+          searchQuery = "";
+          activeOrigin = "all";
+          activeCategory = "all";
+          if (searchInput) searchInput.value = "";
+          if (catSelect) catSelect.value = "all";
+          originButtons.forEach(function(b){
+            var isAll = b.getAttribute("data-origin") === "all";
+            b.classList.toggle("active", isAll);
+            b.setAttribute("aria-pressed", isAll ? "true" : "false");
+          });
+          renderTools();
+        });
+      }
       return;
     }
 
@@ -1043,40 +2017,57 @@
       var card = document.createElement("div");
       card.className = "tool-card";
 
-      var isBR = tool.country.code === "BR";
+      var cInfo = COUNTRIES[tool.country] || { code: tool.country, en: tool.country, pt: tool.country };
+      var isBR = tool.country === "BR";
       var countryClass = "country-tag" + (isBR ? " country-br" : "");
-      var countryLabel = (currentLang === "pt" ? tool.country.pt : tool.country.en);
+      var countryLabel = (currentLang === "pt" ? cInfo.pt : cInfo.en);
 
-      var instHtml = tool.institution
-        ? '<span class="inst-tag">' + tool.institution + '</span>'
-        : '';
+      var maintainerHtml = "";
+      if (tool.maintainer && tool.maintainer.name) {
+        if (tool.maintainer.url) {
+          maintainerHtml = '<a class="entity-link" href="' + escapeHtml(tool.maintainer.url) + '" target="_blank" rel="noopener noreferrer" title="Maintainer">' + escapeHtml(tool.maintainer.name) + ' [↗]</a>';
+        } else {
+          maintainerHtml = '<span class="entity-link">' + escapeHtml(tool.maintainer.name) + '</span>';
+        }
+      }
 
-      var catLabel = getCategoryName(tool.catId, currentLang);
-      var desc = currentLang === "pt" ? tool.desc.pt : tool.desc.en;
+      var institutionHtml = "";
+      if (tool.institution && tool.institution.name) {
+        if (tool.institution.url) {
+          institutionHtml = '<a class="entity-link" href="' + escapeHtml(tool.institution.url) + '" target="_blank" rel="noopener noreferrer" title="Institution">' + escapeHtml(tool.institution.name) + ' [↗]</a>';
+        } else {
+          institutionHtml = '<span class="entity-link">' + escapeHtml(tool.institution.name) + '</span>';
+        }
+      }
+
+      var catLabel = getCategoryName(tool.categoryId, currentLang);
+      var desc = currentLang === "pt" ? tool.description.pt : tool.description.en;
 
       card.innerHTML =
-        '<div>' +
-          '<div class="tool-header">' +
-            '<h3 class="tool-title"><a href="' + tool.url + '" target="_blank" rel="noopener">' + tool.name + '</a></h3>' +
-            '<span class="' + countryClass + '">' + tool.country.flag + ' ' + countryLabel + '</span>' +
-          '</div>' +
-          '<div class="badges-row">' +
-            '<span class="cat-badge">' + catLabel + '</span>' +
-            instHtml +
-          '</div>' +
-          '<p class="tool-desc">' + desc + '</p>' +
+        '<div class="tool-card-header">' +
+          '<h3 class="tool-name"><a href="' + escapeHtml(tool.url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(tool.name) + '</a></h3>' +
+          '<span class="' + countryClass + '" role="text" aria-label="Origem: ' + countryLabel + '">' +
+            '<span class="country-code" aria-hidden="true">' + escapeHtml(cInfo.code) + '</span> ' +
+            '<span class="country-name">' + escapeHtml(countryLabel) + '</span>' +
+          '</span>' +
         '</div>' +
+        '<div class="badges-row">' +
+          '<span class="cat-tag">' + escapeHtml(catLabel) + '</span>' +
+          maintainerHtml +
+          institutionHtml +
+        '</div>' +
+        '<p class="tool-desc">' + escapeHtml(desc) + '</p>' +
         '<div class="tool-footer">' +
-          '<a class="tool-link-btn" href="' + tool.url + '" target="_blank" rel="noopener">' +
-            '<span>' + (currentLang === "pt" ? "Acessar repositório" : "View repository") + '</span> ↗' +
+          '<a class="repo-link" href="' + escapeHtml(tool.url) + '" target="_blank" rel="noopener noreferrer">' +
+            '<span>' + (currentLang === "pt" ? "Ver repositório" : "View repository") + '</span> [↗]' +
           '</a>' +
         '</div>';
 
-      toolGrid.appendChild(card);
+      toolCollection.appendChild(card);
     });
   }
 
-  // Filter events
+  // Filter & Search Events
   if (searchInput) {
     searchInput.addEventListener("input", function(e){
       searchQuery = e.target.value;
@@ -1093,14 +2084,67 @@
 
   originButtons.forEach(function(btn){
     btn.addEventListener("click", function(){
-      originButtons.forEach(function(b){ b.classList.remove("active"); });
+      originButtons.forEach(function(b){
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
       btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
       activeOrigin = btn.getAttribute("data-origin");
       renderTools();
     });
   });
 
-  function applyLang(lang){
+  // View Switcher (Grid vs List)
+  function applyView(view) {
+    currentView = view;
+    if (toolCollection) {
+      toolCollection.classList.remove("layout-grid", "layout-list");
+      toolCollection.classList.add(view === "list" ? "layout-list" : "layout-grid");
+    }
+    if (btnViewGrid) {
+      btnViewGrid.classList.toggle("active", view === "grid");
+      btnViewGrid.setAttribute("aria-pressed", view === "grid" ? "true" : "false");
+    }
+    if (btnViewList) {
+      btnViewList.classList.toggle("active", view === "list");
+      btnViewList.setAttribute("aria-pressed", view === "list" ? "true" : "false");
+    }
+    try { localStorage.setItem("aosrt-view", view); } catch(e){}
+  }
+
+  if (btnViewGrid) {
+    btnViewGrid.addEventListener("click", function(){ applyView("grid"); });
+  }
+  if (btnViewList) {
+    btnViewList.addEventListener("click", function(){ applyView("list"); });
+  }
+
+  // Theme Switcher (Light vs Dark)
+  function applyTheme(theme) {
+    currentTheme = theme;
+    document.documentElement.setAttribute("data-theme", theme);
+    var iconEl = document.getElementById("theme-icon");
+    if (iconEl) {
+      if (theme === "dark") {
+        // Moon icon
+        iconEl.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+      } else {
+        // Sun icon
+        iconEl.innerHTML = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
+      }
+    }
+    try { localStorage.setItem("aosrt-theme", theme); } catch(e){}
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", function(){
+      applyTheme(currentTheme === "dark" ? "light" : "dark");
+    });
+  }
+
+  // Language Switcher (EN vs PT)
+  function applyLang(lang) {
     currentLang = lang;
     document.documentElement.setAttribute("data-lang", lang);
     document.documentElement.setAttribute("lang", lang === "pt" ? "pt-BR" : "en");
@@ -1109,7 +2153,9 @@
       el.classList.toggle("active-lang", tags.indexOf(lang) !== -1);
     });
     document.querySelectorAll("[data-set-lang]").forEach(function(btn){
-      btn.classList.toggle("active", btn.getAttribute("data-set-lang") === lang);
+      var isActive = btn.getAttribute("data-set-lang") === lang;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
 
     if (searchInput) {
@@ -1118,6 +2164,7 @@
         : "Search by name, description, country or institution...";
     }
 
+    renderCategoryGrid();
     renderTools();
     try { localStorage.setItem("aosrt-lang", lang); } catch(e){}
   }
@@ -1126,10 +2173,37 @@
     btn.addEventListener("click", function(){ applyLang(btn.getAttribute("data-set-lang")); });
   });
 
-  var saved = null;
-  try { saved = localStorage.getItem("aosrt-lang"); } catch(e){}
-  var initial = saved || (navigator.language && navigator.language.toLowerCase().indexOf("pt") === 0 ? "pt" : "en");
-  applyLang(initial);
+  // Attempt dynamic fetch from data/tools.json with automatic fallback to embedded data
+  fetch('./data/tools.json')
+    .then(function(res){ return res.json(); })
+    .then(function(json){
+      if (json && json.tools && json.categories) {
+        CATEGORIES = json.categories;
+        TOOLS = json.tools;
+        renderCategoryGrid();
+        renderTools();
+      }
+    })
+    .catch(function(err){
+      // Using embedded window.AOSRT_DATA fallback for file:/// protocol
+    });
+
+  // Initialize from LocalStorage / System Preferences
+  var savedTheme = null;
+  try { savedTheme = localStorage.getItem("aosrt-theme"); } catch(e){}
+  if (!savedTheme) {
+    savedTheme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark" : "light";
+  }
+  applyTheme(savedTheme);
+
+  var savedView = null;
+  try { savedView = localStorage.getItem("aosrt-view"); } catch(e){}
+  applyView(savedView || "grid");
+
+  var savedLang = null;
+  try { savedLang = localStorage.getItem("aosrt-lang"); } catch(e){}
+  var initialLang = savedLang || (navigator.language && navigator.language.toLowerCase().indexOf("pt") === 0 ? "pt" : "en");
+  applyLang(initialLang);
 })();
 </script>
 

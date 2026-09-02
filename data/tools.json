@@ -1,0 +1,1148 @@
+{
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": "data-collection",
+      "nameEn": "Data Collection",
+      "namePt": "Coleta de Dados",
+      "order": 1
+    },
+    {
+      "id": "data-management",
+      "nameEn": "Data Management & Organization",
+      "namePt": "Gestão e Organização de Dados",
+      "order": 2
+    },
+    {
+      "id": "qualitative-analysis",
+      "nameEn": "Qualitative Analysis",
+      "namePt": "Análise Qualitativa",
+      "order": 3
+    },
+    {
+      "id": "quantitative-analysis",
+      "nameEn": "Quantitative & Statistical Analysis",
+      "namePt": "Análise Quantitativa e Estatística",
+      "order": 4
+    },
+    {
+      "id": "reproducibility",
+      "nameEn": "Reproducibility & Computational Environments",
+      "namePt": "Reprodutibilidade e Ambientes Computacionais",
+      "order": 5
+    },
+    {
+      "id": "writing-publishing",
+      "nameEn": "Writing & Publishing",
+      "namePt": "Escrita e Publicação",
+      "order": 6
+    },
+    {
+      "id": "reference-management",
+      "nameEn": "Reference & Citation Management",
+      "namePt": "Gestão de Referências e Citações",
+      "order": 7
+    },
+    {
+      "id": "collaboration",
+      "nameEn": "Collaboration & Project Management",
+      "namePt": "Colaboração e Gestão de Projetos",
+      "order": 8
+    },
+    {
+      "id": "literature-review",
+      "nameEn": "Literature Review & Synthesis",
+      "namePt": "Revisão de Literatura e Síntese",
+      "order": 9
+    },
+    {
+      "id": "ai-tooling",
+      "nameEn": "AI & Agentic Research Tooling",
+      "namePt": "Ferramentas de IA e Agentes para Pesquisa",
+      "order": 10
+    }
+  ],
+  "tools": [
+    {
+      "id": "kobotoolbox",
+      "name": "KoboToolbox",
+      "url": "https://github.com/kobotoolbox",
+      "categoryId": "data-collection",
+      "country": "US",
+      "maintainer": {
+        "name": "KoboToolbox Team",
+        "url": "https://github.com/kobotoolbox"
+      },
+      "institution": {
+        "name": "Harvard Humanitarian Initiative",
+        "url": "https://hhi.harvard.edu"
+      },
+      "description": {
+        "en": "Field data collection suite (forms, mobile app, server) built on ODK, widely used in humanitarian and social research.",
+        "pt": "Suíte de coleta de dados em campo (formulários, aplicativo móvel, servidor) construída sobre o ODK, amplamente usada em pesquisa social e humanitária."
+      },
+      "tags": [
+        "surveys",
+        "mobile-collection",
+        "fieldwork",
+        "odk"
+      ]
+    },
+    {
+      "id": "limesurvey",
+      "name": "LimeSurvey",
+      "url": "https://github.com/LimeSurvey/LimeSurvey",
+      "categoryId": "data-collection",
+      "country": "DE",
+      "maintainer": {
+        "name": "LimeSurvey Team",
+        "url": "https://github.com/LimeSurvey"
+      },
+      "institution": {
+        "name": "LimeSurvey GmbH",
+        "url": "https://www.limesurvey.org"
+      },
+      "description": {
+        "en": "Self-hosted online survey platform for complex questionnaires and research fieldwork.",
+        "pt": "Plataforma de questionários e surveys online autogerenciável para desenhos de pesquisa complexos e trabalho de campo."
+      },
+      "tags": [
+        "surveys",
+        "questionnaires",
+        "self-hosted"
+      ]
+    },
+    {
+      "id": "omnivoice",
+      "name": "OmniVoice",
+      "url": "https://github.com/k2-fsa/OmniVoice",
+      "categoryId": "data-collection",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "k2-fsa",
+        "url": "https://github.com/k2-fsa"
+      },
+      "institution": null,
+      "description": {
+        "en": "Open source voice-cloning text-to-speech system for 600+ languages, useful for producing multilingual audio instruments.",
+        "pt": "Sistema de código aberto de clonagem de voz e conversão texto-para-fala (TTS) em mais de 600 idiomas para elaboração de instrumentos de pesquisa em áudio."
+      },
+      "tags": [
+        "speech",
+        "tts",
+        "multilingual",
+        "audio"
+      ]
+    },
+    {
+      "id": "openrefine",
+      "name": "OpenRefine",
+      "url": "https://github.com/OpenRefine/OpenRefine",
+      "categoryId": "data-collection",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "OpenRefine Team",
+        "url": "https://github.com/OpenRefine"
+      },
+      "institution": {
+        "name": "Code for Science & Society",
+        "url": "https://codeforscience.org"
+      },
+      "description": {
+        "en": "Powerful desktop tool for cleaning, normalizing and transforming messy tabular data before analysis.",
+        "pt": "Ferramenta desktop de alto desempenho para limpeza, normalização e transformação de dados tabulares não estruturados."
+      },
+      "tags": [
+        "data-cleaning",
+        "wrangling",
+        "tabular-data"
+      ]
+    },
+    {
+      "id": "scrapy",
+      "name": "Scrapy",
+      "url": "https://github.com/scrapy/scrapy",
+      "categoryId": "data-collection",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "Scrapy Community",
+        "url": "https://github.com/scrapy"
+      },
+      "institution": {
+        "name": "Zyte",
+        "url": "https://www.zyte.com"
+      },
+      "description": {
+        "en": "Fast high-level web crawling and scraping framework for Python.",
+        "pt": "Framework em Python de alto desempenho para raspagem de dados web e extração estruturada de informação."
+      },
+      "tags": [
+        "web-scraping",
+        "python",
+        "crawling"
+      ]
+    },
+    {
+      "id": "transcritorio",
+      "name": "Transcritório",
+      "url": "https://github.com/antrologos/Transcritorio",
+      "categoryId": "data-collection",
+      "country": "BR",
+      "maintainer": {
+        "name": "Leonardo Nascimento (antrologos)",
+        "url": "https://github.com/antrologos"
+      },
+      "institution": {
+        "name": "IESP-UERJ / CERES",
+        "url": "https://iesp.uerj.br"
+      },
+      "description": {
+        "en": "Open source, fully-local desktop app for transcribing and diarizing interviews in Brazilian Portuguese, with direct NVivo export.",
+        "pt": "Aplicativo desktop open source e 100% local para transcrição e diarização de entrevistas em português brasileiro, com suporte a exportação direta para NVivo."
+      },
+      "tags": [
+        "transcription",
+        "audio",
+        "qualitative",
+        "local-first",
+        "brazil"
+      ]
+    },
+    {
+      "id": "vibe",
+      "name": "Vibe",
+      "url": "https://github.com/thewh1teagle/vibe",
+      "categoryId": "data-collection",
+      "country": "IL",
+      "maintainer": {
+        "name": "thewh1teagle",
+        "url": "https://github.com/thewh1teagle"
+      },
+      "institution": null,
+      "description": {
+        "en": "Local audio/video transcription app (Whisper, Nemotron, Parakeet) with speaker diarization and broad export formats.",
+        "pt": "Aplicativo para transcrição local de áudio e vídeo (Whisper, Nemotron, Parakeet), com diarização de falantes e múltiplos formatos de exportação."
+      },
+      "tags": [
+        "transcription",
+        "whisper",
+        "speech-to-text",
+        "local-first"
+      ]
+    },
+    {
+      "id": "voicestudio",
+      "name": "VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "categoryId": "data-collection",
+      "country": "IN",
+      "maintainer": {
+        "name": "debpalash",
+        "url": "https://github.com/debpalash"
+      },
+      "institution": null,
+      "description": {
+        "en": "Local speech toolkit (transcription, dictation, voice cloning) in 646 languages for confidential interview processing.",
+        "pt": "Kit de ferramentas de voz 100% local (transcrição, ditado, clonagem) em 646 idiomas para preservação de sigilo e privacidade em entrevistas."
+      },
+      "tags": [
+        "speech",
+        "transcription",
+        "multilingual",
+        "privacy"
+      ]
+    },
+    {
+      "id": "dataverse",
+      "name": "Dataverse",
+      "url": "https://github.com/IQSS/dataverse",
+      "categoryId": "data-management",
+      "country": "US",
+      "maintainer": {
+        "name": "Dataverse Community",
+        "url": "https://github.com/IQSS/dataverse"
+      },
+      "institution": {
+        "name": "Harvard IQSS",
+        "url": "https://www.iq.harvard.edu"
+      },
+      "description": {
+        "en": "Open source research data repository software used by institutional archives worldwide.",
+        "pt": "Software de repositório de dados de pesquisa de código aberto, amplamente adotado por acervos e instituições acadêmicas globais."
+      },
+      "tags": [
+        "repository",
+        "data-sharing",
+        "open-data",
+        "metadata"
+      ]
+    },
+    {
+      "id": "dvc",
+      "name": "DVC",
+      "url": "https://github.com/iterative/dvc",
+      "categoryId": "data-management",
+      "country": "US",
+      "maintainer": {
+        "name": "Iterative Team",
+        "url": "https://github.com/iterative"
+      },
+      "institution": {
+        "name": "Iterative",
+        "url": "https://iterative.ai"
+      },
+      "description": {
+        "en": "Data Version Control for datasets and machine learning pipelines, designed to work alongside Git.",
+        "pt": "Controle de versão para conjuntos de dados e pipelines de machine learning, projetado para operar perfeitamente integrado ao Git."
+      },
+      "tags": [
+        "version-control",
+        "data-pipelines",
+        "reproducibility",
+        "git"
+      ]
+    },
+    {
+      "id": "osf",
+      "name": "OSF (Open Science Framework)",
+      "url": "https://github.com/CenterForOpenScience/osf.io",
+      "categoryId": "data-management",
+      "country": "US",
+      "maintainer": {
+        "name": "Center for Open Science",
+        "url": "https://github.com/CenterForOpenScience"
+      },
+      "institution": {
+        "name": "Center for Open Science",
+        "url": "https://www.cos.io"
+      },
+      "description": {
+        "en": "Platform for research workflow management, preregistration, and open archiving.",
+        "pt": "Plataforma para gestão do ciclo de pesquisa, pré-registro e arquivamento aberto de dados e materiais científicos."
+      },
+      "tags": [
+        "open-science",
+        "preregistration",
+        "data-management"
+      ]
+    },
+    {
+      "id": "codebook-lab",
+      "name": "CodeBook Lab",
+      "url": "https://github.com/LorcanMcLaren/codebook-lab",
+      "categoryId": "qualitative-analysis",
+      "country": "IE",
+      "maintainer": {
+        "name": "Lorcan McLaren",
+        "url": "https://github.com/LorcanMcLaren"
+      },
+      "institution": null,
+      "description": {
+        "en": "Validation-first benchmarking environment for evaluating LLM codebook execution against human gold standards.",
+        "pt": "Ambiente de benchmarking para avaliar a execução de livros de códigos por LLMs contra padrões de referência humanos."
+      },
+      "tags": [
+        "qualitative",
+        "codebooks",
+        "llm-evaluation",
+        "caqdas"
+      ]
+    },
+    {
+      "id": "dicto",
+      "name": "Dicto",
+      "url": "https://github.com/dictoapp/dicto",
+      "categoryId": "qualitative-analysis",
+      "country": "FR",
+      "maintainer": {
+        "name": "dictoapp",
+        "url": "https://github.com/dictoapp"
+      },
+      "institution": null,
+      "description": {
+        "en": "CAQDAS for transcribing, annotating, tagging and publishing audio/video content and oral histories.",
+        "pt": "Ferramenta CAQDAS para transcrição, anotação, codificação e publicação de acervos de áudio e vídeo em pesquisa qualitativa."
+      },
+      "tags": [
+        "qualitative",
+        "audio-video",
+        "oral-history",
+        "annotation"
+      ]
+    },
+    {
+      "id": "llm4humanities",
+      "name": "LLM4Humanities",
+      "url": "https://github.com/flowersteam/LLM4Humanities",
+      "categoryId": "qualitative-analysis",
+      "country": "FR",
+      "maintainer": {
+        "name": "Inria Flowers Team",
+        "url": "https://github.com/flowersteam"
+      },
+      "institution": {
+        "name": "Inria",
+        "url": "https://www.inria.fr"
+      },
+      "description": {
+        "en": "Active learning web annotation platform for qualitative text coding and inter-rater reliability evaluation.",
+        "pt": "Plataforma de anotação web com active learning para codificação qualitativa de texto e avaliação de concordância inter-anotadores."
+      },
+      "tags": [
+        "qualitative",
+        "active-learning",
+        "annotation",
+        "humanities"
+      ]
+    },
+    {
+      "id": "localq",
+      "name": "LocalQ",
+      "url": "https://github.com/zimotti/LocalQ",
+      "categoryId": "qualitative-analysis",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "zimotti",
+        "url": "https://github.com/zimotti"
+      },
+      "institution": null,
+      "description": {
+        "en": "Fully local, privacy-compliant qualitative analysis dashboard powered by Ollama for confidential data.",
+        "pt": "Dashboard de análise qualitativa 100% local com suporte a Ollama, voltado para dados confidenciais e garantia de sigilo."
+      },
+      "tags": [
+        "qualitative",
+        "ollama",
+        "privacy",
+        "local-first"
+      ]
+    },
+    {
+      "id": "qualcoder",
+      "name": "QualCoder",
+      "url": "https://github.com/ccbogel/QualCoder",
+      "categoryId": "qualitative-analysis",
+      "country": "AU",
+      "maintainer": {
+        "name": "Colin Curtain (ccbogel)",
+        "url": "https://github.com/ccbogel"
+      },
+      "institution": null,
+      "description": {
+        "en": "Actively maintained CAQDAS for coding and analyzing text, images, audio, and video.",
+        "pt": "Software CAQDAS multiplataforma e ativamente mantido para codificação e análise de textos, imagens, áudios e vídeos."
+      },
+      "tags": [
+        "caqdas",
+        "qualitative",
+        "text-coding",
+        "multimedia"
+      ]
+    },
+    {
+      "id": "qualilab",
+      "name": "QualiLab",
+      "url": "https://github.com/LuizPF42/QualiLab",
+      "categoryId": "qualitative-analysis",
+      "country": "BR",
+      "maintainer": {
+        "name": "Luiz PF (LuizPF42)",
+        "url": "https://github.com/LuizPF42"
+      },
+      "institution": null,
+      "description": {
+        "en": "Open source tool for qualitative data analysis and text coding, developed in Brazil.",
+        "pt": "Ferramenta de código aberto desenvolvida no Brasil para análise e codificação de dados qualitativos em pesquisas acadêmicas."
+      },
+      "tags": [
+        "qualitative",
+        "text-coding",
+        "caqdas",
+        "brazil"
+      ]
+    },
+    {
+      "id": "quallmer",
+      "name": "quallmer",
+      "url": "https://github.com/quallmer/quallmer",
+      "categoryId": "qualitative-analysis",
+      "country": "DE",
+      "maintainer": {
+        "name": "quallmer",
+        "url": "https://github.com/quallmer"
+      },
+      "institution": null,
+      "description": {
+        "en": "R package for AI-assisted qualitative text coding, structured codebooks, and inter-coder reliability.",
+        "pt": "Pacote em R para codificação qualitativa assistida por IA, estruturação de livros de códigos e cálculo de confiabilidade inter-codificadores."
+      },
+      "tags": [
+        "r-package",
+        "qualitative",
+        "codebooks",
+        "reliability"
+      ]
+    },
+    {
+      "id": "taguette",
+      "name": "Taguette",
+      "url": "https://github.com/remram44/taguette",
+      "categoryId": "qualitative-analysis",
+      "country": "US",
+      "maintainer": {
+        "name": "Remi Rampin (remram44)",
+        "url": "https://github.com/remram44"
+      },
+      "institution": {
+        "name": "NYU",
+        "url": "https://www.nyu.edu"
+      },
+      "description": {
+        "en": "Free and open source qualitative text coding tool, accessible alternative to commercial QDA software.",
+        "pt": "Ferramenta livre e aberta para codificação qualitativa de texto, desenvolvida como alternativa aberta a softwares proprietários de QDA."
+      },
+      "tags": [
+        "qualitative",
+        "text-coding",
+        "open-science"
+      ]
+    },
+    {
+      "id": "tallmesh",
+      "name": "TALLMesh",
+      "url": "https://github.com/sdptn/TALLMesh_multi_page",
+      "categoryId": "qualitative-analysis",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "sdptn",
+        "url": "https://github.com/sdptn"
+      },
+      "institution": null,
+      "description": {
+        "en": "Qualitative analysis web dashboard operationalizing Braun & Clarke's reflexive thematic analysis with LLMs.",
+        "pt": "Dashboard web que operacionaliza os passos da análise temática reflexiva de Braun & Clarke com suporte a modelos de linguagem."
+      },
+      "tags": [
+        "qualitative",
+        "thematic-analysis",
+        "llm"
+      ]
+    },
+    {
+      "id": "jasp",
+      "name": "JASP",
+      "url": "https://github.com/jasp-stats/jasp-desktop",
+      "categoryId": "quantitative-analysis",
+      "country": "NL",
+      "maintainer": {
+        "name": "JASP Team",
+        "url": "https://github.com/jasp-stats"
+      },
+      "institution": {
+        "name": "University of Amsterdam",
+        "url": "https://www.uva.nl"
+      },
+      "description": {
+        "en": "Open source statistical software with a graphical interface, free alternative to SPSS for Bayesian and classical tests.",
+        "pt": "Software estatístico livre e de código aberto com interface gráfica amigável, alternativa ao SPSS para inferência clássica e bayesiana."
+      },
+      "tags": [
+        "statistics",
+        "bayesian",
+        "gui",
+        "open-science"
+      ]
+    },
+    {
+      "id": "pandas",
+      "name": "Pandas",
+      "url": "https://github.com/pandas-dev/pandas",
+      "categoryId": "quantitative-analysis",
+      "country": "US",
+      "maintainer": {
+        "name": "Pandas Development Team",
+        "url": "https://github.com/pandas-dev"
+      },
+      "institution": {
+        "name": "NumFOCUS",
+        "url": "https://numfocus.org"
+      },
+      "description": {
+        "en": "Foundational Python library for structured data manipulation, wrangling, and econometric analysis.",
+        "pt": "Biblioteca fundamental em Python para manipulação, limpeza e análise de dados estruturados e tabulares."
+      },
+      "tags": [
+        "python",
+        "data-analysis",
+        "tabular",
+        "dataframes"
+      ]
+    },
+    {
+      "id": "r-project",
+      "name": "R",
+      "url": "https://www.r-project.org/",
+      "categoryId": "quantitative-analysis",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "R Core Team",
+        "url": "https://www.r-project.org/contributors.html"
+      },
+      "institution": {
+        "name": "R Foundation",
+        "url": "https://www.r-project.org/foundation/"
+      },
+      "description": {
+        "en": "Free software environment for statistical computing, data analysis, and publication-ready graphics.",
+        "pt": "Ambiente de software livre para computação estatística, modelagem econométrica e geração de gráficos acadêmicos."
+      },
+      "tags": [
+        "statistics",
+        "econometrics",
+        "graphics",
+        "programming-language"
+      ]
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "url": "https://github.com/moby/moby",
+      "categoryId": "reproducibility",
+      "country": "US",
+      "maintainer": {
+        "name": "Docker / Moby Team",
+        "url": "https://github.com/moby"
+      },
+      "institution": {
+        "name": "Docker Inc.",
+        "url": "https://www.docker.com"
+      },
+      "description": {
+        "en": "Containerization platform to package reproducible research environments and dependencies.",
+        "pt": "Plataforma de conteinerização para empacotamento de ambientes computacionais reprodutíveis e controle de dependências."
+      },
+      "tags": [
+        "containers",
+        "reproducibility",
+        "devops",
+        "environment"
+      ]
+    },
+    {
+      "id": "jupyter",
+      "name": "Jupyter",
+      "url": "https://github.com/jupyter/notebook",
+      "categoryId": "reproducibility",
+      "country": "US",
+      "maintainer": {
+        "name": "Project Jupyter",
+        "url": "https://github.com/jupyter"
+      },
+      "institution": {
+        "name": "NumFOCUS",
+        "url": "https://numfocus.org"
+      },
+      "description": {
+        "en": "Interactive computing notebooks supporting Python, R, Julia, and dozens of other languages.",
+        "pt": "Ambiente de computação interativa que combina código executável, equações, narrativas e visualizações em notebooks."
+      },
+      "tags": [
+        "notebooks",
+        "interactive-computing",
+        "python",
+        "r",
+        "julia"
+      ]
+    },
+    {
+      "id": "renv",
+      "name": "renv",
+      "url": "https://github.com/rstudio/renv",
+      "categoryId": "reproducibility",
+      "country": "US",
+      "maintainer": {
+        "name": "Posit Team",
+        "url": "https://github.com/rstudio"
+      },
+      "institution": {
+        "name": "Posit",
+        "url": "https://posit.co"
+      },
+      "description": {
+        "en": "Dependency and project-local environment management for reproducible R projects.",
+        "pt": "Gerenciamento de dependências e isolamento de bibliotecas para projetos reproduzíveis em R."
+      },
+      "tags": [
+        "r",
+        "reproducibility",
+        "package-manager",
+        "environment"
+      ]
+    },
+    {
+      "id": "snakemake",
+      "name": "Snakemake",
+      "url": "https://github.com/snakemake/snakemake",
+      "categoryId": "reproducibility",
+      "country": "DE",
+      "maintainer": {
+        "name": "Johannes Köster",
+        "url": "https://github.com/johanneskoester"
+      },
+      "institution": {
+        "name": "University of Duisburg-Essen",
+        "url": "https://www.uni-due.de"
+      },
+      "description": {
+        "en": "Workflow management system for creating reproducible, scalable data analysis pipelines.",
+        "pt": "Sistema de gestão de fluxos de trabalho para criação de pipelines de análise de dados escaláveis e reprodutíveis."
+      },
+      "tags": [
+        "workflows",
+        "pipelines",
+        "reproducibility",
+        "python"
+      ]
+    },
+    {
+      "id": "pandoc",
+      "name": "Pandoc",
+      "url": "https://github.com/jgm/pandoc",
+      "categoryId": "writing-publishing",
+      "country": "US",
+      "maintainer": {
+        "name": "John MacFarlane (jgm)",
+        "url": "https://github.com/jgm"
+      },
+      "institution": {
+        "name": "UC Berkeley",
+        "url": "https://www.berkeley.edu"
+      },
+      "description": {
+        "en": "Universal document converter, the foundational engine behind markdown-to-PDF/HTML academic workflows.",
+        "pt": "Conversor universal de documentos, motor central para cadeias de escrita acadêmica baseadas em Markdown, LaTeX e HTML."
+      },
+      "tags": [
+        "document-converter",
+        "markdown",
+        "latex",
+        "publishing"
+      ]
+    },
+    {
+      "id": "quarto",
+      "name": "Quarto",
+      "url": "https://github.com/quarto-dev/quarto-cli",
+      "categoryId": "writing-publishing",
+      "country": "US",
+      "maintainer": {
+        "name": "Quarto Development Team",
+        "url": "https://github.com/quarto-dev"
+      },
+      "institution": {
+        "name": "Posit",
+        "url": "https://posit.co"
+      },
+      "description": {
+        "en": "Scientific and technical publishing system for reproducible articles, books, websites, and presentations.",
+        "pt": "Sistema de publicação técnica e científica de código aberto para artigos, livros, relatórios e apresentações reprodutíveis."
+      },
+      "tags": [
+        "publishing",
+        "reproducibility",
+        "r",
+        "python",
+        "markdown"
+      ]
+    },
+    {
+      "id": "tex-live",
+      "name": "TeX Live",
+      "url": "https://www.tug.org/texlive/",
+      "categoryId": "writing-publishing",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "TeX Users Group",
+        "url": "https://www.tug.org"
+      },
+      "institution": {
+        "name": "TeX Users Group",
+        "url": "https://www.tug.org"
+      },
+      "description": {
+        "en": "Comprehensive, free TeX/LaTeX distribution for publication-grade mathematical and academic typesetting.",
+        "pt": "Distribuição completa e livre de TeX e LaTeX para diagramação profissional de equações matemáticas e manuscritos acadêmicos."
+      },
+      "tags": [
+        "latex",
+        "tex",
+        "typesetting",
+        "academic-writing"
+      ]
+    },
+    {
+      "id": "beaver-zotero",
+      "name": "Beaver",
+      "url": "https://github.com/jlegewie/beaver-zotero",
+      "categoryId": "reference-management",
+      "country": "US",
+      "maintainer": {
+        "name": "Joscha Legewie (jlegewie)",
+        "url": "https://github.com/jlegewie"
+      },
+      "institution": null,
+      "description": {
+        "en": "AI research assistant plugin for Zotero with agentic library search, PDF chat, sentence-level citations, and MCP server support.",
+        "pt": "Plugin de assistente de pesquisa com IA para o Zotero com busca em toda a biblioteca, citações precisas por sentença e servidor MCP nativo."
+      },
+      "tags": [
+        "zotero",
+        "mcp",
+        "ai-assistant",
+        "citations",
+        "pdf-chat"
+      ]
+    },
+    {
+      "id": "zotero",
+      "name": "Zotero",
+      "url": "https://github.com/zotero/zotero",
+      "categoryId": "reference-management",
+      "country": "US",
+      "maintainer": {
+        "name": "Zotero Development Team",
+        "url": "https://github.com/zotero"
+      },
+      "institution": {
+        "name": "Corporation for Digital Scholarship",
+        "url": "https://digitalscholar.org"
+      },
+      "description": {
+        "en": "Free reference manager with browser integration, PDF annotation, and citation style management.",
+        "pt": "Gerenciador de referências e citações livre e aberto com extensão de navegador e integração com editores de texto."
+      },
+      "tags": [
+        "references",
+        "citations",
+        "bibliography",
+        "pdf-reader"
+      ]
+    },
+    {
+      "id": "gitlab-ce",
+      "name": "GitLab Community Edition",
+      "url": "https://gitlab.com/gitlab-org/gitlab",
+      "categoryId": "collaboration",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "GitLab Team",
+        "url": "https://gitlab.com/gitlab-org"
+      },
+      "institution": {
+        "name": "GitLab Inc.",
+        "url": "https://about.gitlab.com"
+      },
+      "description": {
+        "en": "Self-hostable Git platform with issue tracking, wikis, and CI/CD for research teams.",
+        "pt": "Plataforma Git autogerenciável completa com rastreamento de tarefas, documentação wiki e pipelines de CI/CD para equipes de pesquisa."
+      },
+      "tags": [
+        "git",
+        "collaboration",
+        "ci-cd",
+        "self-hosted"
+      ]
+    },
+    {
+      "id": "taiga",
+      "name": "Taiga",
+      "url": "https://github.com/taigaio/taiga-back",
+      "categoryId": "collaboration",
+      "country": "ES",
+      "maintainer": {
+        "name": "Taiga Team",
+        "url": "https://github.com/taigaio"
+      },
+      "institution": {
+        "name": "Kaleidos Open Source",
+        "url": "https://kaleidos.net"
+      },
+      "description": {
+        "en": "Open source project management tool (Kanban and Scrum) suited to collaborative research projects.",
+        "pt": "Ferramenta de gestão ágil de projetos (quadros Kanban e Scrum) desenhada para laboratórios e equipes de pesquisa colaborativa."
+      },
+      "tags": [
+        "project-management",
+        "kanban",
+        "scrum",
+        "agile"
+      ]
+    },
+    {
+      "id": "asreview",
+      "name": "ASReview",
+      "url": "https://github.com/asreview/asreview",
+      "categoryId": "literature-review",
+      "country": "NL",
+      "maintainer": {
+        "name": "ASReview LAB Community",
+        "url": "https://github.com/asreview"
+      },
+      "institution": {
+        "name": "Utrecht University",
+        "url": "https://www.uu.nl"
+      },
+      "description": {
+        "en": "Active-learning AI tool for systematic literature reviews and accelerated title/abstract screening.",
+        "pt": "Ferramenta com active learning para acelerar sistematicamente a triagem de títulos e resumos em revisões de literatura."
+      },
+      "tags": [
+        "literature-review",
+        "active-learning",
+        "systematic-review",
+        "screening"
+      ]
+    },
+    {
+      "id": "metafor",
+      "name": "metafor",
+      "url": "https://github.com/wviechtb/metafor",
+      "categoryId": "literature-review",
+      "country": "NL",
+      "maintainer": {
+        "name": "Wolfgang Viechtbauer (wviechtb)",
+        "url": "https://github.com/wviechtb"
+      },
+      "institution": {
+        "name": "Maastricht University",
+        "url": "https://www.maastrichtuniversity.nl"
+      },
+      "description": {
+        "en": "Comprehensive R package for conducting meta-analyses and evidence synthesis.",
+        "pt": "Pacote abrangente em R para condução de meta-análises estatísticas e síntese quantitativa de evidências."
+      },
+      "tags": [
+        "r-package",
+        "meta-analysis",
+        "evidence-synthesis",
+        "statistics"
+      ]
+    },
+    {
+      "id": "autolabel",
+      "name": "autolabel",
+      "url": "https://github.com/refuel-ai/autolabel",
+      "categoryId": "ai-tooling",
+      "country": "US",
+      "maintainer": {
+        "name": "Refuel AI",
+        "url": "https://github.com/refuel-ai"
+      },
+      "institution": {
+        "name": "Refuel AI",
+        "url": "https://refuel.ai"
+      },
+      "description": {
+        "en": "Python library for declarative dataset labeling with LLMs, confidence scoring, and cost estimation.",
+        "pt": "Biblioteca Python para anotação e rotulagem declarativa de datasets com LLMs, cálculo de confiança e controle de custos."
+      },
+      "tags": [
+        "ai",
+        "labeling",
+        "llm",
+        "data-annotation"
+      ]
+    },
+    {
+      "id": "cleanlab",
+      "name": "Cleanlab",
+      "url": "https://github.com/cleanlab/cleanlab",
+      "categoryId": "ai-tooling",
+      "country": "US",
+      "maintainer": {
+        "name": "Cleanlab Community",
+        "url": "https://github.com/cleanlab"
+      },
+      "institution": {
+        "name": "Cleanlab Inc.",
+        "url": "https://cleanlab.ai"
+      },
+      "description": {
+        "en": "Data-centric AI framework for detecting dataset errors and evaluating LLM response confidence.",
+        "pt": "Framework de IA centrada em dados para detecção de anomalias e erros em datasets e avaliação de confiabilidade de LLMs."
+      },
+      "tags": [
+        "data-centric-ai",
+        "data-quality",
+        "machine-learning"
+      ]
+    },
+    {
+      "id": "daaf",
+      "name": "DAAF",
+      "url": "https://github.com/DAAF-Contribution-Community/daaf",
+      "categoryId": "ai-tooling",
+      "country": "BR",
+      "maintainer": {
+        "name": "DAAF Contribution Community",
+        "url": "https://github.com/DAAF-Contribution-Community"
+      },
+      "institution": null,
+      "description": {
+        "en": "Toolkit that turns Claude Code into an auditable, reproducible quantitative research engine.",
+        "pt": "Kit de ferramentas de código aberto que transforma o Claude Code em um motor de pesquisa quantitativa auditável e reproduzível."
+      },
+      "tags": [
+        "claude-code",
+        "research-engine",
+        "agentic-ai",
+        "reproducibility",
+        "brazil"
+      ]
+    },
+    {
+      "id": "deepseek-harness",
+      "name": "DeepSeek Harness",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "categoryId": "ai-tooling",
+      "country": "CN",
+      "maintainer": {
+        "name": "DeepSeek AI",
+        "url": "https://github.com/deepseek-ai"
+      },
+      "institution": {
+        "name": "DeepSeek",
+        "url": "https://www.deepseek.com"
+      },
+      "description": {
+        "en": "Plugin-based AI agent harness to automate and orchestrate research workflows.",
+        "pt": "Harness de agentes de IA modular para automação e orquestração de fluxos complexos de pesquisa."
+      },
+      "tags": [
+        "agents",
+        "deepseek",
+        "automation",
+        "orchestration"
+      ]
+    },
+    {
+      "id": "dspy",
+      "name": "DSPy",
+      "url": "https://github.com/stanfordnlp/dspy",
+      "categoryId": "ai-tooling",
+      "country": "US",
+      "maintainer": {
+        "name": "Stanford NLP",
+        "url": "https://github.com/stanfordnlp"
+      },
+      "institution": {
+        "name": "Stanford University",
+        "url": "https://nlp.stanford.edu"
+      },
+      "description": {
+        "en": "Declarative framework for optimizing LLM prompts and few-shot examples against validation metrics.",
+        "pt": "Framework declarativo para otimização algorítmica de prompts e exemplos few-shot de LLMs com base em métricas de validação."
+      },
+      "tags": [
+        "prompt-optimization",
+        "dspy",
+        "llm",
+        "nlp"
+      ]
+    },
+    {
+      "id": "instructor",
+      "name": "Instructor",
+      "url": "https://github.com/jxnl/instructor",
+      "categoryId": "ai-tooling",
+      "country": "US",
+      "maintainer": {
+        "name": "Jason Liu (jxnl)",
+        "url": "https://github.com/jxnl"
+      },
+      "institution": null,
+      "description": {
+        "en": "Python library enforcing structured JSON Schema output validation via Pydantic over LLMs.",
+        "pt": "Biblioteca Python para extração e validação de saídas estruturadas em JSON Schema via Pydantic em modelos de linguagem."
+      },
+      "tags": [
+        "structured-outputs",
+        "pydantic",
+        "python",
+        "json-schema"
+      ]
+    },
+    {
+      "id": "open-notebook",
+      "name": "Open Notebook",
+      "url": "https://github.com/lfnovo/open-notebook",
+      "categoryId": "ai-tooling",
+      "country": "BR",
+      "maintainer": {
+        "name": "Lucas Novo (lfnovo)",
+        "url": "https://github.com/lfnovo"
+      },
+      "institution": null,
+      "description": {
+        "en": "Open source alternative to Google's NotebookLM, with FastAPI/SurrealDB backend and Next.js frontend.",
+        "pt": "Alternativa de código aberto ao NotebookLM do Google, desenvolvida no Brasil com backend em FastAPI/SurrealDB e interface Next.js."
+      },
+      "tags": [
+        "notebooklm-alternative",
+        "rag",
+        "knowledge-base",
+        "brazil"
+      ]
+    },
+    {
+      "id": "outlines",
+      "name": "Outlines",
+      "url": "https://github.com/dottxt-ai/outlines",
+      "categoryId": "ai-tooling",
+      "country": "US",
+      "maintainer": {
+        "name": ".txt Team",
+        "url": "https://github.com/dottxt-ai"
+      },
+      "institution": {
+        "name": ".txt",
+        "url": "https://dottxt.co"
+      },
+      "description": {
+        "en": "Structured text generation library enforcing regex and JSON schemas via token logit masking.",
+        "pt": "Biblioteca de geração estruturada que garante gramáticas regulares e esquemas JSON via mascaramento de logits em tempo de inferência."
+      },
+      "tags": [
+        "structured-generation",
+        "logits-masking",
+        "json-schema",
+        "llm"
+      ]
+    },
+    {
+      "id": "setfit",
+      "name": "SetFit",
+      "url": "https://github.com/huggingface/setfit",
+      "categoryId": "ai-tooling",
+      "country": "FR",
+      "maintainer": {
+        "name": "Hugging Face Team",
+        "url": "https://github.com/huggingface"
+      },
+      "institution": {
+        "name": "Hugging Face / Intel Labs",
+        "url": "https://huggingface.co"
+      },
+      "description": {
+        "en": "Prompt-free framework for few-shot fine-tuning of sentence transformers on small labeled datasets.",
+        "pt": "Framework para fine-tuning eficiente de Sentence Transformers com poucas amostras rotuladas, sem necessidade de prompts."
+      },
+      "tags": [
+        "few-shot",
+        "sentence-transformers",
+        "classification",
+        "nlp"
+      ]
+    }
+  ]
+}

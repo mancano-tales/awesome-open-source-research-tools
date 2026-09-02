@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+echo "[GOVERNANCE] Executando validacao de schema e paridade SSOT..."
+npm test || {
+  echo ""
+  echo "[ERRO DE GOVERNANCA] Commit bloqueado."
+  echo "Os arquivos README ou data/tools.json falharam na validacao de paridade."
+  echo "Para corrigir, execute: npm run build-readmes e adicione os arquivos ao commit."
+  exit 1
+}

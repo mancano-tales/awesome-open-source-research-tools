@@ -13,4 +13,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npx awesome-lint
+      - name: Validate JSON Schema and Data Integrity
+        run: node scripts/validate-data.js
+      - name: Validate SSOT Parity between JSON and READMEs
+        run: node scripts/validate-parity.js
+      - name: Run Official Awesome Lint
+        run: npx awesome-lint
