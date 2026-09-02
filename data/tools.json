@@ -189,7 +189,7 @@
       "categoryId": "data-collection",
       "country": "BR",
       "maintainer": {
-        "name": "Leonardo Nascimento (antrologos)",
+        "name": "Rogério Jerônimo Barbosa (antrologos)",
         "url": "https://github.com/antrologos"
       },
       "institution": {
@@ -446,7 +446,7 @@
       "categoryId": "qualitative-analysis",
       "country": "BR",
       "maintainer": {
-        "name": "Luiz PF (LuizPF42)",
+        "name": "Luiz Paulo Farias (LuizPF42)",
         "url": "https://github.com/LuizPF42"
       },
       "institution": null,
@@ -790,7 +790,10 @@
         "name": "Joscha Legewie (jlegewie)",
         "url": "https://github.com/jlegewie"
       },
-      "institution": null,
+      "institution": {
+        "name": "Harvard University / Department of Sociology",
+        "url": "https://sociology.fas.harvard.edu"
+      },
       "description": {
         "en": "AI research assistant plugin for Zotero with agentic library search, PDF chat, sentence-level citations, and MCP server support.",
         "pt": "Plugin de assistente de pesquisa com IA para o Zotero com busca em toda a biblioteca, citações precisas por sentença e servidor MCP nativo."
@@ -984,7 +987,7 @@
       "categoryId": "ai-tooling",
       "country": "BR",
       "maintainer": {
-        "name": "DAAF Contribution Community",
+        "name": "DAAF Contribution Community / Tales Mançano",
         "url": "https://github.com/DAAF-Contribution-Community"
       },
       "institution": null,

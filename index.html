@@ -7,71 +7,97 @@
 <meta name="description" content="A curated, discipline-agnostic list of open source software for every stage of a rigorous research project.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* --- PALETA EDITORIAL ACADÊMICA (ESPELHO DO SITE PRINCIPAL / QUARTO & QUALILAB) --- */
   :root {
-    --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
-    --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --mono: 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
 
-    /* Light Theme (Paper & Ink, WCAG 2.1 AAA) */
-    --bg: #F7F2E8;
-    --bg-alt: #EFE8DA;
+    /* Light Theme (Paper & Ink) */
+    --paper: #F7F2E8;
+    --paper-shade: #EFE9DC;
+    --paper-deep: #E5DDCB;
     --card: #FFFFFF;
     --card-hover: #FCFBF8;
-    --text: #1F1B17;
-    --text-muted: #4B463E;
-    --border: #DDD5C7;
-    --border-soft: #EAE3D6;
-    --accent: #06488A;
-    --accent-hover: #033261;
-    --accent-soft: rgba(6, 72, 138, 0.08);
-    --accent-text: #06488A;
+    
+    --ink: #1F1B17;
+    --ink-soft: #4A4138;
+    --ink-mute: #8B8074;
+    --ink-faint: #B5AC9F;
+
+    --accent: #0366D6;
+    --accent-deep: #024C9E;
+    --accent-soft: #4A90E2;
+    --accent-tint: #E1EDFB;
+
+    --rule: rgba(31, 27, 23, 0.20);
+    --rule-soft: rgba(31, 27, 23, 0.11);
+
+    /* Destaque Brasil (Harmonizado com a paleta acadêmica) */
     --tag-br-bg: rgba(12, 120, 51, 0.08);
-    --tag-br-border: rgba(12, 120, 51, 0.35);
+    --tag-br-border: rgba(12, 120, 51, 0.30);
     --tag-br-text: #086128;
-    --shadow: 0 1px 3px rgba(31, 27, 23, 0.05), 0 8px 24px rgba(31, 27, 23, 0.04);
-    --radius: 10px;
+
+    --shadow-sm: 0 1px 3px rgba(31, 27, 23, 0.05);
+    --shadow-md: 0 4px 16px rgba(31, 27, 23, 0.06);
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
   }
 
   :root[data-theme="dark"] {
-    /* Dark Theme (Slate/Zinc Neutro, WCAG 2.1 AAA) */
-    --bg: #141210;
-    --bg-alt: #1D1A17;
-    --card: #1F1B17;
-    --card-hover: #26221D;
-    --text: #F7F2E8;
-    --text-muted: #D1C8B8;
-    --border: #3A342D;
-    --border-soft: #2B2620;
+    /* Dark Theme (Noite Acadêmica) */
+    --paper: #1B1814;
+    --paper-shade: #221E18;
+    --paper-deep: #2A2520;
+    --card: #221E18;
+    --card-hover: #2B2620;
+
+    --ink: #EDE4D3;
+    --ink-soft: #C9BFAB;
+    --ink-mute: #8A7F6E;
+    --ink-faint: #5A5246;
+
     --accent: #58A6FF;
-    --accent-hover: #79B8FF;
-    --accent-soft: rgba(88, 166, 255, 0.12);
-    --accent-text: #58A6FF;
+    --accent-deep: #79B8FF;
+    --accent-soft: #388BFD;
+    --accent-tint: #162D4A;
+
+    --rule: rgba(237, 228, 211, 0.22);
+    --rule-soft: rgba(237, 228, 211, 0.11);
+
     --tag-br-bg: rgba(74, 222, 128, 0.12);
-    --tag-br-border: rgba(74, 222, 128, 0.40);
+    --tag-br-border: rgba(74, 222, 128, 0.35);
     --tag-br-text: #68E094;
-    --shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.4);
   }
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]):not([data-theme="dark"]) {
-      --bg: #141210;
-      --bg-alt: #1D1A17;
-      --card: #1F1B17;
-      --card-hover: #26221D;
-      --text: #F7F2E8;
-      --text-muted: #D1C8B8;
-      --border: #3A342D;
-      --border-soft: #2B2620;
+      --paper: #1B1814;
+      --paper-shade: #221E18;
+      --paper-deep: #2A2520;
+      --card: #221E18;
+      --card-hover: #2B2620;
+      --ink: #EDE4D3;
+      --ink-soft: #C9BFAB;
+      --ink-mute: #8A7F6E;
+      --ink-faint: #5A5246;
       --accent: #58A6FF;
-      --accent-hover: #79B8FF;
-      --accent-soft: rgba(88, 166, 255, 0.12);
-      --accent-text: #58A6FF;
+      --accent-deep: #79B8FF;
+      --accent-soft: #388BFD;
+      --accent-tint: #162D4A;
+      --rule: rgba(237, 228, 211, 0.22);
+      --rule-soft: rgba(237, 228, 211, 0.11);
       --tag-br-bg: rgba(74, 222, 128, 0.12);
-      --tag-br-border: rgba(74, 222, 128, 0.40);
+      --tag-br-border: rgba(74, 222, 128, 0.35);
       --tag-br-text: #68E094;
-      --shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.4);
     }
   }
 
@@ -79,9 +105,9 @@
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
     line-height: 1.6;
     font-size: 0.98rem;
     -webkit-font-smoothing: antialiased;
@@ -97,81 +123,79 @@
     color: #fff;
     padding: 10px 18px;
     z-index: 1000;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     font-weight: 700;
     text-decoration: none;
   }
-  .skip-link:focus {
-    top: 16px;
-  }
+  .skip-link:focus { top: 16px; }
 
   :focus-visible {
     outline: 3px solid var(--accent);
     outline-offset: 2px;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
   }
 
-  a { color: var(--accent); text-decoration: none; transition: color 0.15s ease; }
-  a:hover { color: var(--accent-hover); text-decoration: underline; }
+  a { color: var(--accent-deep); text-decoration: none; transition: color 0.15s ease; }
+  a:hover { color: var(--accent); text-decoration: underline; }
 
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
 
-  /* Header & Navigation */
+  /* Header & Navigation (Quarto Style) */
   header.site {
-    position: sticky; top: 0; z-index: 30;
-    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    position: sticky; top: 0; z-index: 40;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--rule-soft);
   }
   .nav {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 14px 0; gap: 16px;
+    padding: 12px 0; gap: 16px;
   }
   .brand {
     display: flex; align-items: center; gap: 10px;
-    font-family: var(--font-serif);
-    font-size: 1.15rem; font-weight: 700;
-    text-decoration: none; color: var(--text);
-    letter-spacing: -0.01em;
+    font-family: var(--serif);
+    font-size: 1.18rem; font-weight: 700;
+    text-decoration: none; color: var(--ink);
+    letter-spacing: -0.015em;
   }
   .brand-icon {
-    width: 22px; height: 22px; color: var(--accent);
+    width: 24px; height: 24px; color: var(--accent);
     flex-shrink: 0;
   }
   .nav-links {
     display: flex; align-items: center; gap: 18px;
     font-size: 0.88rem; font-weight: 500; flex-wrap: wrap;
   }
-  .nav-links a { color: var(--text-muted); text-decoration: none; }
-  .nav-links a:hover { color: var(--text); }
+  .nav-links a { color: var(--ink-soft); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
+  .nav-links a:hover { color: var(--ink); text-decoration: none; }
 
   .header-actions {
     display: flex; align-items: center; gap: 8px;
   }
-  .theme-toggle-btn, .lang-btn {
-    border: 1px solid var(--border);
+  .theme-toggle-btn {
+    border: 1px solid var(--rule);
     background: var(--card);
-    color: var(--text);
+    color: var(--ink);
     padding: 6px 10px;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
-    font-family: var(--font-sans);
+    font-family: var(--sans);
     font-size: 0.82rem;
     font-weight: 600;
-    display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+    display: inline-flex; align-items: center; justify-content: center;
     transition: all 0.15s ease;
   }
-  .theme-toggle-btn:hover, .lang-btn:hover {
+  .theme-toggle-btn:hover {
     border-color: var(--accent);
-    background: var(--bg-alt);
+    background: var(--paper-shade);
   }
   .lang-toggle {
-    display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    display: inline-flex; border: 1px solid var(--rule); border-radius: var(--radius-sm); overflow: hidden;
   }
   .lang-toggle button {
-    border: 0; background: transparent; color: var(--text-muted);
-    padding: 6px 10px; cursor: pointer; font: inherit; font-size: 0.80rem; font-weight: 600;
+    border: 0; background: transparent; color: var(--ink-soft);
+    padding: 5px 10px; cursor: pointer; font: inherit; font-size: 0.80rem; font-weight: 600;
   }
   .lang-toggle button.active {
     background: var(--accent); color: #fff;
@@ -182,68 +206,70 @@
 
   /* Hero Section */
   main { padding-bottom: 64px; }
-  .hero { padding: 56px 0 36px; text-align: left; }
+  .hero { padding: 52px 0 32px; text-align: left; }
   .eyebrow {
-    display: inline-block; font-size: 0.76rem; font-weight: 700;
+    display: inline-block; font-size: 0.74rem; font-weight: 700;
     letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--accent-text); background: var(--accent-soft);
+    color: var(--accent-deep); background: var(--accent-tint);
     padding: 4px 12px; border-radius: 999px; margin-bottom: 16px;
-    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border: 1px solid var(--rule-soft);
+  }
+  :root[data-theme="dark"] .eyebrow {
+    color: var(--accent);
   }
   h1 {
-    font-family: var(--font-serif);
+    font-family: var(--serif);
     font-size: clamp(2.0rem, 4.2vw, 2.85rem);
     line-height: 1.15; margin: 0 0 16px;
     letter-spacing: -0.02em; font-weight: 700;
   }
   .lede {
-    font-size: 1.12rem; color: var(--text-muted);
-    max-width: 66ch; margin: 0 0 28px; line-height: 1.65;
+    font-size: 1.12rem; color: var(--ink-soft);
+    max-width: 68ch; margin: 0 0 28px; line-height: 1.65;
   }
   .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
   .btn {
     display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
-    padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 0.92rem;
-    border: 1px solid var(--border); transition: all 0.15s ease; cursor: pointer;
+    padding: 10px 18px; border-radius: var(--radius-md); font-weight: 600; font-size: 0.92rem;
+    border: 1px solid var(--rule); transition: all 0.15s ease; cursor: pointer;
+    font-family: var(--sans);
   }
   .btn:hover { transform: translateY(-1px); text-decoration: none; }
   .btn-primary {
     background: var(--accent); color: #fff; border-color: var(--accent);
   }
-  :root[data-theme="dark"] .btn-primary {
-    color: #12100E;
-  }
-  .btn-ghost { background: var(--card); color: var(--text); }
+  :root[data-theme="dark"] .btn-primary { color: #12100E; }
+  .btn-ghost { background: var(--card); color: var(--ink); }
 
-  .stats { display: flex; gap: 32px; flex-wrap: wrap; border-top: 1px solid var(--border-soft); padding-top: 24px; }
-  .stat b { display: block; font-family: var(--font-serif); font-size: 1.7rem; color: var(--text); font-weight: 700; }
-  .stat span { font-size: 0.84rem; color: var(--text-muted); }
+  .stats { display: flex; gap: 32px; flex-wrap: wrap; border-top: 1px solid var(--rule-soft); padding-top: 24px; }
+  .stat b { display: block; font-family: var(--serif); font-size: 1.7rem; color: var(--ink); font-weight: 700; }
+  .stat span { font-size: 0.84rem; color: var(--ink-mute); }
 
-  section { padding: 48px 0; border-top: 1px solid var(--border); }
+  section { padding: 48px 0; border-top: 1px solid var(--rule-soft); }
   h2 {
-    font-family: var(--font-serif);
+    font-family: var(--serif);
     font-size: 1.65rem; margin: 0 0 10px;
     letter-spacing: -0.015em; font-weight: 700;
   }
-  .section-intro { color: var(--text-muted); max-width: 70ch; margin: 0 0 28px; line-height: 1.6; }
+  .section-intro { color: var(--ink-soft); max-width: 72ch; margin: 0 0 24px; line-height: 1.6; }
 
-  /* Directory Controls & Layout */
+  /* Directory Controls Toolbar */
   .dir-header {
-    display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;
-    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 18px 20px; box-shadow: var(--shadow);
+    display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px;
+    background: var(--card); border: 1px solid var(--rule-soft); border-radius: var(--radius-lg);
+    padding: 18px 20px; box-shadow: var(--shadow-sm);
   }
   .search-input-wrap { position: relative; width: 100%; }
   .search-input {
     width: 100%; padding: 11px 14px 11px 40px; font-size: 0.95rem;
-    border: 1px solid var(--border); border-radius: 6px;
-    background: var(--bg); color: var(--text); font-family: var(--font-sans);
+    border: 1px solid var(--rule); border-radius: var(--radius-sm);
+    background: var(--paper); color: var(--ink); font-family: var(--sans);
     transition: border-color 0.15s ease, outline 0.15s ease;
   }
   .search-input:focus { outline: 2px solid var(--accent); border-color: transparent; }
   .search-icon-svg {
     position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
-    width: 16px; height: 16px; color: var(--text-muted); pointer-events: none;
+    width: 16px; height: 16px; color: var(--ink-mute); pointer-events: none;
   }
 
   .filter-bar {
@@ -251,11 +277,11 @@
   }
   .origin-filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
   .filter-pill {
-    border: 1px solid var(--border); background: var(--bg); color: var(--text-muted);
-    border-radius: 6px; padding: 5px 12px; font-size: 0.80rem; font-weight: 600; cursor: pointer;
-    transition: all 0.15s ease; font-family: var(--font-sans);
+    border: 1px solid var(--rule); background: var(--paper); color: var(--ink-soft);
+    border-radius: var(--radius-sm); padding: 5px 12px; font-size: 0.80rem; font-weight: 600; cursor: pointer;
+    transition: all 0.15s ease; font-family: var(--sans);
   }
-  .filter-pill:hover { color: var(--text); border-color: var(--accent); }
+  .filter-pill:hover { color: var(--ink); border-color: var(--accent); }
   .filter-pill.active {
     background: var(--accent); color: #fff; border-color: var(--accent);
   }
@@ -264,18 +290,18 @@
   .filter-pill.pill-br.active { background: #086128; border-color: #086128; color: #fff; }
 
   .controls-right {
-    display: flex; align-items: center; gap: 10px;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
   }
   .cat-select {
-    padding: 6px 12px; border: 1px solid var(--border); border-radius: 6px;
-    background: var(--bg); color: var(--text); font-size: 0.84rem; font-family: var(--font-sans);
+    padding: 6px 12px; border: 1px solid var(--rule); border-radius: var(--radius-sm);
+    background: var(--paper); color: var(--ink); font-size: 0.84rem; font-family: var(--sans);
   }
 
   .view-toggle-group {
-    display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    display: inline-flex; border: 1px solid var(--rule); border-radius: var(--radius-sm); overflow: hidden;
   }
   .btn-view {
-    border: 0; background: var(--bg); color: var(--text-muted);
+    border: 0; background: var(--paper); color: var(--ink-soft);
     padding: 6px 10px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
     transition: all 0.15s ease;
   }
@@ -285,147 +311,214 @@
   :root[data-theme="dark"] .btn-view.active { color: #12100E; }
   .btn-view svg { width: 15px; height: 15px; }
 
+  /* Export Dropdown */
+  .export-dropdown {
+    position: relative; display: inline-block;
+  }
+  .btn-export {
+    border: 1px solid var(--rule); background: var(--paper); color: var(--ink-soft);
+    padding: 6px 12px; border-radius: var(--radius-sm); font-size: 0.82rem; font-weight: 600;
+    cursor: pointer; display: inline-flex; align-items: center; gap: 6px; font-family: var(--sans);
+    transition: all 0.15s ease;
+  }
+  .btn-export:hover { border-color: var(--accent); color: var(--ink); background: var(--paper-shade); }
+  .export-menu {
+    position: absolute; top: calc(100% + 4px); right: 0;
+    background: var(--card); border: 1px solid var(--rule); border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md); min-width: 210px; z-index: 60; display: none; flex-direction: column;
+    padding: 6px 0;
+  }
+  .export-menu.show { display: flex; }
+  .export-item {
+    display: flex; align-items: center; gap: 8px; padding: 8px 14px; font-size: 0.82rem; font-weight: 500;
+    color: var(--ink); background: transparent; border: none; width: 100%; text-align: left; cursor: pointer;
+    font-family: var(--sans); transition: background 0.12s ease;
+  }
+  .export-item:hover { background: var(--accent-tint); color: var(--accent-deep); }
+  .export-divider { height: 1px; background: var(--rule-soft); margin: 4px 0; }
+
   .results-meta {
     display: flex; align-items: center; justify-content: space-between;
-    font-size: 0.84rem; color: var(--text-muted); margin-bottom: 16px;
+    font-size: 0.84rem; color: var(--ink-mute); margin-bottom: 16px;
   }
 
   /* Tool Cards (Grid View) */
   .tool-collection.layout-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(295px, 1fr)); gap: 14px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px;
   }
   .tool-card {
-    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 18px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column;
+    background: var(--card); border: 1px solid var(--rule-soft); border-radius: var(--radius-lg);
+    padding: 20px 22px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
     justify-content: space-between; transition: transform 0.12s ease, border-color 0.15s ease, background 0.15s ease;
   }
   .tool-card:hover {
-    transform: translateY(-2px); border-color: var(--accent); background: var(--card-hover);
+    transform: translateY(-2px); border-color: var(--accent-soft); background: var(--card-hover);
   }
   .tool-card-header {
     display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 8px;
   }
   .tool-name {
-    font-family: var(--font-serif);
-    font-size: 1.15rem; font-weight: 700; margin: 0; letter-spacing: -0.01em;
+    font-family: var(--serif);
+    font-size: 1.18rem; font-weight: 700; margin: 0; letter-spacing: -0.01em;
   }
-  .tool-name a { color: var(--text); text-decoration: none; }
+  .tool-name a { color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
   .tool-name a:hover { color: var(--accent); text-decoration: underline; }
 
   .badges-row {
     display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 12px;
   }
   .cat-tag {
-    font-size: 0.72rem; font-weight: 600; padding: 2px 8px; border-radius: 4px;
-    background: var(--accent-soft); color: var(--accent-text);
+    font-size: 0.72rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm);
+    background: var(--accent-tint); color: var(--accent-deep);
   }
+  :root[data-theme="dark"] .cat-tag { color: var(--accent); }
+
   .country-tag {
     display: inline-flex; align-items: center; gap: 5px;
-    font-size: 0.74rem; padding: 2px 7px; border-radius: 4px;
-    background: var(--bg-alt); color: var(--text); border: 1px solid var(--border);
+    font-size: 0.74rem; padding: 2px 7px; border-radius: var(--radius-sm);
+    background: var(--paper-shade); color: var(--ink); border: 1px solid var(--rule-soft);
     line-height: 1.2; font-weight: 500;
   }
   .country-code {
-    font-family: var(--font-mono); font-weight: 700; font-size: 0.68rem; letter-spacing: 0.05em; opacity: 0.85;
+    font-family: var(--mono); font-weight: 700; font-size: 0.68rem; letter-spacing: 0.05em; opacity: 0.85;
   }
   .country-tag.country-br {
     background: var(--tag-br-bg); color: var(--tag-br-text); border-color: var(--tag-br-border); font-weight: 700;
   }
 
   .entity-link {
-    font-size: 0.74rem; color: var(--text-muted); text-decoration: none;
-    border: 1px dashed var(--border); padding: 1px 6px; border-radius: 4px;
-    display: inline-flex; align-items: center; gap: 3px;
+    font-size: 0.74rem; color: var(--ink-soft); text-decoration: none;
+    border: 1px dashed var(--rule); padding: 1px 6px; border-radius: var(--radius-sm);
+    display: inline-flex; align-items: center; gap: 4px;
   }
   .entity-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
 
   .tool-desc {
-    font-size: 0.88rem; color: var(--text-muted); margin: 0 0 14px; line-height: 1.55; flex-grow: 1;
+    font-size: 0.88rem; color: var(--ink-soft); margin: 0 0 14px; line-height: 1.55; flex-grow: 1;
   }
   .tool-footer {
     display: flex; align-items: center; justify-content: space-between;
-    padding-top: 10px; border-top: 1px solid var(--border-soft); font-size: 0.82rem;
+    padding-top: 12px; border-top: 1px solid var(--rule-soft); font-size: 0.82rem;
   }
   .repo-link {
-    font-weight: 600; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
+    font-weight: 600; color: var(--accent-deep); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
   }
+  :root[data-theme="dark"] .repo-link { color: var(--accent); }
   .repo-link:hover { text-decoration: underline; }
 
-  /* Tool Cards (List View) */
-  .tool-collection.layout-list {
-    display: flex; flex-direction: column; gap: 8px;
+  /* --- DATA TABLE (TABELA REAL ACADÊMICA) --- */
+  .table-responsive {
+    width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    background: var(--card); border: 1px solid var(--rule-soft); border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
   }
-  .tool-collection.layout-list .tool-card {
-    display: grid;
-    grid-template-columns: 240px 150px 180px 1fr auto;
-    align-items: center; padding: 12px 18px; gap: 16px;
+  .data-table {
+    width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem;
   }
-  .tool-collection.layout-list .tool-card-header { margin-bottom: 0; }
-  .tool-collection.layout-list .badges-row { margin-bottom: 0; }
-  .tool-collection.layout-list .tool-desc {
-    margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  .data-table thead th {
+    background: var(--paper-shade); color: var(--ink); font-family: var(--sans);
+    font-weight: 700; font-size: 0.76rem; letter-spacing: 0.05em; text-transform: uppercase;
+    padding: 12px 16px; border-bottom: 2px solid var(--rule); white-space: nowrap;
+    position: sticky; top: 0; z-index: 1;
   }
-  .tool-collection.layout-list .tool-footer {
-    border-top: none; padding-top: 0;
+  .data-table tbody tr {
+    border-bottom: 1px solid var(--rule-soft); transition: background 0.12s ease;
   }
-  @media (max-width: 900px) {
-    .tool-collection.layout-list .tool-card {
-      grid-template-columns: 1fr; gap: 8px;
-    }
+  .data-table tbody tr:last-child { border-bottom: none; }
+  .data-table tbody tr:hover { background: var(--card-hover); }
+  .data-table td {
+    padding: 12px 16px; vertical-align: middle; color: var(--ink);
+  }
+  .td-tool-name {
+    font-family: var(--serif); font-size: 1.05rem; font-weight: 700;
+  }
+  .td-tool-name a {
+    color: var(--ink); display: inline-flex; align-items: center; gap: 5px;
+  }
+  .td-tool-name a:hover { color: var(--accent); }
+  .td-desc-text {
+    color: var(--ink-soft); font-size: 0.84rem; line-height: 1.45; max-width: 400px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .td-entities {
+    display: flex; flex-direction: column; gap: 4px; min-width: 180px;
+  }
+  .btn-table-action {
+    display: inline-flex; align-items: center; gap: 5px; padding: 5px 10px; font-size: 0.78rem;
+    font-weight: 600; border-radius: var(--radius-sm); border: 1px solid var(--rule);
+    background: var(--paper); color: var(--ink); text-decoration: none; white-space: nowrap;
+    transition: all 0.15s ease; font-family: var(--sans);
+  }
+  .btn-table-action:hover {
+    border-color: var(--accent); background: var(--accent-tint); color: var(--accent-deep);
+    text-decoration: none;
   }
 
   /* Category Overview Cards */
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
   .card {
-    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 18px 20px; box-shadow: var(--shadow);
+    background: var(--card); border: 1px solid var(--rule-soft); border-radius: var(--radius-lg);
+    padding: 20px 22px; box-shadow: var(--shadow-sm);
   }
   .card h3 {
-    font-family: var(--font-serif);
-    margin: 0 0 6px; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;
+    font-family: var(--serif);
+    margin: 0 0 8px; font-size: 1.08rem; display: flex; align-items: center; gap: 8px;
   }
-  .card h3 .icon { width: 16px; height: 16px; color: var(--accent); }
-  .card p { margin: 0; color: var(--text-muted); font-size: 0.88rem; }
+  .card h3 .icon { width: 18px; height: 18px; color: var(--accent); }
+  .card p { margin: 0; color: var(--ink-soft); font-size: 0.88rem; }
   .card .count {
-    float: right; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
-    color: var(--accent-text); background: var(--accent-soft); padding: 2px 8px; border-radius: 999px;
+    float: right; font-family: var(--mono); font-size: 0.72rem; font-weight: 700;
+    color: var(--accent-deep); background: var(--accent-tint); padding: 2px 8px; border-radius: 999px;
   }
+  :root[data-theme="dark"] .card .count { color: var(--accent); }
 
   .orgs { display: flex; flex-wrap: wrap; gap: 10px; }
   .org-pill {
-    border: 1px solid var(--border); background: var(--card); border-radius: 999px;
-    padding: 8px 16px; font-size: 0.88rem; text-decoration: none; color: var(--text);
-    display: inline-flex; align-items: center; gap: 6px; font-weight: 500;
+    border: 1px solid var(--rule); background: var(--card); border-radius: 999px;
+    padding: 8px 16px; font-size: 0.88rem; text-decoration: none; color: var(--ink);
+    display: inline-flex; align-items: center; gap: 6px; font-weight: 500; transition: border-color 0.15s ease;
   }
-  .org-pill:hover { border-color: var(--accent); text-decoration: none; }
+  .org-pill:hover { border-color: var(--accent); text-decoration: none; color: var(--accent); }
 
   .steps { display: grid; gap: 14px; }
   .step { display: flex; gap: 14px; }
   .step .num {
-    flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--accent-soft);
-    color: var(--accent-text); display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 0.85rem; font-family: var(--font-mono);
+    flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--accent-tint);
+    color: var(--accent-deep); display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85rem; font-family: var(--mono);
   }
-  .step p { margin: 2px 0 0; color: var(--text-muted); }
-  .step strong { color: var(--text); }
+  :root[data-theme="dark"] .step .num { color: var(--accent); }
+  .step p { margin: 2px 0 0; color: var(--ink-soft); }
+  .step strong { color: var(--ink); }
 
   .callout {
-    background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius);
+    background: var(--paper-shade); border: 1px solid var(--rule-soft); border-radius: var(--radius-md);
     padding: 20px 22px; margin-top: 12px; font-size: 0.92rem;
   }
-  code { background: var(--bg-alt); border: 1px solid var(--border); padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.86em; font-family: var(--font-mono); }
+  code { background: var(--paper-deep); border: 1px solid var(--rule-soft); padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.86em; font-family: var(--mono); }
 
   .empty-state {
     grid-column: 1 / -1; padding: 40px 20px; text-align: center;
-    background: var(--card); border: 1px dashed var(--border); border-radius: var(--radius);
-    color: var(--text-muted);
+    background: var(--card); border: 1px dashed var(--rule); border-radius: var(--radius-lg);
+    color: var(--ink-mute);
   }
   .btn-reset-filters {
     margin-top: 14px; padding: 6px 14px; font-size: 0.84rem;
-    border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 6px; cursor: pointer;
+    border: 1px solid var(--rule); background: var(--paper); color: var(--ink); border-radius: var(--radius-sm); cursor: pointer;
   }
 
-  footer { border-top: 1px solid var(--border); padding: 32px 0; color: var(--text-muted); font-size: 0.85rem; }
+  /* Toast Notification */
+  .toast-notice {
+    position: fixed; bottom: 24px; right: 24px;
+    background: var(--card); color: var(--ink); border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent); padding: 10px 18px; border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md); font-size: 0.86rem; font-weight: 500; z-index: 1000;
+    transform: translateY(100px); opacity: 0; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+  .toast-notice.show { transform: translateY(0); opacity: 1; }
+
+  footer { border-top: 1px solid var(--rule-soft); padding: 32px 0; color: var(--ink-mute); font-size: 0.85rem; }
   footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: center; }
 
   .sr-only {
@@ -447,7 +540,8 @@
 <header class="site">
   <div class="wrap nav">
     <a class="brand" href="#top">
-      <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <!-- Ícone Acadêmico de Livro Aberto / Ciência Aberta -->
+      <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
       <span>Awesome Open Source Research Tools</span>
     </a>
     <div class="nav-links">
@@ -461,7 +555,11 @@
       <a href="#related" data-i18n="pt nav-related">Relacionadas</a>
       <a href="#contribute" data-i18n="en nav-contribute" class="active-lang">Contribute</a>
       <a href="#contribute" data-i18n="pt nav-contribute">Contribuir</a>
-      <a href="https://github.com/mancano-tales/awesome-open-source-research-tools" target="_blank" rel="noopener noreferrer">GitHub [↗]</a>
+      <a href="https://github.com/mancano-tales/awesome-open-source-research-tools" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        <span>GitHub</span>
+        <svg class="icon-ext" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
 
       <div class="header-actions">
         <button type="button" id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Alternar tema de cores" title="Toggle dark/light theme">
@@ -479,7 +577,7 @@
 <main id="top">
   <div class="wrap">
 
-    <section class="hero" style="border-top:none;padding-top:56px">
+    <section class="hero" style="border-top:none;padding-top:48px">
       <span class="eyebrow" data-i18n="en">Curated & method-agnostic</span>
       <span class="eyebrow" data-i18n="pt">Curada e agnóstica quanto ao método</span>
 
@@ -503,8 +601,10 @@
           <span data-i18n="pt">Explorar diretório de ferramentas</span>
         </a>
         <a class="btn btn-ghost" href="https://github.com/mancano-tales/awesome-open-source-research-tools" target="_blank" rel="noopener noreferrer">
-          <span data-i18n="en" class="active-lang">GitHub Repository [↗]</span>
-          <span data-i18n="pt">Repositório no GitHub [↗]</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span data-i18n="en" class="active-lang">GitHub Repository</span>
+          <span data-i18n="pt">Repositório no GitHub</span>
+          <svg class="icon-ext" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
       </div>
 
@@ -566,15 +666,48 @@
             </select>
 
             <div class="view-toggle-group" role="group" aria-label="Modo de visualização">
-              <button type="button" id="view-grid-btn" class="btn-view active" aria-pressed="true" aria-controls="tool-collection" title="Grid view">
+              <button type="button" id="view-grid-btn" class="btn-view active" aria-pressed="true" aria-controls="tool-collection" title="Visualização em Grade / Grid view">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                <span class="sr-only">Grid View</span>
+                <span class="sr-only">Grade / Grid</span>
               </button>
-              <button type="button" id="view-list-btn" class="btn-view" aria-pressed="false" aria-controls="tool-collection" title="List view">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-                <span class="sr-only">List View</span>
+              <button type="button" id="view-table-btn" class="btn-view" aria-pressed="false" aria-controls="tool-collection" title="Visualização em Tabela / Table view">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/><line x1="8" y1="6" x2="8" y2="18"/></svg>
+                <span class="sr-only">Tabela / Table</span>
               </button>
             </div>
+
+            <!-- Export Module Dropdown -->
+            <div class="export-dropdown">
+              <button type="button" id="btn-export-toggle" class="btn-export" aria-expanded="false" aria-haspopup="true" title="Export dataset">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span data-i18n="en" class="active-lang">Export</span>
+                <span data-i18n="pt">Exportar</span>
+              </button>
+              <div class="export-menu" id="export-menu" role="menu">
+                <button type="button" class="export-item" id="export-json-all" role="menuitem">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  <span data-i18n="en" class="active-lang">Download Full JSON (tools.json)</span>
+                  <span data-i18n="pt">Baixar JSON Completo (tools.json)</span>
+                </button>
+                <button type="button" class="export-item" id="export-json-filtered" role="menuitem">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <span data-i18n="en" class="active-lang">Download Filtered JSON</span>
+                  <span data-i18n="pt">Baixar JSON Filtrado</span>
+                </button>
+                <button type="button" class="export-item" id="export-csv" role="menuitem">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+                  <span data-i18n="en" class="active-lang">Download CSV (Excel / R)</span>
+                  <span data-i18n="pt">Baixar CSV (Excel / R)</span>
+                </button>
+                <div class="export-divider"></div>
+                <button type="button" class="export-item" id="copy-raw-api" role="menuitem">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  <span data-i18n="en" class="active-lang">Copy Raw GitHub JSON URL</span>
+                  <span data-i18n="pt">Copiar URL Bruta do JSON</span>
+                </button>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -611,12 +744,12 @@
         <span data-i18n="pt">Além de ferramentas isoladas, a lista também aponta organizações cujo investimento sustentado em infraestrutura de pesquisa de código aberto merece ser acompanhado.</span>
       </p>
       <div class="orgs">
-        <a class="org-pill" href="https://github.com/CenterForOpenScience" target="_blank" rel="noopener noreferrer">Center for Open Science [US]</a>
-        <a class="org-pill" href="https://github.com/DigitalScholar" target="_blank" rel="noopener noreferrer">Corporation for Digital Scholarship [US]</a>
-        <a class="org-pill" href="https://github.com/ipea" target="_blank" rel="noopener noreferrer">Ipea [BR]</a>
-        <a class="org-pill" href="https://github.com/posit-dev" target="_blank" rel="noopener noreferrer">Posit [US]</a>
-        <a class="org-pill" href="https://github.com/socialsciencedatalab" target="_blank" rel="noopener noreferrer">Social Science Data Lab [DE]</a>
-        <a class="org-pill" href="https://github.com/carpentries" target="_blank" rel="noopener noreferrer">The Carpentries [GLOBAL]</a>
+        <a class="org-pill" href="https://github.com/CenterForOpenScience" target="_blank" rel="noopener noreferrer">Center for Open Science <span class="country-tag"><span class="country-code">US</span></span></a>
+        <a class="org-pill" href="https://github.com/DigitalScholar" target="_blank" rel="noopener noreferrer">Corporation for Digital Scholarship <span class="country-tag"><span class="country-code">US</span></span></a>
+        <a class="org-pill" href="https://github.com/ipea" target="_blank" rel="noopener noreferrer">Ipea <span class="country-tag country-br"><span class="country-code">BR</span> Brasil</span></a>
+        <a class="org-pill" href="https://github.com/posit-dev" target="_blank" rel="noopener noreferrer">Posit <span class="country-tag"><span class="country-code">US</span></span></a>
+        <a class="org-pill" href="https://github.com/socialsciencedatalab" target="_blank" rel="noopener noreferrer">Social Science Data Lab <span class="country-tag"><span class="country-code">DE</span></span></a>
+        <a class="org-pill" href="https://github.com/carpentries" target="_blank" rel="noopener noreferrer">The Carpentries <span class="country-tag"><span class="country-code">GLOBAL</span></span></a>
       </div>
     </section>
 
@@ -631,7 +764,10 @@
       <div class="card">
         <div class="tool-card-header">
           <h3 class="tool-name">
-            <a href="https://github.com/ipea/brverse" target="_blank" rel="noopener noreferrer">brverse (Ipea) [↗]</a>
+            <a href="https://github.com/ipea/brverse" target="_blank" rel="noopener noreferrer">
+              <span>brverse (Ipea)</span>
+              <svg class="icon-ext" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
           </h3>
           <span class="country-tag country-br" role="text" aria-label="Origem: Brasil"><span class="country-code" aria-hidden="true">BR</span> <span class="country-name">Brasil</span></span>
         </div>
@@ -701,6 +837,8 @@
 
   </div>
 </main>
+
+<div class="toast-notice" id="toast-notice"></div>
 
 <footer>
   <div class="wrap">
@@ -907,7 +1045,7 @@ window.AOSRT_DATA = {
       "categoryId": "data-collection",
       "country": "BR",
       "maintainer": {
-        "name": "Leonardo Nascimento (antrologos)",
+        "name": "Rogério Jerônimo Barbosa (antrologos)",
         "url": "https://github.com/antrologos"
       },
       "institution": {
@@ -1164,7 +1302,7 @@ window.AOSRT_DATA = {
       "categoryId": "qualitative-analysis",
       "country": "BR",
       "maintainer": {
-        "name": "Luiz PF (LuizPF42)",
+        "name": "Luiz Paulo Farias (LuizPF42)",
         "url": "https://github.com/LuizPF42"
       },
       "institution": null,
@@ -1508,7 +1646,10 @@ window.AOSRT_DATA = {
         "name": "Joscha Legewie (jlegewie)",
         "url": "https://github.com/jlegewie"
       },
-      "institution": null,
+      "institution": {
+        "name": "Harvard University / Department of Sociology",
+        "url": "https://sociology.fas.harvard.edu"
+      },
       "description": {
         "en": "AI research assistant plugin for Zotero with agentic library search, PDF chat, sentence-level citations, and MCP server support.",
         "pt": "Plugin de assistente de pesquisa com IA para o Zotero com busca em toda a biblioteca, citações precisas por sentença e servidor MCP nativo."
@@ -1702,7 +1843,7 @@ window.AOSRT_DATA = {
       "categoryId": "ai-tooling",
       "country": "BR",
       "maintainer": {
-        "name": "DAAF Contribution Community",
+        "name": "DAAF Contribution Community / Tales Mançano",
         "url": "https://github.com/DAAF-Contribution-Community"
       },
       "institution": null,
@@ -1890,6 +2031,8 @@ window.AOSRT_DATA = {
     GLOBAL: { code: "GLOBAL", region: "GLOBAL", en: "Global", pt: "Global" }
   };
 
+  var SVG_EXT = '<svg class="icon-ext" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
+
   var CATEGORY_ICONS = {
     "data-collection": '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
     "data-management": '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>',
@@ -1943,7 +2086,7 @@ window.AOSRT_DATA = {
   var catSelect = document.getElementById("cat-filter");
   var originButtons = document.querySelectorAll("[data-origin]");
   var btnViewGrid = document.getElementById("view-grid-btn");
-  var btnViewList = document.getElementById("view-list-btn");
+  var btnViewTable = document.getElementById("view-table-btn");
   var themeToggleBtn = document.getElementById("theme-toggle-btn");
 
   function getCategoryName(catId, lang) {
@@ -1952,10 +2095,8 @@ window.AOSRT_DATA = {
     return (lang === "pt" ? match.namePt : match.nameEn);
   }
 
-  function renderTools() {
-    if (!toolCollection) return;
-
-    var filtered = TOOLS.filter(function(tool){
+  function getFilteredTools() {
+    return TOOLS.filter(function(tool){
       var cInfo = COUNTRIES[tool.country] || { region: "GLOBAL" };
       if (activeOrigin === "BR" && tool.country !== "BR") return false;
       if (activeOrigin === "US" && tool.country !== "US") return false;
@@ -1977,6 +2118,11 @@ window.AOSRT_DATA = {
       }
       return true;
     });
+  }
+
+  function renderTools() {
+    if (!toolCollection) return;
+    var filtered = getFilteredTools();
 
     if (countEl) {
       var countText = currentLang === "pt"
@@ -2013,6 +2159,15 @@ window.AOSRT_DATA = {
       return;
     }
 
+    if (currentView === "table") {
+      renderTableView(filtered);
+    } else {
+      renderGridView(filtered);
+    }
+  }
+
+  function renderGridView(filtered) {
+    toolCollection.className = "tool-collection layout-grid";
     filtered.forEach(function(tool){
       var card = document.createElement("div");
       card.className = "tool-card";
@@ -2025,7 +2180,7 @@ window.AOSRT_DATA = {
       var maintainerHtml = "";
       if (tool.maintainer && tool.maintainer.name) {
         if (tool.maintainer.url) {
-          maintainerHtml = '<a class="entity-link" href="' + escapeHtml(tool.maintainer.url) + '" target="_blank" rel="noopener noreferrer" title="Maintainer">' + escapeHtml(tool.maintainer.name) + ' [↗]</a>';
+          maintainerHtml = '<a class="entity-link" href="' + escapeHtml(tool.maintainer.url) + '" target="_blank" rel="noopener noreferrer" title="Maintainer">' + escapeHtml(tool.maintainer.name) + ' ' + SVG_EXT + '</a>';
         } else {
           maintainerHtml = '<span class="entity-link">' + escapeHtml(tool.maintainer.name) + '</span>';
         }
@@ -2034,7 +2189,7 @@ window.AOSRT_DATA = {
       var institutionHtml = "";
       if (tool.institution && tool.institution.name) {
         if (tool.institution.url) {
-          institutionHtml = '<a class="entity-link" href="' + escapeHtml(tool.institution.url) + '" target="_blank" rel="noopener noreferrer" title="Institution">' + escapeHtml(tool.institution.name) + ' [↗]</a>';
+          institutionHtml = '<a class="entity-link" href="' + escapeHtml(tool.institution.url) + '" target="_blank" rel="noopener noreferrer" title="Institution">' + escapeHtml(tool.institution.name) + ' ' + SVG_EXT + '</a>';
         } else {
           institutionHtml = '<span class="entity-link">' + escapeHtml(tool.institution.name) + '</span>';
         }
@@ -2045,7 +2200,11 @@ window.AOSRT_DATA = {
 
       card.innerHTML =
         '<div class="tool-card-header">' +
-          '<h3 class="tool-name"><a href="' + escapeHtml(tool.url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(tool.name) + '</a></h3>' +
+          '<h3 class="tool-name">' +
+            '<a href="' + escapeHtml(tool.url) + '" target="_blank" rel="noopener noreferrer">' +
+              '<span>' + escapeHtml(tool.name) + '</span> ' + SVG_EXT +
+            '</a>' +
+          '</h3>' +
           '<span class="' + countryClass + '" role="text" aria-label="Origem: ' + countryLabel + '">' +
             '<span class="country-code" aria-hidden="true">' + escapeHtml(cInfo.code) + '</span> ' +
             '<span class="country-name">' + escapeHtml(countryLabel) + '</span>' +
@@ -2059,12 +2218,104 @@ window.AOSRT_DATA = {
         '<p class="tool-desc">' + escapeHtml(desc) + '</p>' +
         '<div class="tool-footer">' +
           '<a class="repo-link" href="' + escapeHtml(tool.url) + '" target="_blank" rel="noopener noreferrer">' +
-            '<span>' + (currentLang === "pt" ? "Ver repositório" : "View repository") + '</span> [↗]' +
+            '<span>' + (currentLang === "pt" ? "Ver repositório" : "View repository") + '</span> ' + SVG_EXT +
           '</a>' +
         '</div>';
 
       toolCollection.appendChild(card);
     });
+  }
+
+  function renderTableView(filtered) {
+    toolCollection.className = "tool-collection";
+
+    var tableWrap = document.createElement("div");
+    tableWrap.className = "table-responsive";
+    tableWrap.setAttribute("tabindex", "0");
+    tableWrap.setAttribute("role", "region");
+    tableWrap.setAttribute("aria-label", currentLang === "pt" ? "Tabela de ferramentas de pesquisa" : "Research tools data table");
+
+    var table = document.createElement("table");
+    table.className = "data-table";
+
+    var thTool = currentLang === "pt" ? "Ferramenta" : "Tool";
+    var thCat = currentLang === "pt" ? "Categoria" : "Category";
+    var thOrigin = currentLang === "pt" ? "Origem" : "Origin";
+    var thEntity = currentLang === "pt" ? "Mantenedor & Instituição" : "Maintainer & Institution";
+    var thDesc = currentLang === "pt" ? "Descrição" : "Description";
+    var thAction = currentLang === "pt" ? "Ação" : "Action";
+
+    table.innerHTML =
+      '<thead>' +
+        '<tr>' +
+          '<th scope="col">' + thTool + '</th>' +
+          '<th scope="col">' + thCat + '</th>' +
+          '<th scope="col">' + thOrigin + '</th>' +
+          '<th scope="col">' + thEntity + '</th>' +
+          '<th scope="col">' + thDesc + '</th>' +
+          '<th scope="col" style="text-align:right;">' + thAction + '</th>' +
+        '</tr>' +
+      '</thead>';
+
+    var tbody = document.createElement("tbody");
+
+    filtered.forEach(function(tool){
+      var tr = document.createElement("tr");
+
+      var cInfo = COUNTRIES[tool.country] || { code: tool.country, en: tool.country, pt: tool.country };
+      var isBR = tool.country === "BR";
+      var countryClass = "country-tag" + (isBR ? " country-br" : "");
+      var countryLabel = currentLang === "pt" ? cInfo.pt : cInfo.en;
+      var catLabel = getCategoryName(tool.categoryId, currentLang);
+      var desc = currentLang === "pt" ? tool.description.pt : tool.description.en;
+
+      var maintainerHtml = "-";
+      if (tool.maintainer && tool.maintainer.name) {
+        if (tool.maintainer.url) {
+          maintainerHtml = '<a class="entity-link" href="' + escapeHtml(tool.maintainer.url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(tool.maintainer.name) + ' ' + SVG_EXT + '</a>';
+        } else {
+          maintainerHtml = '<span class="entity-link">' + escapeHtml(tool.maintainer.name) + '</span>';
+        }
+      }
+
+      var institutionHtml = "";
+      if (tool.institution && tool.institution.name) {
+        if (tool.institution.url) {
+          institutionHtml = '<a class="entity-link" href="' + escapeHtml(tool.institution.url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(tool.institution.name) + ' ' + SVG_EXT + '</a>';
+        } else {
+          institutionHtml = '<span class="entity-link">' + escapeHtml(tool.institution.name) + '</span>';
+        }
+      }
+
+      var entitiesCombined = '<div class="td-entities">' + maintainerHtml + (institutionHtml ? institutionHtml : '') + '</div>';
+
+      tr.innerHTML =
+        '<td class="td-tool-name">' +
+          '<a href="' + escapeHtml(tool.url) + '" target="_blank" rel="noopener noreferrer">' +
+            '<span>' + escapeHtml(tool.name) + '</span> ' + SVG_EXT +
+          '</a>' +
+        '</td>' +
+        '<td><span class="cat-tag">' + escapeHtml(catLabel) + '</span></td>' +
+        '<td>' +
+          '<span class="' + countryClass + '" role="text" aria-label="Origem: ' + countryLabel + '">' +
+            '<span class="country-code">' + escapeHtml(cInfo.code) + '</span> ' +
+            '<span class="country-name">' + escapeHtml(countryLabel) + '</span>' +
+          '</span>' +
+        '</td>' +
+        '<td>' + entitiesCombined + '</td>' +
+        '<td><div class="td-desc-text" title="' + escapeHtml(desc) + '">' + escapeHtml(desc) + '</div></td>' +
+        '<td style="text-align:right;">' +
+          '<a class="btn-table-action" href="' + escapeHtml(tool.url) + '" target="_blank" rel="noopener noreferrer">' +
+            '<span>Repo</span> ' + SVG_EXT +
+          '</a>' +
+        '</td>';
+
+      tbody.appendChild(tr);
+    });
+
+    table.appendChild(tbody);
+    tableWrap.appendChild(table);
+    toolCollection.appendChild(tableWrap);
   }
 
   // Filter & Search Events
@@ -2095,29 +2346,26 @@ window.AOSRT_DATA = {
     });
   });
 
-  // View Switcher (Grid vs List)
+  // View Switcher (Grid vs Table)
   function applyView(view) {
     currentView = view;
-    if (toolCollection) {
-      toolCollection.classList.remove("layout-grid", "layout-list");
-      toolCollection.classList.add(view === "list" ? "layout-list" : "layout-grid");
-    }
     if (btnViewGrid) {
       btnViewGrid.classList.toggle("active", view === "grid");
       btnViewGrid.setAttribute("aria-pressed", view === "grid" ? "true" : "false");
     }
-    if (btnViewList) {
-      btnViewList.classList.toggle("active", view === "list");
-      btnViewList.setAttribute("aria-pressed", view === "list" ? "true" : "false");
+    if (btnViewTable) {
+      btnViewTable.classList.toggle("active", view === "table");
+      btnViewTable.setAttribute("aria-pressed", view === "table" ? "true" : "false");
     }
+    renderTools();
     try { localStorage.setItem("aosrt-view", view); } catch(e){}
   }
 
   if (btnViewGrid) {
     btnViewGrid.addEventListener("click", function(){ applyView("grid"); });
   }
-  if (btnViewList) {
-    btnViewList.addEventListener("click", function(){ applyView("list"); });
+  if (btnViewTable) {
+    btnViewTable.addEventListener("click", function(){ applyView("table"); });
   }
 
   // Theme Switcher (Light vs Dark)
@@ -2172,6 +2420,122 @@ window.AOSRT_DATA = {
   document.querySelectorAll("[data-set-lang]").forEach(function(btn){
     btn.addEventListener("click", function(){ applyLang(btn.getAttribute("data-set-lang")); });
   });
+
+  // --- EXPORT & DOWNLOAD FUNCTIONS ---
+  function downloadBlob(content, filename, mimeType) {
+    var blob = new Blob([content], { type: mimeType });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function() { URL.revokeObjectURL(url); }, 1500);
+  }
+
+  function showToast(message) {
+    var toast = document.getElementById("toast-notice");
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add("show");
+    setTimeout(function() { toast.classList.remove("show"); }, 3000);
+  }
+
+  function exportJSON(useFiltered) {
+    var dataset = {
+      version: "1.0.0",
+      exportedAt: new Date().toISOString(),
+      categories: CATEGORIES,
+      tools: useFiltered ? getFilteredTools() : TOOLS
+    };
+    var filename = useFiltered ? "awesome-research-tools-filtered.json" : "awesome-research-tools.json";
+    downloadBlob(JSON.stringify(dataset, null, 2), filename, "application/json;charset=utf-8;");
+    showToast(currentLang === "pt" ? "JSON exportado com sucesso." : "JSON exported successfully.");
+  }
+
+  function escapeCsvField(val) {
+    if (val === null || val === undefined) return '""';
+    var str = String(val);
+    if (str.indexOf('"') !== -1 || str.indexOf(',') !== -1 || str.indexOf('\n') !== -1 || str.indexOf('\r') !== -1) {
+      return '"' + str.replace(/"/g, '""') + '"';
+    }
+    return '"' + str + '"';
+  }
+
+  function exportCSV(useFiltered) {
+    var toolsToExport = useFiltered ? getFilteredTools() : TOOLS;
+    var headers = [
+      "id", "name", "url", "category_id", "category_name_en", "category_name_pt",
+      "country_code", "country_name_en", "country_name_pt",
+      "maintainer_name", "maintainer_url", "institution_name", "institution_url",
+      "description_en", "description_pt", "tags"
+    ];
+
+    var rows = [headers.map(escapeCsvField).join(",")];
+
+    toolsToExport.forEach(function(t) {
+      var cInfo = COUNTRIES[t.country] || { code: t.country, en: t.country, pt: t.country };
+      var cat = CATEGORIES.find(function(c) { return c.id === t.categoryId; }) || { nameEn: t.categoryId, namePt: t.categoryId };
+
+      var row = [
+        escapeCsvField(t.id),
+        escapeCsvField(t.name),
+        escapeCsvField(t.url),
+        escapeCsvField(t.categoryId),
+        escapeCsvField(cat.nameEn),
+        escapeCsvField(cat.namePt),
+        escapeCsvField(cInfo.code),
+        escapeCsvField(cInfo.en),
+        escapeCsvField(cInfo.pt),
+        escapeCsvField(t.maintainer ? t.maintainer.name : ""),
+        escapeCsvField(t.maintainer ? t.maintainer.url : ""),
+        escapeCsvField(t.institution ? t.institution.name : ""),
+        escapeCsvField(t.institution ? t.institution.url : ""),
+        escapeCsvField(t.description ? t.description.en : ""),
+        escapeCsvField(t.description ? t.description.pt : ""),
+        escapeCsvField(t.tags ? t.tags.join("; ") : "")
+      ];
+      rows.push(row.join(","));
+    });
+
+    var csvContent = "\uFEFF" + rows.join("\r\n");
+    var filename = useFiltered ? "awesome-research-tools-filtered.csv" : "awesome-research-tools.csv";
+    downloadBlob(csvContent, filename, "text/csv;charset=utf-8;");
+    showToast(currentLang === "pt" ? "CSV exportado com sucesso." : "CSV exported successfully.");
+  }
+
+  function copyRawApiUrl() {
+    var rawUrl = "https://raw.githubusercontent.com/mancano-tales/awesome-open-source-research-tools/main/data/tools.json";
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(rawUrl).then(function() {
+        showToast(currentLang === "pt" ? "URL do JSON copiada para a área de transferência!" : "Raw JSON API URL copied to clipboard!");
+      });
+    } else {
+      prompt(currentLang === "pt" ? "Copie a URL abaixo:" : "Copy the URL below:", rawUrl);
+    }
+  }
+
+  var btnExportToggle = document.getElementById("btn-export-toggle");
+  var exportMenu = document.getElementById("export-menu");
+
+  if (btnExportToggle && exportMenu) {
+    btnExportToggle.addEventListener("click", function(e){
+      e.stopPropagation();
+      var isShown = exportMenu.classList.toggle("show");
+      btnExportToggle.setAttribute("aria-expanded", isShown ? "true" : "false");
+    });
+
+    document.addEventListener("click", function(){
+      exportMenu.classList.remove("show");
+      btnExportToggle.setAttribute("aria-expanded", "false");
+    });
+
+    document.getElementById("export-json-all").addEventListener("click", function(){ exportJSON(false); });
+    document.getElementById("export-json-filtered").addEventListener("click", function(){ exportJSON(true); });
+    document.getElementById("export-csv").addEventListener("click", function(){ exportCSV(false); });
+    document.getElementById("copy-raw-api").addEventListener("click", function(){ copyRawApiUrl(); });
+  }
 
   // Attempt dynamic fetch from data/tools.json with automatic fallback to embedded data
   fetch('./data/tools.json')
