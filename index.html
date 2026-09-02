@@ -15,7 +15,7 @@
     --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --mono: 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
 
-    /* Light Theme (Paper & Ink) */
+    /* Light Theme (Paper & Ink, WCAG 2.1 AAA strictly > 7.0:1) */
     --paper: #F7F2E8;
     --paper-shade: #EFE9DC;
     --paper-deep: #E5DDCB;
@@ -24,7 +24,7 @@
     
     --ink: #1F1B17;
     --ink-soft: #4A4138;
-    --ink-mute: #8B8074;
+    --ink-mute: #544B3F;
     --ink-faint: #B5AC9F;
 
     --accent: #0366D6;
@@ -35,10 +35,10 @@
     --rule: rgba(31, 27, 23, 0.20);
     --rule-soft: rgba(31, 27, 23, 0.11);
 
-    /* Destaque Brasil (Harmonizado com a paleta acadêmica) */
+    /* Destaque Brasil Soberano */
     --tag-br-bg: rgba(12, 120, 51, 0.08);
     --tag-br-border: rgba(12, 120, 51, 0.30);
-    --tag-br-text: #086128;
+    --tag-br-text: #055221;
 
     --shadow-sm: 0 1px 3px rgba(31, 27, 23, 0.05);
     --shadow-md: 0 4px 16px rgba(31, 27, 23, 0.06);
@@ -57,7 +57,7 @@
 
     --ink: #EDE4D3;
     --ink-soft: #C9BFAB;
-    --ink-mute: #8A7F6E;
+    --ink-mute: #BAAE9D;
     --ink-faint: #5A5246;
 
     --accent: #58A6FF;
@@ -85,7 +85,7 @@
       --card-hover: #2B2620;
       --ink: #EDE4D3;
       --ink-soft: #C9BFAB;
-      --ink-mute: #8A7F6E;
+      --ink-mute: #BAAE9D;
       --ink-faint: #5A5246;
       --accent: #58A6FF;
       --accent-deep: #79B8FF;
@@ -325,7 +325,7 @@
   .export-menu {
     position: absolute; top: calc(100% + 4px); right: 0;
     background: var(--card); border: 1px solid var(--rule); border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md); min-width: 210px; z-index: 60; display: none; flex-direction: column;
+    box-shadow: var(--shadow-md); min-width: 220px; z-index: 60; display: none; flex-direction: column;
     padding: 6px 0;
   }
   .export-menu.show { display: flex; }
@@ -373,6 +373,7 @@
   }
   :root[data-theme="dark"] .cat-tag { color: var(--accent); }
 
+  /* Country & Scope Badges */
   .country-tag {
     display: inline-flex; align-items: center; gap: 5px;
     font-size: 0.74rem; padding: 2px 7px; border-radius: var(--radius-sm);
@@ -384,6 +385,9 @@
   }
   .country-tag.country-br {
     background: var(--tag-br-bg); color: var(--tag-br-text); border-color: var(--tag-br-border); font-weight: 700;
+  }
+  .country-tag.country-global {
+    letter-spacing: 0.01em;
   }
 
   .entity-link {
@@ -406,7 +410,7 @@
   :root[data-theme="dark"] .repo-link { color: var(--accent); }
   .repo-link:hover { text-decoration: underline; }
 
-  /* --- DATA TABLE (TABELA REAL ACADÊMICA) --- */
+  /* --- DATA TABLE (TABELA REAL ACADÊMICA COM ORDENAÇÃO) --- */
   .table-responsive {
     width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
     background: var(--card); border: 1px solid var(--rule-soft); border-radius: var(--radius-lg);
@@ -419,8 +423,22 @@
     background: var(--paper-shade); color: var(--ink); font-family: var(--sans);
     font-weight: 700; font-size: 0.76rem; letter-spacing: 0.05em; text-transform: uppercase;
     padding: 12px 16px; border-bottom: 2px solid var(--rule); white-space: nowrap;
-    position: sticky; top: 0; z-index: 1;
+    position: sticky; top: 56px; z-index: 2; user-select: none;
   }
+  .data-table thead th.sortable {
+    cursor: pointer; transition: background 0.12s ease;
+  }
+  .data-table thead th.sortable:hover {
+    background: var(--paper-deep); color: var(--accent-deep);
+  }
+  .sort-indicator {
+    display: inline-block; margin-left: 4px; font-size: 0.70rem; opacity: 0.6;
+  }
+  th[aria-sort="ascending"] .sort-indicator,
+  th[aria-sort="descending"] .sort-indicator {
+    opacity: 1; color: var(--accent);
+  }
+
   .data-table tbody tr {
     border-bottom: 1px solid var(--rule-soft); transition: background 0.12s ease;
   }
@@ -530,6 +548,24 @@
   [data-i18n].active-lang { display: revert; }
   h1[data-i18n].active-lang, .lede[data-i18n].active-lang, .card p[data-i18n].active-lang, p[data-i18n].active-lang { display: block; }
   span[data-i18n].active-lang { display: inline; }
+
+  /* Respeito a Movimento Reduzido */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Impressão Acadêmica */
+  @media print {
+    header.site, .dir-header, .results-meta, .export-dropdown, .toast-notice { display: none !important; }
+    body { background: #fff !important; color: #000 !important; font-size: 10pt; }
+    .tool-card, .data-table { box-shadow: none !important; border: 1px solid #ccc !important; }
+    a { text-decoration: underline !important; color: #000 !important; }
+  }
 </style>
 </head>
 <body>
@@ -540,7 +576,7 @@
 <header class="site">
   <div class="wrap nav">
     <a class="brand" href="#top">
-      <!-- Ícone Acadêmico de Livro Aberto / Ciência Aberta -->
+      <!-- Ícone Acadêmico de Livro Aberto / Saber -->
       <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
       <span>Awesome Open Source Research Tools</span>
     </a>
@@ -646,7 +682,7 @@
               <span>[EU] Europe</span>
             </button>
             <button type="button" class="filter-pill" data-origin="GLOBAL" aria-pressed="false">
-              <span>[GLOBAL] Global</span>
+              <span>Global</span>
             </button>
           </div>
           <div class="controls-right">
@@ -694,10 +730,15 @@
                   <span data-i18n="en" class="active-lang">Download Filtered JSON</span>
                   <span data-i18n="pt">Baixar JSON Filtrado</span>
                 </button>
-                <button type="button" class="export-item" id="export-csv" role="menuitem">
+                <button type="button" class="export-item" id="export-csv-all" role="menuitem">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
-                  <span data-i18n="en" class="active-lang">Download CSV (Excel / R)</span>
-                  <span data-i18n="pt">Baixar CSV (Excel / R)</span>
+                  <span data-i18n="en" class="active-lang">Download Full CSV (Excel / R)</span>
+                  <span data-i18n="pt">Baixar CSV Completo (Excel / R)</span>
+                </button>
+                <button type="button" class="export-item" id="export-csv-filtered" role="menuitem">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+                  <span data-i18n="en" class="active-lang">Download Filtered CSV</span>
+                  <span data-i18n="pt">Baixar CSV Filtrado</span>
                 </button>
                 <div class="export-divider"></div>
                 <button type="button" class="export-item" id="copy-raw-api" role="menuitem">
@@ -744,12 +785,12 @@
         <span data-i18n="pt">Além de ferramentas isoladas, a lista também aponta organizações cujo investimento sustentado em infraestrutura de pesquisa de código aberto merece ser acompanhado.</span>
       </p>
       <div class="orgs">
-        <a class="org-pill" href="https://github.com/CenterForOpenScience" target="_blank" rel="noopener noreferrer">Center for Open Science <span class="country-tag"><span class="country-code">US</span></span></a>
-        <a class="org-pill" href="https://github.com/DigitalScholar" target="_blank" rel="noopener noreferrer">Corporation for Digital Scholarship <span class="country-tag"><span class="country-code">US</span></span></a>
+        <a class="org-pill" href="https://github.com/CenterForOpenScience" target="_blank" rel="noopener noreferrer">Center for Open Science <span class="country-tag"><span class="country-code">US</span> USA</span></a>
+        <a class="org-pill" href="https://github.com/DigitalScholar" target="_blank" rel="noopener noreferrer">Corporation for Digital Scholarship <span class="country-tag"><span class="country-code">US</span> USA</span></a>
         <a class="org-pill" href="https://github.com/ipea" target="_blank" rel="noopener noreferrer">Ipea <span class="country-tag country-br"><span class="country-code">BR</span> Brasil</span></a>
-        <a class="org-pill" href="https://github.com/posit-dev" target="_blank" rel="noopener noreferrer">Posit <span class="country-tag"><span class="country-code">US</span></span></a>
-        <a class="org-pill" href="https://github.com/socialsciencedatalab" target="_blank" rel="noopener noreferrer">Social Science Data Lab <span class="country-tag"><span class="country-code">DE</span></span></a>
-        <a class="org-pill" href="https://github.com/carpentries" target="_blank" rel="noopener noreferrer">The Carpentries <span class="country-tag"><span class="country-code">GLOBAL</span></span></a>
+        <a class="org-pill" href="https://github.com/posit-dev" target="_blank" rel="noopener noreferrer">Posit <span class="country-tag"><span class="country-code">US</span> USA</span></a>
+        <a class="org-pill" href="https://github.com/socialsciencedatalab" target="_blank" rel="noopener noreferrer">Social Science Data Lab <span class="country-tag"><span class="country-code">DE</span> Germany</span></a>
+        <a class="org-pill" href="https://github.com/carpentries" target="_blank" rel="noopener noreferrer">The Carpentries <span class="country-tag country-global"><span class="country-name">Global</span></span></a>
       </div>
     </section>
 
@@ -2015,6 +2056,8 @@ window.AOSRT_DATA = {
   var activeOrigin = "all";
   var activeCategory = "all";
   var searchQuery = "";
+  var sortColumn = "name";
+  var sortDirection = "asc";
 
   var COUNTRIES = {
     BR: { code: "BR", region: "BR", en: "Brazil", pt: "Brasil" },
@@ -2059,6 +2102,27 @@ window.AOSRT_DATA = {
               .replace(/'/g, '&#039;');
   }
 
+  // Renderizador Semântico de Badges de Origem (Elimina GLOBAL Global)
+  function renderCountryBadge(countryCode, lang) {
+    var cInfo = COUNTRIES[countryCode] || { code: countryCode, en: countryCode, pt: countryCode };
+    var isBR = countryCode === "BR";
+    var isGlobal = countryCode === "GLOBAL";
+    var countryClass = "country-tag" + (isBR ? " country-br" : "") + (isGlobal ? " country-global" : "");
+    var countryLabel = lang === "pt" ? cInfo.pt : cInfo.en;
+    var ariaPrefix = lang === "pt" ? "Origem: " : "Origin: ";
+
+    if (isGlobal) {
+      return '<span class="' + countryClass + '" role="text" aria-label="' + escapeHtml(ariaPrefix + countryLabel) + '">' +
+        '<span class="country-name">' + escapeHtml(countryLabel) + '</span>' +
+      '</span>';
+    }
+
+    return '<span class="' + countryClass + '" role="text" aria-label="' + escapeHtml(ariaPrefix + countryLabel) + '">' +
+      '<span class="country-code" aria-hidden="true">' + escapeHtml(cInfo.code) + '</span> ' +
+      '<span class="country-name">' + escapeHtml(countryLabel) + '</span>' +
+    '</span>';
+  }
+
   function renderCategoryGrid() {
     var catGrid = document.getElementById("cat-grid");
     if (!catGrid) return;
@@ -2096,12 +2160,12 @@ window.AOSRT_DATA = {
   }
 
   function getFilteredTools() {
-    return TOOLS.filter(function(tool){
+    var filtered = TOOLS.filter(function(tool){
       var cInfo = COUNTRIES[tool.country] || { region: "GLOBAL" };
       if (activeOrigin === "BR" && tool.country !== "BR") return false;
       if (activeOrigin === "US" && tool.country !== "US") return false;
       if (activeOrigin === "EU" && cInfo.region !== "EU") return false;
-      if (activeOrigin === "GLOBAL" && tool.country !== "GLOBAL") return false;
+      if (activeOrigin === "GLOBAL" && cInfo.region !== "GLOBAL") return false;
 
       if (activeCategory !== "all" && tool.categoryId !== activeCategory) return false;
 
@@ -2117,6 +2181,24 @@ window.AOSRT_DATA = {
         if (!matchName && !matchDescEn && !matchDescPt && !matchCountry && !matchMaintainer && !matchInstitution && !matchTags) return false;
       }
       return true;
+    });
+
+    // Aplica Ordenação
+    return filtered.slice().sort(function(a, b){
+      var valA = "", valB = "";
+      if (sortColumn === "name") {
+        valA = a.name; valB = b.name;
+      } else if (sortColumn === "category") {
+        valA = getCategoryName(a.categoryId, currentLang);
+        valB = getCategoryName(b.categoryId, currentLang);
+      } else if (sortColumn === "origin") {
+        var cA = COUNTRIES[a.country] || { en: a.country, pt: a.country };
+        var cB = COUNTRIES[b.country] || { en: b.country, pt: b.country };
+        valA = currentLang === "pt" ? cA.pt : cA.en;
+        valB = currentLang === "pt" ? cB.pt : cB.en;
+      }
+      var cmp = valA.localeCompare(valB, currentLang, { sensitivity: 'base' });
+      return sortDirection === "asc" ? cmp : -cmp;
     });
   }
 
@@ -2172,11 +2254,6 @@ window.AOSRT_DATA = {
       var card = document.createElement("div");
       card.className = "tool-card";
 
-      var cInfo = COUNTRIES[tool.country] || { code: tool.country, en: tool.country, pt: tool.country };
-      var isBR = tool.country === "BR";
-      var countryClass = "country-tag" + (isBR ? " country-br" : "");
-      var countryLabel = (currentLang === "pt" ? cInfo.pt : cInfo.en);
-
       var maintainerHtml = "";
       if (tool.maintainer && tool.maintainer.name) {
         if (tool.maintainer.url) {
@@ -2205,10 +2282,7 @@ window.AOSRT_DATA = {
               '<span>' + escapeHtml(tool.name) + '</span> ' + SVG_EXT +
             '</a>' +
           '</h3>' +
-          '<span class="' + countryClass + '" role="text" aria-label="Origem: ' + countryLabel + '">' +
-            '<span class="country-code" aria-hidden="true">' + escapeHtml(cInfo.code) + '</span> ' +
-            '<span class="country-name">' + escapeHtml(countryLabel) + '</span>' +
-          '</span>' +
+          renderCountryBadge(tool.country, currentLang) +
         '</div>' +
         '<div class="badges-row">' +
           '<span class="cat-tag">' + escapeHtml(catLabel) + '</span>' +
@@ -2245,12 +2319,22 @@ window.AOSRT_DATA = {
     var thDesc = currentLang === "pt" ? "Descrição" : "Description";
     var thAction = currentLang === "pt" ? "Ação" : "Action";
 
+    function getSortAttr(col) {
+      if (sortColumn !== col) return 'aria-sort="none"';
+      return sortDirection === "asc" ? 'aria-sort="ascending"' : 'aria-sort="descending"';
+    }
+
+    function getSortIcon(col) {
+      if (sortColumn !== col) return '<span class="sort-indicator" aria-hidden="true">↕</span>';
+      return sortDirection === "asc" ? '<span class="sort-indicator" aria-hidden="true">▲</span>' : '<span class="sort-indicator" aria-hidden="true">▼</span>';
+    }
+
     table.innerHTML =
       '<thead>' +
         '<tr>' +
-          '<th scope="col">' + thTool + '</th>' +
-          '<th scope="col">' + thCat + '</th>' +
-          '<th scope="col">' + thOrigin + '</th>' +
+          '<th scope="col" class="sortable" data-sort="name" ' + getSortAttr("name") + '>' + thTool + ' ' + getSortIcon("name") + '</th>' +
+          '<th scope="col" class="sortable" data-sort="category" ' + getSortAttr("category") + '>' + thCat + ' ' + getSortIcon("category") + '</th>' +
+          '<th scope="col" class="sortable" data-sort="origin" ' + getSortAttr("origin") + '>' + thOrigin + ' ' + getSortIcon("origin") + '</th>' +
           '<th scope="col">' + thEntity + '</th>' +
           '<th scope="col">' + thDesc + '</th>' +
           '<th scope="col" style="text-align:right;">' + thAction + '</th>' +
@@ -2262,10 +2346,6 @@ window.AOSRT_DATA = {
     filtered.forEach(function(tool){
       var tr = document.createElement("tr");
 
-      var cInfo = COUNTRIES[tool.country] || { code: tool.country, en: tool.country, pt: tool.country };
-      var isBR = tool.country === "BR";
-      var countryClass = "country-tag" + (isBR ? " country-br" : "");
-      var countryLabel = currentLang === "pt" ? cInfo.pt : cInfo.en;
       var catLabel = getCategoryName(tool.categoryId, currentLang);
       var desc = currentLang === "pt" ? tool.description.pt : tool.description.en;
 
@@ -2296,12 +2376,7 @@ window.AOSRT_DATA = {
           '</a>' +
         '</td>' +
         '<td><span class="cat-tag">' + escapeHtml(catLabel) + '</span></td>' +
-        '<td>' +
-          '<span class="' + countryClass + '" role="text" aria-label="Origem: ' + countryLabel + '">' +
-            '<span class="country-code">' + escapeHtml(cInfo.code) + '</span> ' +
-            '<span class="country-name">' + escapeHtml(countryLabel) + '</span>' +
-          '</span>' +
-        '</td>' +
+        '<td>' + renderCountryBadge(tool.country, currentLang) + '</td>' +
         '<td>' + entitiesCombined + '</td>' +
         '<td><div class="td-desc-text" title="' + escapeHtml(desc) + '">' + escapeHtml(desc) + '</div></td>' +
         '<td style="text-align:right;">' +
@@ -2316,6 +2391,20 @@ window.AOSRT_DATA = {
     table.appendChild(tbody);
     tableWrap.appendChild(table);
     toolCollection.appendChild(tableWrap);
+
+    // Eventos de clique para ordenação nos cabeçalhos
+    table.querySelectorAll("th.sortable").forEach(function(th){
+      th.addEventListener("click", function(){
+        var col = th.getAttribute("data-sort");
+        if (sortColumn === col) {
+          sortDirection = sortDirection === "asc" ? "desc" : "asc";
+        } else {
+          sortColumn = col;
+          sortDirection = "asc";
+        }
+        renderTools();
+      });
+    });
   }
 
   // Filter & Search Events
@@ -2499,6 +2588,7 @@ window.AOSRT_DATA = {
       rows.push(row.join(","));
     });
 
+    // UTF-8 BOM para garantir compatibilidade com Excel e R
     var csvContent = "\uFEFF" + rows.join("\r\n");
     var filename = useFiltered ? "awesome-research-tools-filtered.csv" : "awesome-research-tools.csv";
     downloadBlob(csvContent, filename, "text/csv;charset=utf-8;");
@@ -2510,6 +2600,8 @@ window.AOSRT_DATA = {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(rawUrl).then(function() {
         showToast(currentLang === "pt" ? "URL do JSON copiada para a área de transferência!" : "Raw JSON API URL copied to clipboard!");
+      }).catch(function() {
+        prompt(currentLang === "pt" ? "Copie a URL abaixo:" : "Copy the URL below:", rawUrl);
       });
     } else {
       prompt(currentLang === "pt" ? "Copie a URL abaixo:" : "Copy the URL below:", rawUrl);
@@ -2531,13 +2623,22 @@ window.AOSRT_DATA = {
       btnExportToggle.setAttribute("aria-expanded", "false");
     });
 
+    document.addEventListener("keydown", function(e){
+      if (e.key === "Escape" && exportMenu.classList.contains("show")) {
+        exportMenu.classList.remove("show");
+        btnExportToggle.setAttribute("aria-expanded", "false");
+        btnExportToggle.focus();
+      }
+    });
+
     document.getElementById("export-json-all").addEventListener("click", function(){ exportJSON(false); });
     document.getElementById("export-json-filtered").addEventListener("click", function(){ exportJSON(true); });
-    document.getElementById("export-csv").addEventListener("click", function(){ exportCSV(false); });
+    document.getElementById("export-csv-all").addEventListener("click", function(){ exportCSV(false); });
+    document.getElementById("export-csv-filtered").addEventListener("click", function(){ exportCSV(true); });
     document.getElementById("copy-raw-api").addEventListener("click", function(){ copyRawApiUrl(); });
   }
 
-  // Attempt dynamic fetch from data/tools.json with automatic fallback to embedded data
+  // Dynamic fetch with fallback
   fetch('./data/tools.json')
     .then(function(res){ return res.json(); })
     .then(function(json){
@@ -2549,7 +2650,7 @@ window.AOSRT_DATA = {
       }
     })
     .catch(function(err){
-      // Using embedded window.AOSRT_DATA fallback for file:/// protocol
+      // Fallback
     });
 
   // Initialize from LocalStorage / System Preferences

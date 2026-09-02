@@ -7,7 +7,8 @@
     "validate-data": "node scripts/validate-data.js",
     "validate-parity": "node scripts/validate-parity.js",
     "lint": "npx awesome-lint",
-    "test": "node scripts/validate-data.js && node scripts/validate-parity.js"
+    "test": "node scripts/validate-data.js && node scripts/validate-parity.js",
+    "prepare": "husky || true"
   },
   "keywords": [
     "awesome",
