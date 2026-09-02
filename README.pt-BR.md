@@ -70,6 +70,7 @@ Read this in [English](README.md). Prefere uma página bilíngue e mais navegáv
 
 ## Gestão de Referências e Citações
 
+- [Beaver](https://github.com/jlegewie/beaver-zotero) - Plugin de código aberto de assistente de pesquisa com IA para o Zotero, com busca agêntica em toda a biblioteca, leitura interativa de PDFs, citações precisas e suporte a servidor MCP.
 - [Zotero](https://github.com/zotero/zotero) - Gerenciador de referências livre e de código aberto, com integração ao navegador e plugins de processador de texto.
 
 ## Colaboração e Gestão de Projetos

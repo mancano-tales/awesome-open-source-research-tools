@@ -70,6 +70,7 @@ Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingu
 
 ## Reference & Citation Management
 
+- [Beaver](https://github.com/jlegewie/beaver-zotero) - Open source AI research assistant plugin for Zotero with agentic library search, PDF chat, precise sentence-level citations, and MCP server support.
 - [Zotero](https://github.com/zotero/zotero) - Free, open source reference manager with browser integration and word processor plugins.
 
 ## Collaboration & Project Management
