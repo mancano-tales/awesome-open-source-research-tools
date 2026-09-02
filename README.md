@@ -1,12 +1,10 @@
-# Awesome Open Source Research Tools [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+# Awesome Open Source Research Tools [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 > A curated list of open source software for any stage of a rigorous, systematic research project — not limited to any single discipline or method.
 
-Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingual page? See the [project site](https://mancano-tales.github.io/awesome-open-source-research-tools/).
-
-## Scope
-
 This list is method- and discipline-agnostic. If a tool is open source and supports some part of the research lifecycle — collecting data, managing it, analyzing it, making the work reproducible, writing it up, or reviewing existing literature — it belongs here. Social sciences, natural sciences, health sciences, digital humanities: all welcome, as long as the software itself is open source.
+
+Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingual page? See the [project site](https://mancano-tales.github.io/awesome-open-source-research-tools/).
 
 ## Contents
 
@@ -23,7 +21,6 @@ This list is method- and discipline-agnostic. If a tool is open source and suppo
 - [Inspiring Organizations](#inspiring-organizations)
 - [Related Lists](#related-lists)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Data Collection
 
@@ -57,7 +54,7 @@ This list is method- and discipline-agnostic. If a tool is open source and suppo
 ## Quantitative & Statistical Analysis
 
 - [JASP](https://github.com/jasp-stats/jasp-desktop) - Open source statistical software with a graphical interface, positioned as a free alternative to SPSS.
-- [pandas](https://github.com/pandas-dev/pandas) - Python data analysis and manipulation library.
+- [Pandas](https://github.com/pandas-dev/pandas) - Python data analysis and manipulation library.
 - [R](https://www.r-project.org/) - Free software environment for statistical computing and graphics.
 
 ## Reproducibility & Computational Environments
@@ -117,9 +114,3 @@ Organizations (not single tools) whose sustained investment in open source resea
 ## Contributing
 
 Contributions are welcome! Please read the [contribution guidelines](CONTRIBUTING.md) before opening a pull request — additions are evaluated against an objective checklist (open source license, active maintenance, minimal documentation, non-redundancy), not personal preference.
-
-## License
-
-[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
-
-To the extent possible under law, the contributors to this list have waived all copyright and related or neighboring rights to this work. See [LICENSE](LICENSE).

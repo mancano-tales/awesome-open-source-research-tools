@@ -1,12 +1,10 @@
-# Awesome Open Source Research Tools [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+# Awesome Open Source Research Tools [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 > Uma lista curada de software de código aberto para qualquer etapa de um projeto de pesquisa rigorosa e sistemática — sem se limitar a uma única disciplina ou método.
 
-Read this in [English](README.md). Prefere uma página bilíngue e mais navegável? Veja o [site do projeto](https://mancano-tales.github.io/awesome-open-source-research-tools/).
-
-## Escopo
-
 Esta lista é agnóstica quanto a método e disciplina. Se uma ferramenta é de código aberto e apoia alguma parte do ciclo de pesquisa — coletar dados, organizá-los, analisá-los, tornar o trabalho reprodutível, escrevê-lo ou revisar a literatura existente — ela tem lugar aqui. Ciências sociais, ciências naturais, ciências da saúde, humanidades digitais: todas bem-vindas, desde que o software em si seja de código aberto.
+
+Read this in [English](README.md). Prefere uma página bilíngue e mais navegável? Veja o [site do projeto](https://mancano-tales.github.io/awesome-open-source-research-tools/).
 
 ## Conteúdo
 
@@ -23,7 +21,6 @@ Esta lista é agnóstica quanto a método e disciplina. Se uma ferramenta é de 
 - [Organizações Inspiradoras](#organizações-inspiradoras)
 - [Listas Relacionadas](#listas-relacionadas)
 - [Como Contribuir](#como-contribuir)
-- [Licença](#licença)
 
 ## Coleta de Dados
 
@@ -57,7 +54,7 @@ Esta lista é agnóstica quanto a método e disciplina. Se uma ferramenta é de 
 ## Análise Quantitativa e Estatística
 
 - [JASP](https://github.com/jasp-stats/jasp-desktop) - Software estatístico de código aberto com interface gráfica, posicionado como alternativa livre ao SPSS.
-- [pandas](https://github.com/pandas-dev/pandas) - Biblioteca Python para análise e manipulação de dados.
+- [Pandas](https://github.com/pandas-dev/pandas) - Biblioteca Python para análise e manipulação de dados.
 - [R](https://www.r-project.org/) - Ambiente de software livre para computação estatística e gráficos.
 
 ## Reprodutibilidade e Ambientes Computacionais
@@ -117,9 +114,3 @@ Organizações (não ferramentas isoladas) cujo investimento sustentado em infra
 ## Como Contribuir
 
 Contribuições são bem-vindas! Leia as [diretrizes de contribuição](CONTRIBUTING.md) antes de abrir um pull request — adições são avaliadas por um checklist objetivo (licença de código aberto, manutenção ativa, documentação mínima, não-redundância), não por preferência pessoal.
-
-## Licença
-
-[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
-
-Na medida em que a lei permite, os contribuidores desta lista renunciaram a todos os direitos autorais e direitos conexos sobre esta obra. Veja [LICENSE](LICENSE).
