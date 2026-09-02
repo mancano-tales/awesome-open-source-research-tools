@@ -19,7 +19,6 @@ Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingu
 - [Literature Review & Synthesis](#literature-review--synthesis)
 - [AI & Agentic Research Tooling](#ai--agentic-research-tooling)
 - [Inspiring Organizations](#inspiring-organizations)
-- [Related Lists](#related-lists)
 - [Contributing](#contributing)
 
 ## Data Collection
