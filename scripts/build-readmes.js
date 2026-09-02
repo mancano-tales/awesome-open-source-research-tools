@@ -26,7 +26,6 @@ function ensureTrailingPeriod(str) {
 }
 
 function slugifyEn(text) {
-  // github-slugger algorithm: remove non-alphanumeric except whitespace/hyphens, then replace spaces with hyphens
   return text
     .toLowerCase()
     .replace(/[^\w\s-]/g, '')
@@ -60,11 +59,12 @@ function generateReadmeEn(data) {
     ''
   ];
 
-  // Table of Contents (strictly categories only)
+  // Table of Contents
   data.categories.forEach(cat => {
     const slug = slugifyEn(cat.nameEn);
     lines.push(`- [${cat.nameEn}](#${slug})`);
   });
+  lines.push('- [Inspiring Organizations](#inspiring-organizations)');
 
   lines.push('');
 
@@ -132,6 +132,7 @@ function generateReadmePt(data) {
     const slug = slugifyPt(cat.namePt);
     lines.push(`- [${cat.namePt}](#${slug})`);
   });
+  lines.push('- [Organizações Inspiradoras](#organizacoes-inspiradoras)');
 
   lines.push('');
 

@@ -18,6 +18,7 @@ Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingu
 - [Collaboration & Project Management](#collaboration--project-management)
 - [Literature Review & Synthesis](#literature-review--synthesis)
 - [AI & Agentic Research Tooling](#ai--agentic-research-tooling)
+- [Inspiring Organizations](#inspiring-organizations)
 
 ## Data Collection
 
