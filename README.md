@@ -1,19 +1,23 @@
 # Awesome Open Source Research Tools [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-A curated list of open source software for every stage of a rigorous research project. Covering data collection, management, quantitative and qualitative analysis, reproducibility, writing, and literature synthesis across disciplines.
+> A curated list of open source software for any stage of a rigorous, systematic research project — not limited to any single discipline or method.
+
+This list is method- and discipline-agnostic. If a tool is open source and supports some part of the research lifecycle — collecting data, managing it, analyzing it, making the work reproducible, writing it up, or reviewing existing literature — it belongs here. Social sciences, natural sciences, health sciences, digital humanities: all welcome, as long as the software itself is open source.
+
+Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingual page? See the [project site](https://mancano-tales.github.io/awesome-open-source-research-tools/).
 
 ## Contents
 
 - [Data Collection](#data-collection)
-- [Data Management & Organization](#data-management-organization)
+- [Data Management & Organization](#data-management--organization)
 - [Qualitative Analysis](#qualitative-analysis)
-- [Quantitative & Statistical Analysis](#quantitative-statistical-analysis)
-- [Reproducibility & Computational Environments](#reproducibility-computational-environments)
-- [Writing & Publishing](#writing-publishing)
-- [Reference & Citation Management](#reference-citation-management)
-- [Collaboration & Project Management](#collaboration-project-management)
-- [Literature Review & Synthesis](#literature-review-synthesis)
-- [AI & Agentic Research Tooling](#ai-agentic-research-tooling)
+- [Quantitative & Statistical Analysis](#quantitative--statistical-analysis)
+- [Reproducibility & Computational Environments](#reproducibility--computational-environments)
+- [Writing & Publishing](#writing--publishing)
+- [Reference & Citation Management](#reference--citation-management)
+- [Collaboration & Project Management](#collaboration--project-management)
+- [Literature Review & Synthesis](#literature-review--synthesis)
+- [AI & Agentic Research Tooling](#ai--agentic-research-tooling)
 
 ## Data Collection
 
@@ -92,21 +96,19 @@ A curated list of open source software for every stage of a rigorous research pr
 
 ## Inspiring Organizations
 
-Beyond individual tools, these organizations actively build, maintain, or fund open research infrastructure:
+Organizations (not single tools) whose sustained investment in open source research infrastructure is worth pointing to.
 
-- [Center for Open Science](https://github.com/CenterForOpenScience) - Non-profit developing the Open Science Framework (OSF) and promoting preregistration, open data, and badges.
-- [Corporation for Digital Scholarship](https://github.com/DigitalScholar) - Non-profit behind Zotero, dedicated to open infrastructure for researchers and cultural heritage institutions.
-- [Ipea (Instituto de Pesquisa Econômica Aplicada)](https://github.com/ipea) - Brazilian public research foundation developing open source statistical software, geospatial packages, and socioeconomic data access tools.
-- [Posit](https://github.com/posit-dev) - PBC building open source data science tools (RStudio, Quarto, tidyverse, renv) committed to scientific computing.
-- [Social Science Data Lab](https://github.com/socialsciencedatalab) - Mannheim-based initiative sharing open tutorials, teaching materials, and reproducible research workflows.
-- [The Carpentries](https://github.com/carpentries) - Global community teaching foundational coding and data science skills to researchers under open licenses.
+- [Center for Open Science](https://github.com/CenterForOpenScience) - Nonprofit behind the Open Science Framework (OSF), building infrastructure and running initiatives for open, reproducible research.
+- [Corporation for Digital Scholarship](https://github.com/DigitalScholar) - Nonprofit behind Zotero and Tropy, building free and open source tools for scholarly research.
+- [Ipea (Instituto de Pesquisa Econômica Aplicada)](https://github.com/ipea) - Brazilian federal public foundation producing open source tooling and reproducible research infrastructure for official data, including the `brverse` ecosystem.
+- [Posit](https://github.com/posit-dev) - Public benefit corporation (formerly RStudio) behind RStudio, Quarto, Shiny, renv and other widely-used open source research tooling.
+- [Social Science Data Lab](https://github.com/socialsciencedatalab) - Research lab at the Mannheim Centre for European Social Research (MZES) publishing open source tools and resources for social science data work.
+- [The Carpentries](https://github.com/carpentries) - Nonprofit teaching foundational open source data and computational skills to researchers (Software Carpentry, Data Carpentry, Library Carpentry).
 
 ## Related Lists
 
-Domain-specific and regional collections that complement this general list:
-
-- [brverse (Ipea)](https://github.com/ipea/brverse) - Curated directory and ecosystem of open source R packages maintained by the Institute for Applied Economic Research (Ipea) for programmatic, reproducible access to official Brazilian socioeconomic, census, and spatial data, strengthening national data sovereignty.
+- [brverse (Ipea)](https://github.com/ipea/brverse) - Curated directory and ecosystem of open source R packages maintained by the Institute for Applied Economic Research (Ipea) for reproducible access to official Brazilian socioeconomic, census, and spatial data, strengthening national data sovereignty.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to suggest new tools.
+Contributions are welcome! Please read the [contribution guidelines](CONTRIBUTING.md) before opening a pull request — additions are evaluated against an objective checklist (open source license, active maintenance, minimal documentation, non-redundancy), not personal preference.

@@ -1,8 +1,10 @@
 # Awesome Open Source Research Tools (pt-BR) [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-Uma lista curada de software de código aberto para cada etapa de um projeto de pesquisa rigoroso. Cobre coleta de dados, gestão, análise quantitativa e qualitativa, reprodutibilidade, escrita e síntese de literatura em diversas disciplinas.
+> Uma lista curada de software de código aberto para qualquer etapa de um projeto de pesquisa rigoroso e sistemático — sem se limitar a uma única disciplina ou método.
 
-Para a versão em inglês, consulte o [README.md](README.md).
+Esta lista é agnóstica quanto a métodos e disciplinas. Se uma ferramenta é de código aberto e apoia alguma etapa do ciclo de pesquisa — coleta de dados, gestão, análise (qualitativa ou quantitativa), reprodutibilidade, escrita ou síntese de literatura —, ela tem lugar aqui. Ciências sociais, ciências naturais, ciências da saúde, humanidades digitais: todas bem-vindas, desde que o software em si seja de código aberto.
+
+Leia a versão em [Inglês](README.md). Prefere uma página interativa e bilíngue? Acesse o [site do projeto](https://mancano-tales.github.io/awesome-open-source-research-tools/).
 
 ## Sumário
 
@@ -94,21 +96,19 @@ Para a versão em inglês, consulte o [README.md](README.md).
 
 ## Organizações Inspiradoras
 
-Além de ferramentas individuais, estas organizações constroem, mantêm ou financiam ativamente a infraestrutura aberta de pesquisa:
+Organizações (e não ferramentas isoladas) cujo investimento sustentado em infraestrutura aberta de pesquisa merece destaque:
 
-- [Center for Open Science](https://github.com/CenterForOpenScience) - Organização sem fins lucrativos que desenvolve o Open Science Framework (OSF) e promove pré-registro, dados abertos e selos de reprodutibilidade.
-- [Corporation for Digital Scholarship](https://github.com/DigitalScholar) - Entidade sem fins lucrativos por trás do Zotero, dedicada à infraestrutura aberta para pesquisadores e acervos culturais.
-- [Ipea (Instituto de Pesquisa Econômica Aplicada)](https://github.com/ipea) - Fundação pública brasileira dedicada à pesquisa aplicada, desenvolvimento de software estatístico e geoespacial de código aberto, e fomento ao acesso público e reprodutível a dados oficiais.
-- [Posit](https://github.com/posit-dev) - Empresa pública de interesse geral (PBC) que cria ferramentas de ciência de dados de código aberto (RStudio, Quarto, tidyverse, renv), comprometida com a computação científica.
-- [Social Science Data Lab](https://github.com/socialsciencedatalab) - Iniciativa da Universidade de Mannheim focada em tutoriais abertos, materiais didáticos e fluxos de pesquisa reproduzíveis.
-- [The Carpentries](https://github.com/carpentries) - Comunidade global que ensina habilidades essenciais de programação e ciência de dados para pesquisadores sob licenças abertas.
+- [Center for Open Science](https://github.com/CenterForOpenScience) - Entidade sem fins lucrativos responsável pelo Open Science Framework (OSF), construindo infraestrutura e liderando iniciativas para pesquisa aberta e reproduzível.
+- [Corporation for Digital Scholarship](https://github.com/DigitalScholar) - Entidade sem fins lucrativos por trás do Zotero e Tropy, desenvolvendo ferramentas livres e de código aberto para pesquisa acadêmica.
+- [Ipea (Instituto de Pesquisa Econômica Aplicada)](https://github.com/ipea) - Fundação pública federal brasileira que desenvolve ferramentas de código aberto e infraestrutura de pesquisa reproduzível para dados públicos oficiais, incluindo o ecossistema `brverse`.
+- [Posit](https://github.com/posit-dev) - Empresa de benefício público (anteriormente RStudio) responsável por RStudio, Quarto, Shiny, renv e outras ferramentas fundamentais de código aberto para computação científica.
+- [Social Science Data Lab](https://github.com/socialsciencedatalab) - Laboratório de pesquisa no Centro de Pesquisa Social Europeia de Mannheim (MZES), publicando ferramentas e recursos abertos para trabalho com dados em ciências sociais.
+- [The Carpentries](https://github.com/carpentries) - Organização sem fins lucrativos que ensina habilidades fundamentais de programação e ciência de dados abertas para pesquisadores (Software Carpentry, Data Carpentry, Library Carpentry).
 
 ## Listas Relacionadas
-
-Coleções temáticas e ecossistemas regionais que complementam esta lista geral:
 
 - [brverse (Ipea)](https://github.com/ipea/brverse) - Diretório e ecossistema de pacotes em R mantidos pelo Instituto de Pesquisa Econômica Aplicada (Ipea) para acesso facilitado e reprodutível a bases de dados públicas e geoespaciais brasileiras, promovendo a soberania de dados.
 
 ## Como Contribuir
 
-Consulte o [CONTRIBUTING.md](CONTRIBUTING.md) para diretrizes sobre como sugerir novas ferramentas.
+Contribuições são bem-vindas! Leia as [diretrizes de contribuição](CONTRIBUTING.md) antes de abrir um pull request — adições são avaliadas por um checklist objetivo (licença de código aberto, manutenção ativa, documentação mínima, não redundância), não por preferência pessoal.
