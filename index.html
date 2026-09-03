@@ -113,6 +113,7 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-anchor: none;
+    padding-top: var(--header-h, 98px);
   }
 
   /* Skip link for accessibility */
@@ -143,10 +144,11 @@
 
   /* Header & Navigation (Quarto Style) */
   header.site {
-    position: sticky; top: 0; z-index: 40;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 40;
     background: var(--paper);
     border-bottom: 1px solid var(--rule-soft);
   }
+  section { scroll-margin-top: var(--header-h, 98px); }
   .nav {
     display: flex; align-items: center; justify-content: space-between;
     padding: 12px 0; gap: 16px;
