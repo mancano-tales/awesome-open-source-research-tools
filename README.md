@@ -66,7 +66,6 @@ Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingu
 
 - [Pandoc](https://github.com/jgm/pandoc) - Universal document converter, the foundational engine behind markdown-to-PDF/HTML academic workflows.
 - [Quarto](https://github.com/quarto-dev/quarto-cli) - Scientific and technical publishing system for reproducible articles, books, websites, and presentations.
-- [TeX Live](https://www.tug.org/texlive/) - Comprehensive, free TeX/LaTeX distribution for publication-grade mathematical and academic typesetting.
 
 ## Reference & Citation Management
 

@@ -66,7 +66,6 @@ Leia a versão em [Inglês](README.md). Prefere uma página interativa e bilíng
 
 - [Pandoc](https://github.com/jgm/pandoc) - Conversor universal de documentos, motor central para cadeias de escrita acadêmica baseadas em Markdown, LaTeX e HTML.
 - [Quarto](https://github.com/quarto-dev/quarto-cli) - Sistema de publicação técnica e científica de código aberto para artigos, livros, relatórios e apresentações reprodutíveis.
-- [TeX Live](https://www.tug.org/texlive/) - Distribuição completa e livre de TeX e LaTeX para diagramação profissional de equações matemáticas e manuscritos acadêmicos.
 
 ## Gestão de Referências e Citações
 
