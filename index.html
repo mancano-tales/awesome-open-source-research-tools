@@ -147,6 +147,8 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 40;
     background: var(--paper);
     border-bottom: 1px solid var(--rule-soft);
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
   section { scroll-margin-top: var(--header-h, 98px); }
   .nav {
