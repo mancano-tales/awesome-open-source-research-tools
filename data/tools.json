@@ -803,7 +803,7 @@
     {
       "id": "gitlab-ce",
       "name": "GitLab Community Edition",
-      "url": "https://gitlab.com/gitlab-org/gitlab",
+      "url": "https://gitlab.com/gitlab-org/gitlab-foss",
       "categoryId": "collaboration",
       "country": "GLOBAL",
       "maintainer": {
@@ -1095,7 +1095,7 @@
       "name": "SetFit",
       "url": "https://github.com/huggingface/setfit",
       "categoryId": "ai-tooling",
-      "country": "FR",
+      "country": "US",
       "maintainer": {
         "name": "Hugging Face Team",
         "url": "https://github.com/huggingface"
