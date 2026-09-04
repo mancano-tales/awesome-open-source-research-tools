@@ -65,6 +65,7 @@ function generateReadmeEn(data) {
     lines.push(`- [${cat.nameEn}](#${slug})`);
   });
   lines.push('- [Inspiring Organizations](#inspiring-organizations)');
+  lines.push('- [Related Lists](#related-lists)');
 
   lines.push('');
 
@@ -101,8 +102,15 @@ function generateReadmeEn(data) {
   // Related Lists
   lines.push('## Related Lists');
   lines.push('');
-  lines.push('- [awesome-quarto](https://github.com/mcanouil/awesome-quarto) - A curated list of Quarto plugins, extensions, tools, tutorials, examples and resources.');
-  lines.push('- [brverse (Ipea)](https://github.com/ipea/brverse) - Curated directory and ecosystem of open source R packages maintained by the Institute for Applied Economic Research (Ipea) for reproducible access to official Brazilian socioeconomic, census, and spatial data, strengthening national data sovereignty.');
+
+  const sortedRelatedEn = (data.relatedLists || [])
+    .slice()
+    .sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
+
+  sortedRelatedEn.forEach(list => {
+    const desc = ensureTrailingPeriod(list.description.en);
+    lines.push(`- [${list.name}](${list.url}) - ${desc}`);
+  });
   lines.push('');
 
   // Contributing
@@ -134,6 +142,7 @@ function generateReadmePt(data) {
     lines.push(`- [${cat.namePt}](#${slug})`);
   });
   lines.push('- [Organizações Inspiradoras](#organizacoes-inspiradoras)');
+  lines.push('- [Listas Relacionadas](#listas-relacionadas)');
 
   lines.push('');
 
@@ -170,8 +179,15 @@ function generateReadmePt(data) {
   // Listas Relacionadas
   lines.push('## Listas Relacionadas');
   lines.push('');
-  lines.push('- [awesome-quarto](https://github.com/mcanouil/awesome-quarto) - Lista curada de plugins, extensões, ferramentas, tutoriais, exemplos e recursos para o sistema de publicação científica Quarto.');
-  lines.push('- [brverse (Ipea)](https://github.com/ipea/brverse) - Diretório e ecossistema de pacotes em R mantidos pelo Instituto de Pesquisa Econômica Aplicada (Ipea) para acesso facilitado e reprodutível a bases de dados públicas e geoespaciais brasileiras, promovendo a soberania de dados.');
+
+  const sortedRelatedPt = (data.relatedLists || [])
+    .slice()
+    .sort((a, b) => a.name.localeCompare(b.name, 'pt-BR', { sensitivity: 'base' }));
+
+  sortedRelatedPt.forEach(list => {
+    const desc = ensureTrailingPeriod(list.description.pt);
+    lines.push(`- [${list.name}](${list.url}) - ${desc}`);
+  });
   lines.push('');
 
   // Contribuição

@@ -19,6 +19,7 @@ Leia a versão em [Inglês](README.md). Prefere uma página interativa e bilíng
 - [Revisão de Literatura e Síntese](#revisao-de-literatura-e-sintese)
 - [Ferramentas de IA e Agentes para Pesquisa](#ferramentas-de-ia-e-agentes-para-pesquisa)
 - [Organizações Inspiradoras](#organizacoes-inspiradoras)
+- [Listas Relacionadas](#listas-relacionadas)
 
 ## Coleta de Dados
 
@@ -107,7 +108,20 @@ Organizações (e não ferramentas isoladas) cujo investimento sustentado em inf
 
 ## Listas Relacionadas
 
-- [awesome-quarto](https://github.com/mcanouil/awesome-quarto) - Lista curada de plugins, extensões, ferramentas, tutoriais, exemplos e recursos para o sistema de publicação científica Quarto.
+- [awesome-ai-for-science](https://github.com/ai4s-research/awesome-ai-for-science) - Coleção curada de ferramentas de IA, frameworks de machine learning, modelos e datasets para acelerar a descoberta científica em física, química, biologia e materiais.
+- [Awesome-Auto-Research-Tools](https://github.com/handsome-rich/Awesome-Auto-Research-Tools) - Coleção curada de sistemas de pesquisa automatizada, agentes de pesquisa profunda, ambientes de execução isolada e habilidades de IA para pesquisa.
+- [awesome-computational-social-science](https://github.com/gesiscss/awesome-computational-social-science) - Recursos curados para ciências sociais computacionais, incluindo bibliotecas de software em Python e R, cursos, livros, artigos, periódicos e conferências.
+- [awesome-digital-humanities](https://github.com/dh-tech/awesome-digital-humanities) - Diretório curado de ferramentas de software, bibliotecas e recursos para pesquisadores de humanidades que utilizam métodos quantitativos ou computacionais.
+- [awesome-evidence-synthesis](https://github.com/evidencesynthesis-tools/awesome-evidence-synthesis) - Diretório curado de ferramentas e softwares estritamente de código aberto para revisões sistemáticas de literatura, meta-análise e síntese transparente de evidências.
+- [awesome-open-science](https://github.com/brandonhimpfen/awesome-open-science) - Lista curada de plataformas, repositórios de dados abertos, iniciativas de ciência cidadã e recursos para pesquisa transparente e aberta.
+- [awesome-open-science-software](https://github.com/ASSERT-KTH/awesome-open-science-software) - Lista curada de diretrizes e recursos sobre princípios de ciência aberta voltados à engenharia de software e artefatos de pesquisa computacional.
+- [awesome-PhD](https://github.com/helenahartmann/awesome-PhD) - Coleção colaborativa de ferramentas, modelos, fontes de financiamento e guias práticos para doutorandos e pesquisadores acadêmicos.
+- [awesome-quarto](https://github.com/mcanouil/awesome-quarto) - Lista curada de plugins, extensões, ferramentas, tutoriais, exemplos e recursos para o sistema de publicação científica e documentos computacionais Quarto.
+- [awesome-reproducible-research](https://github.com/leipzig/awesome-reproducible-research) - Coleção curada de estudos de caso de pesquisa reproduzível, fluxos de trabalho, padrões de gestão de dados e iniciativas de metaciência.
+- [awesome-research (historical)](https://github.com/emptymalei/awesome-research) - Diretório clássico de ferramentas de produtividade, gráficos e escrita para pesquisa acadêmica (atualmente arquivado e migrado para a web).
+- [awesome-scientific-computing](https://github.com/nschloe/awesome-scientific-computing) - Diretório curado de softwares e bibliotecas de código aberto para análise numérica, simulação e computação científica em diversas linguagens.
+- [awesome-scientific-writing](https://github.com/writing-resources/awesome-scientific-writing) - Lista curada de ferramentas, tutoriais e fluxos em texto puro para ir além do LaTeX com Pandoc, Markdown e ferramentas de publicação reproduzível.
+- [awesome-zotero](https://github.com/MohamedElashri/awesome-zotero) - Coleção curada de plugins, extensões, fluxos de citação e integrações para o ecossistema do gerenciador de referências Zotero.
 - [brverse (Ipea)](https://github.com/ipea/brverse) - Diretório e ecossistema de pacotes em R mantidos pelo Instituto de Pesquisa Econômica Aplicada (Ipea) para acesso facilitado e reprodutível a bases de dados públicas e geoespaciais brasileiras, promovendo a soberania de dados.
 
 ## Como Contribuir

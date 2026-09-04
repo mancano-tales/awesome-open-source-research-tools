@@ -1123,6 +1123,118 @@
   ],
   "relatedLists": [
     {
+      "id": "awesome-ai-for-science",
+      "name": "awesome-ai-for-science",
+      "url": "https://github.com/ai4s-research/awesome-ai-for-science",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "AI4S Research Community",
+        "url": "https://github.com/ai4s-research"
+      },
+      "description": {
+        "en": "Curated collection of AI tools, machine learning frameworks, models, and datasets accelerating scientific discovery across physics, chemistry, biology, and materials.",
+        "pt": "Coleção curada de ferramentas de IA, frameworks de machine learning, modelos e datasets para acelerar a descoberta científica em física, química, biologia e materiais."
+      }
+    },
+    {
+      "id": "awesome-auto-research-tools",
+      "name": "Awesome-Auto-Research-Tools",
+      "url": "https://github.com/handsome-rich/Awesome-Auto-Research-Tools",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "Handsome Rich",
+        "url": "https://github.com/handsome-rich"
+      },
+      "description": {
+        "en": "Curated collection of automated research systems, deep research agents, sandbox execution environments, and scientific LLM skills.",
+        "pt": "Coleção curada de sistemas de pesquisa automatizada, agentes de pesquisa profunda, ambientes de execução isolada e habilidades de IA para pesquisa."
+      }
+    },
+    {
+      "id": "awesome-computational-social-science",
+      "name": "awesome-computational-social-science",
+      "url": "https://github.com/gesiscss/awesome-computational-social-science",
+      "country": "DE",
+      "maintainer": {
+        "name": "GESIS CSS Department",
+        "url": "https://github.com/gesiscss"
+      },
+      "description": {
+        "en": "Curated resources for computational social science, including Python and R software libraries, courses, books, papers, journals, and conferences.",
+        "pt": "Recursos curados para ciências sociais computacionais, incluindo bibliotecas de software em Python e R, cursos, livros, artigos, periódicos e conferências."
+      }
+    },
+    {
+      "id": "awesome-digital-humanities",
+      "name": "awesome-digital-humanities",
+      "url": "https://github.com/dh-tech/awesome-digital-humanities",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "DH-Tech Community",
+        "url": "https://github.com/dh-tech"
+      },
+      "description": {
+        "en": "Curated directory of software tools, libraries, and resources for humanities scholars using quantitative or computational methods.",
+        "pt": "Diretório curado de ferramentas de software, bibliotecas e recursos para pesquisadores de humanidades que utilizam métodos quantitativos ou computacionais."
+      }
+    },
+    {
+      "id": "awesome-evidence-synthesis",
+      "name": "awesome-evidence-synthesis",
+      "url": "https://github.com/evidencesynthesis-tools/awesome-evidence-synthesis",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "Evidence Synthesis Tools",
+        "url": "https://github.com/evidencesynthesis-tools"
+      },
+      "description": {
+        "en": "Curated directory of strictly open-source software and tools for systematic literature reviews, meta-analysis, and transparent evidence synthesis.",
+        "pt": "Diretório curado de ferramentas e softwares estritamente de código aberto para revisões sistemáticas de literatura, meta-análise e síntese transparente de evidências."
+      }
+    },
+    {
+      "id": "awesome-open-science",
+      "name": "awesome-open-science",
+      "url": "https://github.com/brandonhimpfen/awesome-open-science",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "Brandon Himpfen",
+        "url": "https://github.com/brandonhimpfen"
+      },
+      "description": {
+        "en": "Curated list of platforms, open data repositories, citizen science initiatives, and resources promoting transparent, open research practices.",
+        "pt": "Lista curada de plataformas, repositórios de dados abertos, iniciativas de ciência cidadã e recursos para pesquisa transparente e aberta."
+      }
+    },
+    {
+      "id": "awesome-open-science-software",
+      "name": "awesome-open-science-software",
+      "url": "https://github.com/ASSERT-KTH/awesome-open-science-software",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "ASSERT Research Group (KTH)",
+        "url": "https://github.com/ASSERT-KTH"
+      },
+      "description": {
+        "en": "Curated list of resources and guidelines on open science principles for software engineering and computational scientific research artifacts.",
+        "pt": "Lista curada de diretrizes e recursos sobre princípios de ciência aberta voltados à engenharia de software e artefatos de pesquisa computacional."
+      }
+    },
+    {
+      "id": "awesome-phd",
+      "name": "awesome-PhD",
+      "url": "https://github.com/helenahartmann/awesome-PhD",
+      "country": "DE",
+      "maintainer": {
+        "name": "Helena Hartmann",
+        "url": "https://github.com/helenahartmann"
+      },
+      "description": {
+        "en": "Living collection of tools, templates, funding resources, and practical guides for PhD students and academic researchers.",
+        "pt": "Coleção colaborativa de ferramentas, modelos, fontes de financiamento e guias práticos para doutorandos e pesquisadores acadêmicos."
+      }
+    },
+    {
       "id": "awesome-quarto",
       "name": "awesome-quarto",
       "url": "https://github.com/mcanouil/awesome-quarto",
@@ -1132,8 +1244,78 @@
         "url": "https://github.com/mcanouil"
       },
       "description": {
-        "en": "A curated list of Quarto plugins, extensions, tools, tutorials, examples and resources.",
-        "pt": "Lista curada de plugins, extensões, ferramentas, tutoriais, exemplos e recursos para o sistema de publicação científica Quarto."
+        "en": "A curated list of Quarto plugins, extensions, tools, tutorials, examples and resources for scientific publishing and computational documents.",
+        "pt": "Lista curada de plugins, extensões, ferramentas, tutoriais, exemplos e recursos para o sistema de publicação científica e documentos computacionais Quarto."
+      }
+    },
+    {
+      "id": "awesome-reproducible-research",
+      "name": "awesome-reproducible-research",
+      "url": "https://github.com/leipzig/awesome-reproducible-research",
+      "country": "US",
+      "maintainer": {
+        "name": "Jeremy Leipzig",
+        "url": "https://github.com/leipzig"
+      },
+      "description": {
+        "en": "Curated collection of reproducible research case studies, workflows, data management standards, and meta-science initiatives.",
+        "pt": "Coleção curada de estudos de caso de pesquisa reproduzível, fluxos de trabalho, padrões de gestão de dados e iniciativas de metaciência."
+      }
+    },
+    {
+      "id": "awesome-research",
+      "name": "awesome-research (historical)",
+      "url": "https://github.com/emptymalei/awesome-research",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "emptymalei",
+        "url": "https://github.com/emptymalei"
+      },
+      "description": {
+        "en": "A classic curated directory of productivity, plotting, and writing tools for academic research (now archived and migrated to web).",
+        "pt": "Diretório clássico de ferramentas de produtividade, gráficos e escrita para pesquisa acadêmica (atualmente arquivado e migrado para a web)."
+      }
+    },
+    {
+      "id": "awesome-scientific-computing",
+      "name": "awesome-scientific-computing",
+      "url": "https://github.com/nschloe/awesome-scientific-computing",
+      "country": "DE",
+      "maintainer": {
+        "name": "Nico Schlömer",
+        "url": "https://github.com/nschloe"
+      },
+      "description": {
+        "en": "Curated directory of open source software and libraries for numerical analysis, simulation, and scientific computing across programming languages.",
+        "pt": "Diretório curado de softwares e bibliotecas de código aberto para análise numérica, simulação e computação científica em diversas linguagens."
+      }
+    },
+    {
+      "id": "awesome-scientific-writing",
+      "name": "awesome-scientific-writing",
+      "url": "https://github.com/writing-resources/awesome-scientific-writing",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "Writing Resources Community",
+        "url": "https://github.com/writing-resources"
+      },
+      "description": {
+        "en": "Curated list of tools, demos, and plain-text workflows to go beyond LaTeX using Pandoc, Markdown, and reproducible publishing tools.",
+        "pt": "Lista curada de ferramentas, tutoriais e fluxos em texto puro para ir além do LaTeX com Pandoc, Markdown e ferramentas de publicação reproduzível."
+      }
+    },
+    {
+      "id": "awesome-zotero",
+      "name": "awesome-zotero",
+      "url": "https://github.com/MohamedElashri/awesome-zotero",
+      "country": "GLOBAL",
+      "maintainer": {
+        "name": "Mohamed Elashri",
+        "url": "https://github.com/MohamedElashri"
+      },
+      "description": {
+        "en": "Curated collection of plugins, add-ons, citation workflows, and integrations for the Zotero reference management system.",
+        "pt": "Coleção curada de plugins, extensões, fluxos de citação e integrações para o ecossistema do gerenciador de referências Zotero."
       }
     },
     {

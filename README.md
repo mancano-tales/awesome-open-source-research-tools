@@ -19,6 +19,7 @@ Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingu
 - [Literature Review & Synthesis](#literature-review--synthesis)
 - [AI & Agentic Research Tooling](#ai--agentic-research-tooling)
 - [Inspiring Organizations](#inspiring-organizations)
+- [Related Lists](#related-lists)
 
 ## Data Collection
 
@@ -107,7 +108,20 @@ Organizations (not single tools) whose sustained investment in open source resea
 
 ## Related Lists
 
-- [awesome-quarto](https://github.com/mcanouil/awesome-quarto) - A curated list of Quarto plugins, extensions, tools, tutorials, examples and resources.
+- [awesome-ai-for-science](https://github.com/ai4s-research/awesome-ai-for-science) - Curated collection of AI tools, machine learning frameworks, models, and datasets accelerating scientific discovery across physics, chemistry, biology, and materials.
+- [Awesome-Auto-Research-Tools](https://github.com/handsome-rich/Awesome-Auto-Research-Tools) - Curated collection of automated research systems, deep research agents, sandbox execution environments, and scientific LLM skills.
+- [awesome-computational-social-science](https://github.com/gesiscss/awesome-computational-social-science) - Curated resources for computational social science, including Python and R software libraries, courses, books, papers, journals, and conferences.
+- [awesome-digital-humanities](https://github.com/dh-tech/awesome-digital-humanities) - Curated directory of software tools, libraries, and resources for humanities scholars using quantitative or computational methods.
+- [awesome-evidence-synthesis](https://github.com/evidencesynthesis-tools/awesome-evidence-synthesis) - Curated directory of strictly open-source software and tools for systematic literature reviews, meta-analysis, and transparent evidence synthesis.
+- [awesome-open-science](https://github.com/brandonhimpfen/awesome-open-science) - Curated list of platforms, open data repositories, citizen science initiatives, and resources promoting transparent, open research practices.
+- [awesome-open-science-software](https://github.com/ASSERT-KTH/awesome-open-science-software) - Curated list of resources and guidelines on open science principles for software engineering and computational scientific research artifacts.
+- [awesome-PhD](https://github.com/helenahartmann/awesome-PhD) - Living collection of tools, templates, funding resources, and practical guides for PhD students and academic researchers.
+- [awesome-quarto](https://github.com/mcanouil/awesome-quarto) - A curated list of Quarto plugins, extensions, tools, tutorials, examples and resources for scientific publishing and computational documents.
+- [awesome-reproducible-research](https://github.com/leipzig/awesome-reproducible-research) - Curated collection of reproducible research case studies, workflows, data management standards, and meta-science initiatives.
+- [awesome-research (historical)](https://github.com/emptymalei/awesome-research) - A classic curated directory of productivity, plotting, and writing tools for academic research (now archived and migrated to web).
+- [awesome-scientific-computing](https://github.com/nschloe/awesome-scientific-computing) - Curated directory of open source software and libraries for numerical analysis, simulation, and scientific computing across programming languages.
+- [awesome-scientific-writing](https://github.com/writing-resources/awesome-scientific-writing) - Curated list of tools, demos, and plain-text workflows to go beyond LaTeX using Pandoc, Markdown, and reproducible publishing tools.
+- [awesome-zotero](https://github.com/MohamedElashri/awesome-zotero) - Curated collection of plugins, add-ons, citation workflows, and integrations for the Zotero reference management system.
 - [brverse (Ipea)](https://github.com/ipea/brverse) - Curated directory and ecosystem of open source R packages maintained by the Institute for Applied Economic Research (Ipea) for reproducible access to official Brazilian socioeconomic, census, and spatial data, strengthening national data sovereignty.
 
 ## Contributing

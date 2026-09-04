@@ -172,6 +172,44 @@ function runValidation() {
     });
   }
 
+  // Related Lists check
+  if (data.relatedLists !== undefined) {
+    if (!Array.isArray(data.relatedLists)) {
+      errors.push("Campo 'relatedLists' deve ser um array.");
+    } else {
+      const listIds = new Set();
+      const listUrls = new Set();
+      data.relatedLists.forEach((list, index) => {
+        const prefix = `Lista Relacionada #${index + 1} ('${list.name || list.id || 'desconhecida'}')`;
+        if (!list.id || typeof list.id !== 'string') errors.push(`${prefix}: 'id' deve ser string.`);
+        else {
+          if (listIds.has(list.id)) errors.push(`${prefix}: 'id' duplicado '${list.id}'.`);
+          listIds.add(list.id);
+        }
+        if (!list.name || typeof list.name !== 'string') errors.push(`${prefix}: 'name' deve ser string.`);
+        if (!list.url || typeof list.url !== 'string' || !isValidUrl(list.url)) {
+          errors.push(`${prefix}: 'url' invalida ('${list.url}').`);
+        } else {
+          if (listUrls.has(list.url)) errors.push(`${prefix}: 'url' duplicada ('${list.url}').`);
+          listUrls.add(list.url);
+        }
+        if (!list.country || typeof list.country !== 'string' || !VALID_COUNTRIES.has(list.country)) {
+          errors.push(`${prefix}: 'country' '${list.country}' invalido.`);
+        }
+        if (!list.description || typeof list.description !== 'object') {
+          errors.push(`${prefix}: 'description' deve ser objeto contendo 'en' e 'pt'.`);
+        } else {
+          if (!list.description.en || typeof list.description.en !== 'string' || list.description.en.length < 15) {
+            errors.push(`${prefix}: 'description.en' deve ter pelo menos 15 caracteres.`);
+          }
+          if (!list.description.pt || typeof list.description.pt !== 'string' || list.description.pt.length < 15) {
+            errors.push(`${prefix}: 'description.pt' deve ter pelo menos 15 caracteres.`);
+          }
+        }
+      });
+    }
+  }
+
   if (errors.length > 0) {
     console.error(`\n[FALHA] Foram encontrados ${errors.length} erros de validacao em data/tools.json:`);
     errors.forEach((err, idx) => console.error(`  ${idx + 1}. ${err}`));
