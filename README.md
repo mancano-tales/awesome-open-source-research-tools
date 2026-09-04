@@ -34,14 +34,14 @@ Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingu
 ## Data Management & Organization
 
 - [Dataverse](https://github.com/IQSS/dataverse) - Open source research data repository software used by institutional archives worldwide.
-- [DVC](https://github.com/iterative/dvc) - Data Version Control for datasets and machine learning pipelines, designed to work alongside Git.
+- [DVC](https://github.com/treeverse/dvc) - Data Version Control for datasets and machine learning pipelines, designed to work alongside Git.
 - [OSF (Open Science Framework)](https://github.com/CenterForOpenScience/osf.io) - Platform for research workflow management, preregistration, and open archiving.
 
 ## Qualitative Analysis
 
 - [CodeBook Lab](https://github.com/LorcanMcLaren/codebook-lab) - Validation-first benchmarking environment for evaluating LLM codebook execution against human gold standards.
 - [Dicto](https://github.com/dictoapp/dicto) - CAQDAS for transcribing, annotating, tagging and publishing audio/video content and oral histories.
-- [LLM4Humanities](https://github.com/flowersteam/LLM4Humanities) - Active learning web annotation platform for qualitative text coding and inter-rater reliability evaluation.
+- [LLM4Humanities](https://github.com/flowersteam/LLM4Humanities) - Web-based toolkit for LLM-assisted qualitative text annotation, benchmarked against human coding via inter-rater reliability metrics.
 - [LocalQ](https://github.com/zimotti/LocalQ) - Fully local, privacy-compliant qualitative analysis dashboard powered by Ollama for confidential data.
 - [QualCoder](https://github.com/ccbogel/QualCoder) - Actively maintained CAQDAS for coding and analyzing text, images, audio, and video.
 - [QualiLab](https://github.com/LuizPF42/QualiLab) - Open source tool for qualitative data analysis and text coding, developed in Brazil.
@@ -52,12 +52,12 @@ Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingu
 ## Quantitative & Statistical Analysis
 
 - [JASP](https://github.com/jasp-stats/jasp-desktop) - Open source statistical software with a graphical interface, free alternative to SPSS for Bayesian and classical tests.
-- [Pandas](https://github.com/pandas-dev/pandas) - Foundational Python library for structured data manipulation, wrangling, and econometric analysis.
+- [Pandas](https://github.com/pandas-dev/pandas) - Foundational Python library for structured data manipulation, wrangling, and analysis.
 - [R](https://www.r-project.org/) - Free software environment for statistical computing, data analysis, and publication-ready graphics.
 
 ## Reproducibility & Computational Environments
 
-- [Docker](https://github.com/moby/moby) - Containerization platform to package reproducible research environments and dependencies.
+- [Docker](https://github.com/moby/moby) - Open source container engine — the code Docker itself is built on — for packaging reproducible research environments and dependencies.
 - [Jupyter](https://github.com/jupyter/notebook) - Interactive computing notebooks supporting Python, R, Julia, and dozens of other languages.
 - [renv](https://github.com/rstudio/renv) - Dependency and project-local environment management for reproducible R projects.
 - [Snakemake](https://github.com/snakemake/snakemake) - Workflow management system for creating reproducible, scalable data analysis pipelines.
@@ -85,11 +85,11 @@ Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingu
 ## AI & Agentic Research Tooling
 
 - [autolabel](https://github.com/refuel-ai/autolabel) - Python library for declarative dataset labeling with LLMs, confidence scoring, and cost estimation.
-- [Cleanlab](https://github.com/cleanlab/cleanlab) - Data-centric AI framework for detecting dataset errors and evaluating LLM response confidence.
+- [Cleanlab](https://github.com/cleanlab/cleanlab) - Data-centric AI framework for detecting errors — outliers, duplicates, label errors — across text, image, audio and tabular datasets.
 - [DAAF](https://github.com/DAAF-Contribution-Community/daaf) - Toolkit that turns Claude Code into an auditable, reproducible quantitative research engine.
 - [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) - Plugin-based AI agent harness to automate and orchestrate research workflows.
 - [DSPy](https://github.com/stanfordnlp/dspy) - Declarative framework for optimizing LLM prompts and few-shot examples against validation metrics.
-- [Instructor](https://github.com/jxnl/instructor) - Python library enforcing structured JSON Schema output validation via Pydantic over LLMs.
+- [Instructor](https://github.com/567-labs/instructor) - Python library enforcing structured JSON Schema output validation via Pydantic over LLMs.
 - [Open Notebook](https://github.com/lfnovo/open-notebook) - Open source alternative to Google's NotebookLM, with FastAPI/SurrealDB backend and Next.js frontend.
 - [Outlines](https://github.com/dottxt-ai/outlines) - Structured text generation library enforcing regex and JSON schemas via token logit masking.
 - [SetFit](https://github.com/huggingface/setfit) - Prompt-free framework for few-shot fine-tuning of sentence transformers on small labeled datasets.

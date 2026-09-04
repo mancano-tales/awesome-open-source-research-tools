@@ -34,14 +34,14 @@ Leia a versão em [Inglês](README.md). Prefere uma página interativa e bilíng
 ## Gestão e Organização de Dados
 
 - [Dataverse](https://github.com/IQSS/dataverse) - Software de repositório de dados de pesquisa de código aberto, amplamente adotado por acervos e instituições acadêmicas globais.
-- [DVC](https://github.com/iterative/dvc) - Controle de versão para conjuntos de dados e pipelines de machine learning, projetado para operar perfeitamente integrado ao Git.
+- [DVC](https://github.com/treeverse/dvc) - Controle de versão para conjuntos de dados e pipelines de machine learning, projetado para operar perfeitamente integrado ao Git.
 - [OSF (Open Science Framework)](https://github.com/CenterForOpenScience/osf.io) - Plataforma para gestão do ciclo de pesquisa, pré-registro e arquivamento aberto de dados e materiais científicos.
 
 ## Análise Qualitativa
 
 - [CodeBook Lab](https://github.com/LorcanMcLaren/codebook-lab) - Ambiente de benchmarking para avaliar a execução de livros de códigos por LLMs contra padrões de referência humanos.
 - [Dicto](https://github.com/dictoapp/dicto) - Ferramenta CAQDAS para transcrição, anotação, codificação e publicação de acervos de áudio e vídeo em pesquisa qualitativa.
-- [LLM4Humanities](https://github.com/flowersteam/LLM4Humanities) - Plataforma de anotação web com active learning para codificação qualitativa de texto e avaliação de concordância inter-anotadores.
+- [LLM4Humanities](https://github.com/flowersteam/LLM4Humanities) - Kit de ferramentas web para anotação qualitativa de texto assistida por LLMs, com avaliação de concordância inter-anotadores frente à codificação humana.
 - [LocalQ](https://github.com/zimotti/LocalQ) - Dashboard de análise qualitativa 100% local com suporte a Ollama, voltado para dados confidenciais e garantia de sigilo.
 - [QualCoder](https://github.com/ccbogel/QualCoder) - Software CAQDAS multiplataforma e ativamente mantido para codificação e análise de textos, imagens, áudios e vídeos.
 - [QualiLab](https://github.com/LuizPF42/QualiLab) - Ferramenta de código aberto desenvolvida no Brasil para análise e codificação de dados qualitativos em pesquisas acadêmicas.
@@ -57,7 +57,7 @@ Leia a versão em [Inglês](README.md). Prefere uma página interativa e bilíng
 
 ## Reprodutibilidade e Ambientes Computacionais
 
-- [Docker](https://github.com/moby/moby) - Plataforma de conteinerização para empacotamento de ambientes computacionais reprodutíveis e controle de dependências.
+- [Docker](https://github.com/moby/moby) - Motor de contêineres de código aberto — a base sobre a qual o Docker é construído — para empacotamento de ambientes computacionais reprodutíveis e controle de dependências.
 - [Jupyter](https://github.com/jupyter/notebook) - Ambiente de computação interativa que combina código executável, equações, narrativas e visualizações em notebooks.
 - [renv](https://github.com/rstudio/renv) - Gerenciamento de dependências e isolamento de bibliotecas para projetos reproduzíveis em R.
 - [Snakemake](https://github.com/snakemake/snakemake) - Sistema de gestão de fluxos de trabalho para criação de pipelines de análise de dados escaláveis e reprodutíveis.
@@ -85,11 +85,11 @@ Leia a versão em [Inglês](README.md). Prefere uma página interativa e bilíng
 ## Ferramentas de IA e Agentes para Pesquisa
 
 - [autolabel](https://github.com/refuel-ai/autolabel) - Biblioteca Python para anotação e rotulagem declarativa de datasets com LLMs, cálculo de confiança e controle de custos.
-- [Cleanlab](https://github.com/cleanlab/cleanlab) - Framework de IA centrada em dados para detecção de anomalias e erros em datasets e avaliação de confiabilidade de LLMs.
+- [Cleanlab](https://github.com/cleanlab/cleanlab) - Framework de IA centrada em dados para detecção de erros — outliers, duplicatas, rótulos incorretos — em datasets de texto, imagem, áudio e dados tabulares.
 - [DAAF](https://github.com/DAAF-Contribution-Community/daaf) - Kit de ferramentas de código aberto que transforma o Claude Code em um motor de pesquisa quantitativa auditável e reproduzível.
 - [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) - Harness de agentes de IA modular para automação e orquestração de fluxos complexos de pesquisa.
 - [DSPy](https://github.com/stanfordnlp/dspy) - Framework declarativo para otimização algorítmica de prompts e exemplos few-shot de LLMs com base em métricas de validação.
-- [Instructor](https://github.com/jxnl/instructor) - Biblioteca Python para extração e validação de saídas estruturadas em JSON Schema via Pydantic em modelos de linguagem.
+- [Instructor](https://github.com/567-labs/instructor) - Biblioteca Python para extração e validação de saídas estruturadas em JSON Schema via Pydantic em modelos de linguagem.
 - [Open Notebook](https://github.com/lfnovo/open-notebook) - Alternativa de código aberto ao NotebookLM do Google, desenvolvida no Brasil com backend em FastAPI/SurrealDB e interface Next.js.
 - [Outlines](https://github.com/dottxt-ai/outlines) - Biblioteca de geração estruturada que garante gramáticas regulares e esquemas JSON via mascaramento de logits em tempo de inferência.
 - [SetFit](https://github.com/huggingface/setfit) - Framework para fine-tuning eficiente de Sentence Transformers com poucas amostras rotuladas, sem necessidade de prompts.
