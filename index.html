@@ -413,59 +413,50 @@
   :root[data-theme="dark"] .repo-link { color: var(--accent); }
   .repo-link:hover { text-decoration: underline; }
 
-  /* --- DATA TABLE (TABELA REAL ACADÊMICA COM ORDENAÇÃO) --- */
-  .table-responsive {
-    width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  /* --- LIST VIEW (linhas simples, sem colunas rígidas nem cabeçalho grudento) --- */
+  .list-view {
     background: var(--card); border: 1px solid var(--rule-soft); border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-sm); overflow: hidden;
   }
-  .data-table {
-    width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem;
+  .list-toolbar {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    padding: 10px 18px; background: var(--paper-shade); border-bottom: 1px solid var(--rule);
+    font-size: 0.8rem; color: var(--ink-soft);
   }
-  .data-table thead th {
-    background: var(--paper-shade); color: var(--ink); font-family: var(--sans);
-    font-weight: 700; font-size: 0.76rem; letter-spacing: 0.05em; text-transform: uppercase;
-    padding: 12px 16px; border-bottom: 2px solid var(--rule); white-space: nowrap;
-    position: sticky; top: var(--header-h, 98px); z-index: 2; user-select: none;
+  .list-sort-select {
+    font: inherit; font-size: 0.8rem; padding: 4px 8px; border-radius: var(--radius-sm);
+    border: 1px solid var(--rule); background: var(--paper); color: var(--ink);
   }
-  .data-table thead th.sortable {
-    cursor: pointer; transition: background 0.12s ease;
+  .list-sort-dir {
+    display: inline-flex; align-items: center; gap: 4px; padding: 4px 9px; font-size: 0.8rem;
+    font-weight: 600; border-radius: var(--radius-sm); border: 1px solid var(--rule);
+    background: var(--paper); color: var(--ink); cursor: pointer; font-family: var(--sans);
   }
-  .data-table thead th.sortable:hover {
-    background: var(--paper-deep); color: var(--accent-deep);
-  }
-  .sort-indicator {
-    display: inline-block; margin-left: 4px; font-size: 0.70rem; opacity: 0.6;
-  }
-  th[aria-sort="ascending"] .sort-indicator,
-  th[aria-sort="descending"] .sort-indicator {
-    opacity: 1; color: var(--accent);
-  }
+  .list-sort-dir:hover { border-color: var(--accent); color: var(--accent-deep); }
 
-  .data-table tbody tr {
-    border-bottom: 1px solid var(--rule-soft); transition: background 0.12s ease;
+  .list-row {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px;
+    padding: 16px 18px; border-bottom: 1px solid var(--rule-soft); transition: background 0.12s ease;
   }
-  .data-table tbody tr:last-child { border-bottom: none; }
-  .data-table tbody tr:hover { background: var(--card-hover); }
-  .data-table td {
-    padding: 12px 16px; vertical-align: middle; color: var(--ink);
-  }
-  .td-tool-name {
+  .list-row:last-child { border-bottom: none; }
+  .list-row:hover { background: var(--card-hover); }
+  .list-row-main { flex: 1 1 280px; min-width: 0; }
+  .list-row-name {
     font-family: var(--serif); font-size: 1.05rem; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 5px; color: var(--ink);
   }
-  .td-tool-name a {
-    color: var(--ink); display: inline-flex; align-items: center; gap: 5px;
+  .list-row-name:hover { color: var(--accent); }
+  .list-row-badges { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 6px; }
+  .list-row-desc {
+    color: var(--ink-soft); font-size: 0.86rem; line-height: 1.45; margin-top: 6px; max-width: 62ch;
   }
-  .td-tool-name a:hover { color: var(--accent); }
-  .td-desc-text {
-    color: var(--ink-soft); font-size: 0.84rem; line-height: 1.45; max-width: 400px;
-    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  .list-row-meta {
+    flex: 0 0 auto; display: flex; flex-direction: column; gap: 3px;
+    font-size: 0.8rem; min-width: 170px; max-width: 220px;
   }
-  .td-entities {
-    display: flex; flex-direction: column; gap: 4px; min-width: 180px;
-  }
+  .list-row-action { flex: 0 0 auto; margin-left: auto; }
   .btn-table-action {
-    display: inline-flex; align-items: center; gap: 5px; padding: 5px 10px; font-size: 0.78rem;
+    display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; font-size: 0.8rem;
     font-weight: 600; border-radius: var(--radius-sm); border: 1px solid var(--rule);
     background: var(--paper); color: var(--ink); text-decoration: none; white-space: nowrap;
     transition: all 0.15s ease; font-family: var(--sans);
@@ -566,7 +557,7 @@
   @media print {
     header.site, .dir-header, .results-meta, .export-dropdown, .toast-notice { display: none !important; }
     body { background: #fff !important; color: #000 !important; font-size: 10pt; }
-    .tool-card, .data-table { box-shadow: none !important; border: 1px solid #ccc !important; }
+    .tool-card, .list-view { box-shadow: none !important; border: 1px solid #ccc !important; }
     a { text-decoration: underline !important; color: #000 !important; }
   }
 </style>
@@ -2316,53 +2307,43 @@ window.AOSRT_DATA = {
   function renderTableView(filtered) {
     toolCollection.className = "tool-collection";
 
-    var tableWrap = document.createElement("div");
-    tableWrap.className = "table-responsive";
-    tableWrap.setAttribute("tabindex", "0");
-    tableWrap.setAttribute("role", "region");
-    tableWrap.setAttribute("aria-label", currentLang === "pt" ? "Tabela de ferramentas de pesquisa" : "Research tools data table");
+    var listWrap = document.createElement("div");
+    listWrap.className = "list-view";
+    listWrap.setAttribute("role", "region");
+    listWrap.setAttribute("aria-label", currentLang === "pt" ? "Lista de ferramentas de pesquisa" : "Research tools list");
 
-    var table = document.createElement("table");
-    table.className = "data-table";
+    var sortOptions = [
+      { value: "name", en: "Name", pt: "Nome" },
+      { value: "category", en: "Category", pt: "Categoria" },
+      { value: "origin", en: "Origin", pt: "Origem" }
+    ];
+    var sortLabel = currentLang === "pt" ? "Ordenar por" : "Sort by";
+    var dirLabel = sortDirection === "asc"
+      ? (currentLang === "pt" ? "A→Z" : "A→Z")
+      : (currentLang === "pt" ? "Z→A" : "Z→A");
 
-    var thTool = currentLang === "pt" ? "Ferramenta" : "Tool";
-    var thCat = currentLang === "pt" ? "Categoria" : "Category";
-    var thOrigin = currentLang === "pt" ? "Origem" : "Origin";
-    var thEntity = currentLang === "pt" ? "Mantenedor & Instituição" : "Maintainer & Institution";
-    var thDesc = currentLang === "pt" ? "Descrição" : "Description";
-    var thAction = currentLang === "pt" ? "Ação" : "Action";
-
-    function getSortAttr(col) {
-      if (sortColumn !== col) return 'aria-sort="none"';
-      return sortDirection === "asc" ? 'aria-sort="ascending"' : 'aria-sort="descending"';
-    }
-
-    function getSortIcon(col) {
-      if (sortColumn !== col) return '<span class="sort-indicator" aria-hidden="true">↕</span>';
-      return sortDirection === "asc" ? '<span class="sort-indicator" aria-hidden="true">▲</span>' : '<span class="sort-indicator" aria-hidden="true">▼</span>';
-    }
-
-    table.innerHTML =
-      '<thead>' +
-        '<tr>' +
-          '<th scope="col" class="sortable" data-sort="name" ' + getSortAttr("name") + '>' + thTool + ' ' + getSortIcon("name") + '</th>' +
-          '<th scope="col" class="sortable" data-sort="category" ' + getSortAttr("category") + '>' + thCat + ' ' + getSortIcon("category") + '</th>' +
-          '<th scope="col" class="sortable" data-sort="origin" ' + getSortAttr("origin") + '>' + thOrigin + ' ' + getSortIcon("origin") + '</th>' +
-          '<th scope="col">' + thEntity + '</th>' +
-          '<th scope="col">' + thDesc + '</th>' +
-          '<th scope="col" style="text-align:right;">' + thAction + '</th>' +
-        '</tr>' +
-      '</thead>';
-
-    var tbody = document.createElement("tbody");
+    var toolbar = document.createElement("div");
+    toolbar.className = "list-toolbar";
+    toolbar.innerHTML =
+      '<label for="list-sort-select">' + escapeHtml(sortLabel) + '</label>' +
+      '<select id="list-sort-select" class="list-sort-select">' +
+        sortOptions.map(function(o){
+          var label = currentLang === "pt" ? o.pt : o.en;
+          var selected = sortColumn === o.value ? " selected" : "";
+          return '<option value="' + o.value + '"' + selected + '>' + escapeHtml(label) + '</option>';
+        }).join("") +
+      '</select>' +
+      '<button type="button" class="list-sort-dir" id="list-sort-dir">' + escapeHtml(dirLabel) + '</button>';
+    listWrap.appendChild(toolbar);
 
     filtered.forEach(function(tool){
-      var tr = document.createElement("tr");
+      var row = document.createElement("div");
+      row.className = "list-row";
 
       var catLabel = getCategoryName(tool.categoryId, currentLang);
       var desc = currentLang === "pt" ? tool.description.pt : tool.description.en;
 
-      var maintainerHtml = "-";
+      var maintainerHtml = "";
       if (tool.maintainer && tool.maintainer.name) {
         if (tool.maintainer.url) {
           maintainerHtml = '<a class="entity-link" href="' + escapeHtml(tool.maintainer.url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(tool.maintainer.name) + ' ' + SVG_EXT + '</a>';
@@ -2380,44 +2361,43 @@ window.AOSRT_DATA = {
         }
       }
 
-      var entitiesCombined = '<div class="td-entities">' + maintainerHtml + (institutionHtml ? institutionHtml : '') + '</div>';
-
-      tr.innerHTML =
-        '<td class="td-tool-name">' +
-          '<a href="' + escapeHtml(tool.url) + '" target="_blank" rel="noopener noreferrer">' +
+      row.innerHTML =
+        '<div class="list-row-main">' +
+          '<a class="list-row-name" href="' + escapeHtml(tool.url) + '" target="_blank" rel="noopener noreferrer">' +
             '<span>' + escapeHtml(tool.name) + '</span> ' + SVG_EXT +
           '</a>' +
-        '</td>' +
-        '<td><span class="cat-tag">' + escapeHtml(catLabel) + '</span></td>' +
-        '<td>' + renderCountryBadge(tool.country, currentLang) + '</td>' +
-        '<td>' + entitiesCombined + '</td>' +
-        '<td><div class="td-desc-text" title="' + escapeHtml(desc) + '">' + escapeHtml(desc) + '</div></td>' +
-        '<td style="text-align:right;">' +
+          '<div class="list-row-badges">' +
+            '<span class="cat-tag">' + escapeHtml(catLabel) + '</span>' +
+            renderCountryBadge(tool.country, currentLang) +
+          '</div>' +
+          '<div class="list-row-desc">' + escapeHtml(desc) + '</div>' +
+        '</div>' +
+        (maintainerHtml || institutionHtml ? '<div class="list-row-meta">' + maintainerHtml + institutionHtml + '</div>' : '') +
+        '<div class="list-row-action">' +
           '<a class="btn-table-action" href="' + escapeHtml(tool.url) + '" target="_blank" rel="noopener noreferrer">' +
             '<span>Repo</span> ' + SVG_EXT +
           '</a>' +
-        '</td>';
+        '</div>';
 
-      tbody.appendChild(tr);
+      listWrap.appendChild(row);
     });
 
-    table.appendChild(tbody);
-    tableWrap.appendChild(table);
-    toolCollection.appendChild(tableWrap);
+    toolCollection.appendChild(listWrap);
 
-    // Eventos de clique para ordenação nos cabeçalhos
-    table.querySelectorAll("th.sortable").forEach(function(th){
-      th.addEventListener("click", function(){
-        var col = th.getAttribute("data-sort");
-        if (sortColumn === col) {
-          sortDirection = sortDirection === "asc" ? "desc" : "asc";
-        } else {
-          sortColumn = col;
-          sortDirection = "asc";
-        }
+    var sortSelect = document.getElementById("list-sort-select");
+    if (sortSelect) {
+      sortSelect.addEventListener("change", function(){
+        sortColumn = sortSelect.value;
         renderTools();
       });
-    });
+    }
+    var sortDirBtn = document.getElementById("list-sort-dir");
+    if (sortDirBtn) {
+      sortDirBtn.addEventListener("click", function(){
+        sortDirection = sortDirection === "asc" ? "desc" : "asc";
+        renderTools();
+      });
+    }
   }
 
   // Filter & Search Events
