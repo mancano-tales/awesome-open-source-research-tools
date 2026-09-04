@@ -17,7 +17,7 @@ Before opening a pull request, confirm the tool meets **all** of these:
 `data/tools.json` is the Single Source of Truth (SSOT) for this repository. All READMEs and web views are automatically compiled from it:
 
 1. Fork the repository and create a branch.
-2. Add your entry into `data/tools.json` with the required metadata (`id`, `name`, `url`, `categoryId`, `country`, `maintainer`, `institution`, `description` in EN and PT, and `tags`).
+2. Add your entry into `data/tools.json` with the required metadata (`id`, `name`, `url`, `categoryId`, `country`, `maintainer`, `institution`, `description` in EN and PT, and `tags`). `institution` records where the maintainer is affiliated, not that the tool is an official or institutionally endorsed project — leave it `null` if the project has no institutional tie beyond the maintainer's personal affiliation, or if you're unsure.
 3. Compile the READMEs:
    ```bash
    npm run build-readmes
