@@ -74,7 +74,7 @@ Leia a versão em [Inglês](README.md). Prefere uma página interativa e bilíng
 
 ## Colaboração e Gestão de Projetos
 
-- [GitLab Community Edition](https://gitlab.com/gitlab-org/gitlab) - Plataforma Git autogerenciável completa com rastreamento de tarefas, documentação wiki e pipelines de CI/CD para equipes de pesquisa.
+- [GitLab Community Edition](https://gitlab.com/gitlab-org/gitlab-foss) - Plataforma Git autogerenciável completa com rastreamento de tarefas, documentação wiki e pipelines de CI/CD para equipes de pesquisa.
 - [Taiga](https://github.com/taigaio/taiga-back) - Ferramenta de gestão ágil de projetos (quadros Kanban e Scrum) desenhada para laboratórios e equipes de pesquisa colaborativa.
 
 ## Revisão de Literatura e Síntese

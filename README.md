@@ -74,7 +74,7 @@ Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingu
 
 ## Collaboration & Project Management
 
-- [GitLab Community Edition](https://gitlab.com/gitlab-org/gitlab) - Self-hostable Git platform with issue tracking, wikis, and CI/CD for research teams.
+- [GitLab Community Edition](https://gitlab.com/gitlab-org/gitlab-foss) - Self-hostable Git platform with issue tracking, wikis, and CI/CD for research teams.
 - [Taiga](https://github.com/taigaio/taiga-back) - Open source project management tool (Kanban and Scrum) suited to collaborative research projects.
 
 ## Literature Review & Synthesis
