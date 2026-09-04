@@ -464,8 +464,7 @@
   }
   .td-tool-name a:hover { color: var(--accent); }
   .td-desc-text {
-    color: var(--ink-soft); font-size: 0.84rem; line-height: 1.45; max-width: 400px;
-    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    color: var(--ink-soft); font-size: 0.84rem; line-height: 1.45; max-width: 360px;
   }
   .td-entities {
     display: flex; flex-direction: column; gap: 4px; min-width: 180px;
@@ -1126,7 +1125,10 @@ window.AOSRT_DATA = {
         "name": "Rogério Jerônimo Barbosa (antrologos)",
         "url": "https://github.com/antrologos"
       },
-      "institution": null,
+      "institution": {
+        "name": "IESP-UERJ",
+        "url": "https://www.iesp.uerj.br"
+      },
       "description": {
         "en": "Open source, fully-local desktop app for transcribing and diarizing interviews in Brazilian Portuguese, with direct NVivo export.",
         "pt": "Aplicativo desktop open source e 100% local para transcrição e diarização de entrevistas em português brasileiro, com suporte a exportação direta para NVivo."
@@ -1990,7 +1992,9 @@ window.AOSRT_DATA = {
         "name": "Lucas Novo (lfnovo)",
         "url": "https://github.com/lfnovo"
       },
-      "institution": null,
+      "institution": {
+        "name": "Supernova Labs"
+      },
       "description": {
         "en": "Open source alternative to Google's NotebookLM, with FastAPI/SurrealDB backend and Next.js frontend.",
         "pt": "Alternativa de código aberto ao NotebookLM do Google, desenvolvida no Brasil com backend em FastAPI/SurrealDB e interface Next.js."
@@ -2235,6 +2239,9 @@ window.AOSRT_DATA = {
         var cB = COUNTRIES[b.country] || { en: b.country, pt: b.country };
         valA = currentLang === "pt" ? cA.pt : cA.en;
         valB = currentLang === "pt" ? cB.pt : cB.en;
+      } else if (sortColumn === "maintainer") {
+        valA = (a.maintainer && a.maintainer.name) || "";
+        valB = (b.maintainer && b.maintainer.name) || "";
       }
       var cmp = valA.localeCompare(valB, currentLang, { sensitivity: 'base' });
       return sortDirection === "asc" ? cmp : -cmp;
@@ -2374,7 +2381,7 @@ window.AOSRT_DATA = {
           '<th scope="col" class="sortable" data-sort="name" ' + getSortAttr("name") + '>' + thTool + ' ' + getSortIcon("name") + '</th>' +
           '<th scope="col" class="sortable" data-sort="category" ' + getSortAttr("category") + '>' + thCat + ' ' + getSortIcon("category") + '</th>' +
           '<th scope="col" class="sortable" data-sort="origin" ' + getSortAttr("origin") + '>' + thOrigin + ' ' + getSortIcon("origin") + '</th>' +
-          '<th scope="col">' + thEntity + '</th>' +
+          '<th scope="col" class="sortable" data-sort="maintainer" ' + getSortAttr("maintainer") + '>' + thEntity + ' ' + getSortIcon("maintainer") + '</th>' +
           '<th scope="col">' + thDesc + '</th>' +
           '<th scope="col" style="text-align:right;">' + thAction + '</th>' +
         '</tr>' +

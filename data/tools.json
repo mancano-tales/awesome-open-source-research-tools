@@ -189,7 +189,10 @@
         "name": "Rogério Jerônimo Barbosa (antrologos)",
         "url": "https://github.com/antrologos"
       },
-      "institution": null,
+      "institution": {
+        "name": "IESP-UERJ",
+        "url": "https://www.iesp.uerj.br"
+      },
       "description": {
         "en": "Open source, fully-local desktop app for transcribing and diarizing interviews in Brazilian Portuguese, with direct NVivo export.",
         "pt": "Aplicativo desktop open source e 100% local para transcrição e diarização de entrevistas em português brasileiro, com suporte a exportação direta para NVivo."
@@ -1053,7 +1056,9 @@
         "name": "Lucas Novo (lfnovo)",
         "url": "https://github.com/lfnovo"
       },
-      "institution": null,
+      "institution": {
+        "name": "Supernova Labs"
+      },
       "description": {
         "en": "Open source alternative to Google's NotebookLM, with FastAPI/SurrealDB backend and Next.js frontend.",
         "pt": "Alternativa de código aberto ao NotebookLM do Google, desenvolvida no Brasil com backend em FastAPI/SurrealDB e interface Next.js."
