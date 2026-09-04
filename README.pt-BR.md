@@ -19,7 +19,6 @@ Leia a versão em [Inglês](README.md). Prefere uma página interativa e bilíng
 - [Revisão de Literatura e Síntese](#revisao-de-literatura-e-sintese)
 - [Ferramentas de IA e Agentes para Pesquisa](#ferramentas-de-ia-e-agentes-para-pesquisa)
 - [Organizações Inspiradoras](#organizacoes-inspiradoras)
-- [Listas Relacionadas](#listas-relacionadas)
 
 ## Coleta de Dados
 

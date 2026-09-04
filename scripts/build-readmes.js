@@ -65,7 +65,6 @@ function generateReadmeEn(data) {
     lines.push(`- [${cat.nameEn}](#${slug})`);
   });
   lines.push('- [Inspiring Organizations](#inspiring-organizations)');
-  lines.push('- [Related Lists](#related-lists)');
 
   lines.push('');
 
@@ -142,7 +141,6 @@ function generateReadmePt(data) {
     lines.push(`- [${cat.namePt}](#${slug})`);
   });
   lines.push('- [Organizações Inspiradoras](#organizacoes-inspiradoras)');
-  lines.push('- [Listas Relacionadas](#listas-relacionadas)');
 
   lines.push('');
 
