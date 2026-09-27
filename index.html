@@ -605,8 +605,8 @@
   <div class="wrap">
 
     <section class="hero" style="border-top:none;padding-top:48px">
-      <h1 data-i18n="en" class="active-lang">Open source tools for every stage of a research project</h1>
-      <h1 data-i18n="pt">Ferramentas de código aberto para cada etapa de um projeto de pesquisa</h1>
+      <h1 data-i18n="en" class="active-lang">A practical directory of open source research tools</h1>
+      <h1 data-i18n="pt">Um diretório prático de ferramentas abertas de pesquisa</h1>
 
       <p class="lede active-lang" data-i18n="en">
         A curated list of open source software for collecting data, managing it, analyzing it,
@@ -633,8 +633,8 @@
       </div>
 
       <div class="stats">
-        <div class="stat"><b>45</b><span data-i18n="en" class="active-lang">open source tools</span><span data-i18n="pt">ferramentas de código aberto</span></div>
-        <div class="stat"><b>10</b><span data-i18n="en" class="active-lang">research stages</span><span data-i18n="pt">etapas da pesquisa</span></div>
+        <div class="stat"><b id="tools-total">0</b><span data-i18n="en" class="active-lang">open source tools</span><span data-i18n="pt">ferramentas de código aberto</span></div>
+        <div class="stat"><b id="categories-total">0</b><span data-i18n="en" class="active-lang">research stages</span><span data-i18n="pt">etapas da pesquisa</span></div>
         <div class="stat"><b>6</b><span data-i18n="en" class="active-lang">organizations</span><span data-i18n="pt">organizações</span></div>
         <div class="stat"><b>CC0</b><span data-i18n="en" class="active-lang">public domain license</span><span data-i18n="pt">licença de domínio público</span></div>
       </div>
@@ -1181,6 +1181,10 @@
           Leia as <a href="https://github.com/mancano-tales/awesome-open-source-research-tools/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">diretrizes de contribuição</a>
           completas e abra um pull request atualizando <code>data/tools.json</code>.
         </span>
+        <p class="maintainer-note">
+          <span data-i18n="en" class="active-lang">Are you a maintainer? <a href="https://github.com/mancano-tales/awesome-open-source-research-tools/issues/new?title=Entry%20correction%3A%20" target="_blank" rel="noopener noreferrer">Tell us about a correction</a> — keeping your entry accurate is a contribution, too.</span>
+          <span data-i18n="pt">Você mantém uma ferramenta listada? <a href="https://github.com/mancano-tales/awesome-open-source-research-tools/issues/new?title=Corre%C3%A7%C3%A3o%20de%20entrada%3A%20" target="_blank" rel="noopener noreferrer">Avise-nos sobre uma correção</a> — manter sua entrada correta também é uma contribuição.</span>
+        </p>
       </div>
     </section>
 
@@ -2587,6 +2591,13 @@ window.AOSRT_DATA = {
   var CATEGORIES = rawDataset.categories || [];
   var TOOLS = rawDataset.tools || [];
 
+  function renderDatasetTotals() {
+    var toolsTotal = document.getElementById("tools-total");
+    var categoriesTotal = document.getElementById("categories-total");
+    if (toolsTotal) toolsTotal.textContent = TOOLS.length;
+    if (categoriesTotal) categoriesTotal.textContent = CATEGORIES.length;
+  }
+
   function escapeHtml(str) {
     if (typeof str !== 'string') return '';
     return str.replace(/&/g, '&amp;')
@@ -3142,6 +3153,7 @@ window.AOSRT_DATA = {
       if (json && json.tools && json.categories) {
         CATEGORIES = json.categories;
         TOOLS = json.tools;
+        renderDatasetTotals();
         renderCategoryGrid();
         renderTools();
       }
@@ -3157,6 +3169,8 @@ window.AOSRT_DATA = {
     savedTheme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark" : "light";
   }
   applyTheme(savedTheme);
+
+  renderDatasetTotals();
 
   var savedView = null;
   try { savedView = localStorage.getItem("aosrt-view"); } catch(e){}

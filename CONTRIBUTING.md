@@ -35,3 +35,4 @@ If a category doesn't fit your entry, propose a new one in the PR description â€
 - Fix broken links or outdated descriptions in `data/tools.json`.
 - Flag entries that no longer meet the checklist (e.g., abandoned projects, license changes) by opening an issue.
 - Improve the `README.pt-BR.md` translation in `data/tools.json`.
+- If you maintain a listed tool, open an issue to correct or update its entry; maintainer feedback helps keep the directory trustworthy.

@@ -4,10 +4,11 @@
   "description": "A curated, discipline-agnostic list of open source software for every stage of a rigorous research project.",
   "scripts": {
     "build-readmes": "node scripts/build-readmes.js",
+    "build-site-data": "node scripts/build-site-data.js",
     "validate-data": "node scripts/validate-data.js",
     "validate-parity": "node scripts/validate-parity.js",
     "lint": "npx awesome-lint",
-    "test": "node scripts/validate-data.js && node scripts/validate-parity.js",
+    "test": "node scripts/validate-data.js && node scripts/validate-parity.js && node scripts/validate-site-parity.js",
     "prepare": "husky || true"
   },
   "keywords": [
