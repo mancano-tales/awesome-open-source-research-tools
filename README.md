@@ -52,6 +52,7 @@ Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingu
 ## Quantitative & Statistical Analysis
 
 - [JASP](https://github.com/jasp-stats/jasp-desktop) - Open source statistical software with a graphical interface, free alternative to SPSS for Bayesian and classical tests.
+- [Lixity](https://mfahsold.github.io/lixity/) - Local manuscript analysis for literary text: sentence rhythm, vocabulary, dialogue and tense across chapters, with every measurement linked to its passage and a citation-aware research workspace.
 - [Pandas](https://github.com/pandas-dev/pandas) - Foundational Python library for structured data manipulation, wrangling, and analysis.
 - [R](https://www.r-project.org/) - Free software environment for statistical computing, data analysis, and publication-ready graphics.
 
