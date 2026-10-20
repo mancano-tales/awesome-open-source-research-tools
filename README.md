@@ -70,6 +70,7 @@ Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingu
 ## Reference & Citation Management
 
 - [Beaver](https://github.com/jlegewie/beaver-zotero) - AI research assistant plugin for Zotero with agentic library search, PDF chat, sentence-level citations, and MCP server support.
+- [BiblioAudit](https://github.com/Official-Satyam-Tiwari/Reference-Architect) - Command-line tool to check, verify, and repair citation metadata in BibTeX files across 12+ academic databases.
 - [Zotero](https://github.com/zotero/zotero) - Free reference manager with browser integration, PDF annotation, and citation style management.
 
 ## Collaboration & Project Management
