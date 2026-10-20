@@ -70,6 +70,7 @@ Leia a versão em [Inglês](README.md). Prefere uma página interativa e bilíng
 ## Gestão de Referências e Citações
 
 - [Beaver](https://github.com/jlegewie/beaver-zotero) - Plugin de assistente de pesquisa com IA para o Zotero com busca em toda a biblioteca, citações precisas por sentença e servidor MCP nativo.
+- [BiblioAudit](https://github.com/Official-Satyam-Tiwari/Reference-Architect) - Ferramenta de linha de comando para verificar, validar e corrigir metadados de citações em arquivos BibTeX em mais de 12 bases acadêmicas.
 - [Zotero](https://github.com/zotero/zotero) - Gerenciador de referências e citações livre e aberto com extensão de navegador e integração com editores de texto.
 
 ## Colaboração e Gestão de Projetos
