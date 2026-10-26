@@ -64,6 +64,23 @@
   ],
   "tools": [
     {
+      "id": "agentfem",
+      "name": "AgentFEM",
+      "url": "https://github.com/haoming-luo/agentfem",
+      "categoryId": "ai-tooling",
+      "country": "CN",
+      "maintainer": {
+        "name": "Haoming Luo",
+        "url": "https://github.com/haoming-luo"
+      },
+      "institution": null,
+      "description": {
+        "en": "Finite-element workflows built on FEniCSx, with an MCP interface for AI assistants, readable model files, and inspectable simulation results.",
+        "pt": "Fluxos de simulação por elementos finitos baseados em FEniCSx, com interface MCP para assistentes de IA, arquivos de modelo legíveis e resultados que podem ser inspecionados."
+      },
+      "tags": ["finite-elements", "simulation", "mcp", "reproducibility"]
+    },
+    {
       "id": "kobotoolbox",
       "name": "KoboToolbox",
       "url": "https://github.com/kobotoolbox",

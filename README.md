@@ -84,6 +84,7 @@ Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingu
 
 ## AI & Agentic Research Tooling
 
+- [AgentFEM](https://github.com/haoming-luo/agentfem) - Finite-element workflows built on FEniCSx, with an MCP interface for AI assistants, readable model files, and inspectable simulation results.
 - [autolabel](https://github.com/refuel-ai/autolabel) - Python library for declarative dataset labeling with LLMs, confidence scoring, and cost estimation.
 - [Cleanlab](https://github.com/cleanlab/cleanlab) - Data-centric AI framework for detecting errors — outliers, duplicates, label errors — across text, image, audio and tabular datasets.
 - [DAAF](https://github.com/DAAF-Contribution-Community/daaf) - Toolkit that turns Claude Code into an auditable, reproducible quantitative research engine.

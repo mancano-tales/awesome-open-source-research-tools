@@ -84,6 +84,7 @@ Leia a versão em [Inglês](README.md). Prefere uma página interativa e bilíng
 
 ## Ferramentas de IA e Agentes para Pesquisa
 
+- [AgentFEM](https://github.com/haoming-luo/agentfem) - Fluxos de simulação por elementos finitos baseados em FEniCSx, com interface MCP para assistentes de IA, arquivos de modelo legíveis e resultados que podem ser inspecionados.
 - [autolabel](https://github.com/refuel-ai/autolabel) - Biblioteca Python para anotação e rotulagem declarativa de datasets com LLMs, cálculo de confiança e controle de custos.
 - [Cleanlab](https://github.com/cleanlab/cleanlab) - Framework de IA centrada em dados para detecção de erros — outliers, duplicatas, rótulos incorretos — em datasets de texto, imagem, áudio e dados tabulares.
 - [DAAF](https://github.com/DAAF-Contribution-Community/daaf) - Kit de ferramentas de código aberto que transforma o Claude Code em um motor de pesquisa quantitativa auditável e reproduzível.
