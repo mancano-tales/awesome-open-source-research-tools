@@ -81,6 +81,7 @@ Leia a versão em [Inglês](README.md). Prefere uma página interativa e bilíng
 
 - [ASReview](https://github.com/asreview/asreview) - Ferramenta com active learning para acelerar sistematicamente a triagem de títulos e resumos em revisões de literatura.
 - [metafor](https://github.com/wviechtb/metafor) - Pacote abrangente em R para condução de meta-análises estatísticas e síntese quantitativa de evidências.
+- [P-Research](https://github.com/pengpengyi92/p-research) - CLI em Python para coletar metadados do arXiv, manter um corpus de artigos sem duplicatas e gerar resumos de pesquisa com links para as fontes.
 
 ## Ferramentas de IA e Agentes para Pesquisa
 

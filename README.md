@@ -81,6 +81,7 @@ Read this in [Português (Brasil)](README.pt-BR.md). Prefer a browsable, bilingu
 
 - [ASReview](https://github.com/asreview/asreview) - Active-learning AI tool for systematic literature reviews and accelerated title/abstract screening.
 - [metafor](https://github.com/wviechtb/metafor) - Comprehensive R package for conducting meta-analyses and evidence synthesis.
+- [P-Research](https://github.com/pengpengyi92/p-research) - Python CLI for collecting arXiv metadata, maintaining a deduplicated paper corpus, and generating source-linked research digests.
 
 ## AI & Agentic Research Tooling
 
